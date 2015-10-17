@@ -1,0 +1,13 @@
+//sass --watch app/scss:app/css
+
+$main-color: #333;
+
+
+        //base
+@import '_bootstrap.scss',
+        '_font-awesome',
+        //general
+        '_animations.scss',
+        '_helpers.scss',
+        '_general.scss';
+        //pages
