@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="brainstormingApp">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Brainstorming</title>
@@ -10,9 +10,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Slabo+27px' rel='stylesheet' type='text/css'>
 </head>
-<body>
-    test
+<body ng-controller="mainCtrl">
+    <div ng-view></div>
 </body>
 
+<script src="/app/lib/jquery-1.11.3.min.js"></script>
 <script src="/app/lib/bootstrap.min.js"></script>
 <script src="/app/lib/angular.min.js"></script>
+<script src="/app/js/app.js"></script>

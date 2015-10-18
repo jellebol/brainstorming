@@ -4,10 +4,12 @@ $main-color: #333;
 
 
         //base
-@import '_bootstrap.scss',
-        '_font-awesome',
+@import 'bootstrap.scss',
+        'font-awesome',
         //general
-        '_animations.scss',
-        '_helpers.scss',
-        '_general.scss';
+        'animations.scss',
+        'helpers.scss',
+        'general.scss',
+        'type.scss',
         //pages
+        'login.scss';
