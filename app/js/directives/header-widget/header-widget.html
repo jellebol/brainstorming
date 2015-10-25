@@ -1,0 +1,26 @@
+<header class="main-header">
+    <div class="container full-height">
+        <div class="display-table full-height full-width">
+            <div class="main-header-logo table-cell">
+                <a href="/" class="logo-link">
+                    <img src="" class="logo"/>
+                    <h1 class="title">Brightstorming</h1>
+                </a>
+            </div>
+            <div class="profile-menu table-cell">
+                <div class="profile-dropdown dropdown dropdown-left pull-right">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{user.firstName}} {{user.lastName}}
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Profiel</a></li>
+                        <li><a href="#/login">Uitloggen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>

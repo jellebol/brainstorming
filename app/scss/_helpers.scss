@@ -1,5 +1,12 @@
-.clear {
-  clear:both;
-}
+.clear { clear:both; }
+.full-width {  width: 100%; }
+.full-height {  height: 100%; }
+.uppercase {text-transform: uppercase; }
 
-.uppercase {text-transform: uppercase;}
+.display-table {
+  display: table;
+}
+.table-cell {
+  display:table-cell;
+  vertical-align: middle;
+}

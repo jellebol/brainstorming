@@ -1,5 +1,8 @@
 .btn {
   border-radius:$border-radius;
+  &:hover, &:active, &:focus, &:active:focus {
+    outline:0;
+  }
 }
 
 @mixin button($background, $background-hover, $color, $color-hover, $border, $border-hover) {
@@ -10,10 +13,14 @@
     background-color: $background-hover;
     color:$color-hover;
     border:3px solid $border-hover;
-    outline:0;
   }
 }
 
 .btn-primary {
   @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
+}
+
+.dropdown-left .dropdown-menu{
+  right:0;
+  left:auto;
 }

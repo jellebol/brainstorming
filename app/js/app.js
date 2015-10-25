@@ -1,4 +1,4 @@
-var brightstormApp = angular.module('brainstormingApp', [
+var brightstormApp = angular.module('brightstormApp', [
     'ngRoute'
 ]);
 
@@ -24,7 +24,13 @@ brightstormApp.run(function($rootScope) {
     })
 });
 
-brightstormApp.controller('MainCtrl', function($scope, $location) {
+brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
 
     $scope.location = $location.path();
+
+    $rootScope.user = {
+        firstName:'Murielle',
+        lastName:'Smit',
+        programs:[]
+    };
 });

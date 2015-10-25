@@ -1,11 +1,17 @@
-brightstormApp.controller('LoginCtrl', function($scope, $location) {
+brightstormApp.controller('LoginCtrl', function($scope, $rootScope, $location) {
     console.log('login');
 
-    $scope.login = [];
+    $scope.login = {
+        username:'test',
+        password:'hahaaaaaaa',
+        stay: true
+    };
 
     $scope.enter = function(login){
-        if(login.user == '' && login.password == '') {
+        console.log(login);
+        if(login.username == '' && login.password == '') {
 
         }
+        $location.path('/dashboard');
     }
 });

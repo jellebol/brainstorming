@@ -1,0 +1,38 @@
+.main-header {
+  height: $header-height;
+  background-color: $blue-dark;
+  color:white;
+  .main-header-logo {
+    .logo-link {
+      display: inline-block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .title {
+      margin: 0;
+      color:white;
+      font-size: 28px;
+      @include main-font(600);
+    }
+  }
+  .profile-dropdown {
+    .btn {
+      color:white;
+      font-size: 16px;
+      @include main-font(600);
+      span {
+        margin-left: 8px;
+        font-size: 12px;
+      }
+      &:hover, &:active, &:focus, &:active:focus {
+        text-decoration: none;
+      }
+    }
+    .dropdown-menu {
+      top: 64px;
+      border:0;
+      border-radius: 0;
+    }
+  }
+}

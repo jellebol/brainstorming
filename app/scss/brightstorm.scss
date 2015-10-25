@@ -17,6 +17,8 @@ $purple: #5a267a;
 
 $border-radius:6px;
 
+$header-height:95px;
+
 
         //base
 @import 'bootstrap.scss',
@@ -28,5 +30,8 @@ $border-radius:6px;
         'buttons.scss',
         'forms.scss',
         'general.scss',
+        //includes
+        'header.scss',
         //pages
-        'login.scss';
+        'login.scss',
+        'dashboard.scss';
