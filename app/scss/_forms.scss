@@ -1,0 +1,9 @@
+input, textarea {
+  &.form-control {
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+      border-color:$yellow;
+    }
+  }
+}

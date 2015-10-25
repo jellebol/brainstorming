@@ -1,8 +1,8 @@
-var brainstormingApp = angular.module('brainstormingApp', [
+var brightstormApp = angular.module('brainstormingApp', [
     'ngRoute'
 ]);
 
-brainstormingApp.config(['$routeProvider', function($routeProvider) {
+brightstormApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
         when('/login', {
             templateUrl: 'app/js/modules/login/login.html',
@@ -17,14 +17,14 @@ brainstormingApp.config(['$routeProvider', function($routeProvider) {
         });
 }]);
 
-brainstormingApp.run(function($rootScope) {
+brightstormApp.run(function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function(ev,data) {
         if (data.$$route && data.$$route.controller)
             $rootScope.controller = data.$$route.controller;
     })
 });
 
-brainstormingApp.controller('MainCtrl', function($scope, $location) {
+brightstormApp.controller('MainCtrl', function($scope, $location) {
 
     $scope.location = $location.path();
 });

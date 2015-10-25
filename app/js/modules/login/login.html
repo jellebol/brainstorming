@@ -6,23 +6,35 @@
                 <h2 class="box-title">Inloggen</h2>
             </header>
             <main>
-                <form role="form" id="login-form">
+                <form role="form" id="login-form" ng-submit="enter()">
                     <div class="form-group">
-                        <input type="text" id="login-username" class="form-control"
-                                placeholder="Email adres"/>
+                        <input type="text" id="login-username" class="form-control" placeholder="Email adres"
+                                ng-model="login.username" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" id="login-password" class="form-control"
-                                placeholder="Wachtwoord"/>
+                        <input type="password" id="login-password" class="form-control" placeholder="Wachtwoord"
+                                ng-model="login.password" required/>
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Aangemeld blijven
-                        </label>
+                    <div class="form-group">
+                        <div class="checkbox pull-left">
+                            <label>
+                                <input type="checkbox" id="login-stay" checked ng-model="login.stay"/> Aangemeld blijven
+                            </label>
+                        </div>
+                        <div class="forgot-password pull-right">
+                            <a href="/" id="forgot-password">Wachtwoord vergeten?</a>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <button type="submit" id="login-submit" class="btn btn-primary btn-block btn-lg">Inloggen</button>
+                    <div class="box-footer">
+                        <button type="submit" id="login-submit" class="btn btn-primary btn-block btn-lg">Inloggen</button>
+                    </div>
                 </form>
             </main>
+        </section>
+        <section class="login-links">
+            <p>Heb je nog geen uitnodiging?</p>
+            <a href="/" id="register" class="yellow-link">Registreer nu voor de beta</a>
         </section>
     </div>
 </div>

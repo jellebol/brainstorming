@@ -7532,6 +7532,15 @@ button.close {
 .fa-fonticons:before {
   content: "\f280"; }
 
+a {
+  color: grey; }
+  a:hover {
+    color: #2b2e3a; }
+  a.yellow-link {
+    color: #ffca4c; }
+    a.yellow-link:hover {
+      color: #ffca4c; }
+
 .clear {
   clear: both; }
 
@@ -7545,10 +7554,17 @@ button.close {
   background-color: #ffca4c;
   color: black;
   border: 3px solid #ffca4c; }
-  .btn-primary:hover {
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:active:focus {
     background-color: transparent;
     color: #ffca4c;
-    border: 3px solid #ffca4c; }
+    border: 3px solid #ffca4c;
+    outline: 0; }
+
+input.form-control, textarea.form-control {
+  box-shadow: none; }
+  input.form-control:focus, textarea.form-control:focus {
+    box-shadow: none;
+    border-color: #ffca4c; }
 
 body {
   background-color: #f8f7fb;
@@ -7557,8 +7573,20 @@ body {
   font-weight: 400; }
 
 .box {
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
   background-color: white;
   border-radius: 6px; }
+  .box header {
+    text-align: center;
+    padding-bottom: 40px; }
+    .box header .box-title {
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 700; }
+  .box .box-footer {
+    padding-top: 20px; }
 
 body.LoginCtrl {
   background-color: #2b2e3a; }
@@ -7567,13 +7595,19 @@ body.LoginCtrl {
   padding: 50px; }
 
 .login-box {
-  margin: auto;
-  padding: 40px;
-  width: 100%;
-  max-width: 600px; }
+  padding: 40px; }
   .login-box #login-submit {
     text-transform: uppercase;
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 800; }
+  .login-box .forgot-password {
+    margin: 10px 0; }
 
-/*# sourceMappingURL=brainstorming.css.map */
+.login-links {
+  margin: 30px 0;
+  text-align: center;
+  color: lightgrey; }
+  .login-links p {
+    margin-bottom: 5px; }
+
+/*# sourceMappingURL=brightstorm.css.map */
