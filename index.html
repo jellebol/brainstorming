@@ -4,17 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Brainstorming</title>
 
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- styling -->
     <link type="text/css" rel="stylesheet" href="/app/css/brainstorming.css"/>
+    <!-- favicon -->
     <link rel="shortcut icon" href="/favicon.ico"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Slabo+27px' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="mainCtrl">
+<body ng-controller="MainCtrl" ng-class="controller">
     <div ng-view></div>
 </body>
 
 <script src="/app/lib/jquery-1.11.3.min.js"></script>
 <script src="/app/lib/bootstrap.min.js"></script>
 <script src="/app/lib/angular.min.js"></script>
+<script src="/app/lib/angular-route.min.js"></script>
 <script src="/app/js/app.js"></script>
+<script src="/app/js/modules/login/loginCtrl.js"></script>
+<script src="/app/js/modules/dashboard/dashboardCtrl.js"></script>

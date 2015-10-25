@@ -7535,7 +7535,45 @@ button.close {
 .clear {
   clear: both; }
 
+.uppercase {
+  text-transform: uppercase; }
+
+.btn {
+  border-radius: 6px; }
+
+.btn-primary {
+  background-color: #ffca4c;
+  color: black;
+  border: 3px solid #ffca4c; }
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #ffca4c;
+    border: 3px solid #ffca4c; }
+
 body {
-  background-color: green; }
+  background-color: #f8f7fb;
+  color: #333;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 400; }
+
+.box {
+  background-color: white;
+  border-radius: 6px; }
+
+body.LoginCtrl {
+  background-color: #2b2e3a; }
+
+.login-page .logo-holder {
+  padding: 50px; }
+
+.login-box {
+  margin: auto;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px; }
+  .login-box #login-submit {
+    text-transform: uppercase;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 800; }
 
 /*# sourceMappingURL=brainstorming.css.map */

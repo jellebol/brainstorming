@@ -2,14 +2,30 @@
 
 $main-color: #333;
 
+$grey-light: #f8f7fb;
+$grey-medium: #cdcbcc;
+
+$blue: #1994af;
+$blue-dark: #2b2e3a;
+$cyan: #06a485;
+$green: #0e932a;
+$yellow: #ffca4c;
+$yellow-light: #fddc6c;
+$orange: #e95922;
+$pink: #b30857;
+$purple: #5a267a;
+
+$border-radius:6px;
+
 
         //base
 @import 'bootstrap.scss',
         'font-awesome',
         //general
         'animations.scss',
-        'helpers.scss',
-        'general.scss',
         'type.scss',
+        'helpers.scss',
+        'buttons.scss',
+        'general.scss',
         //pages
         'login.scss';

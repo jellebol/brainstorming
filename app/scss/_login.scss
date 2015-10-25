@@ -1,0 +1,21 @@
+body.LoginCtrl {
+  background-color: $blue-dark;
+}
+
+.login-page {
+  .logo-holder{
+    padding: 50px;
+  }
+}
+
+.login-box {
+  margin:auto;
+  padding: 40px;
+  width: 100%;
+  max-width:600px;
+
+  #login-submit {
+    text-transform: uppercase;
+    @include main-font(800);
+  }
+}

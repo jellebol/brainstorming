@@ -1,0 +1,18 @@
+.btn {
+  border-radius:$border-radius;
+}
+
+@mixin button($background, $background-hover, $color, $color-hover, $border, $border-hover) {
+  background-color: $background;
+  color:$color;
+  border:3px solid $border;
+  &:hover {
+    background-color: $background-hover;
+    color:$color-hover;
+    border:3px solid $border-hover;
+  }
+}
+
+.btn-primary {
+  @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
+}

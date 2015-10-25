@@ -1,3 +1,10 @@
 body {
-  background-color:green;
+  background-color:$grey-light;
+  color:$main-color;
+  @include main-font(400);
+}
+
+.box {
+  background-color: white;
+  border-radius:$border-radius;
 }
