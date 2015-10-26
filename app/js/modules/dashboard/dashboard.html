@@ -1,6 +1,47 @@
 <div class="dashboard-page simple-page">
     <header-widget user="user"></header-widget>
-    <main>
-        main {{user.lastName}}
-    </main>
+    <section class="dashboard">
+        <header class="dashboard-header">
+            <div class="container display-table full-height">
+                <div class="dashboard-tabs">
+                    <ul class="list-inline">
+                        <li><button class="btn btn-link btn-tab active">Programma</button></li>
+                        <li><button class="btn btn-link btn-tab">Concept (0)</button></li>
+                        <li><button class="btn btn-link btn-tab">Prullenbak (0)</button></li>
+                    </ul>
+                </div>
+                <div class="dashboard-buttons">
+                    <button class="btn btn-primary-odd btn-lg uppercase" ng-click="addProgram()">
+                        + Nieuwe sessie
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="dashboard-content">
+            <div class="container">
+                <div class="dashboard-empty" ng-if="user.programs.length == 0">
+                    <p class="empty-one">{{user.firstName}} je hebt nog geen Brightstorms aangemaakt.</p>
+                    <p class="empty-two">Wees niet verlegen. <a href="#" class="link-orange">Stel snel een programma samen</a></p>
+                </div>
+                <ul class="list-inline dashboard-programs" ng-if="user.programs.length > 0">
+                    <li class="dashboard-program" ng-repeat="program in user.programs">
+                        <a href="#" class="dashboard-program-box display-table">
+                            <h3 class="dashboard-program-title table-cell">{{program.title}}</h3>
+                        </a>
+                        <footer>
+                            <button class="btn btn-link dashboard-program-button">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Wijzig
+                            </button>
+                            <button class="btn btn-link dashboard-program-button">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Verwijder
+                            </button>
+                            <button class="btn btn-link dashboard-program-button">
+                                <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Deel
+                            </button>
+                        </footer>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </section>
 </div>

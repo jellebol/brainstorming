@@ -8,10 +8,16 @@ a {
   &:hover {
     color:$blue-dark;
   }
-  &.yellow-link {
+  &.link-yellow {
     color:$yellow;
     &:hover {
       color:$yellow;
+    }
+  }
+  &.link-orange {
+    color:$orange;
+    &:hover {
+      color:$orange;
     }
   }
 }

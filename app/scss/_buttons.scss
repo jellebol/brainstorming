@@ -20,6 +20,33 @@
   @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
 }
 
+.btn-primary-odd {
+  @include button($orange, transparent, white, $orange, $orange, $orange);
+}
+
+.btn-tab {
+  margin-right: 5px;
+  padding: 20px 10px;
+  color: grey;
+  font-size: 16px;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  &:hover {
+    color:grey;
+    border-color: $orange;
+    text-decoration: none;
+  }
+  &.active {
+    color:$main-color;
+    font-weight: 600;
+    border-color: $orange;
+    &:hover {
+      color:$main-color;
+    }
+  }
+}
+
 .dropdown-left .dropdown-menu{
   right:0;
   left:auto;

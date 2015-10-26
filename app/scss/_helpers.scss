@@ -1,3 +1,11 @@
+@mixin transition($what, $time, $how){
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}
+
+
 .clear { clear:both; }
 .full-width {  width: 100%; }
 .full-height {  height: 100%; }

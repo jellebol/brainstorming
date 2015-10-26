@@ -1,5 +1,6 @@
 var brightstormApp = angular.module('brightstormApp', [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ]);
 
 brightstormApp.config(['$routeProvider', function($routeProvider) {
