@@ -1,8 +1,12 @@
-angular.module('brightstormApp').controller('createProgramModelCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('brightstormApp').controller('createProgramModelCtrl', function ($scope, $rootScope, $uibModalInstance, programs) {
 
-    $scope.items = items;
+    $scope.programs = programs;
 
     $scope.ok = function () {
+        $rootScope.user.programs.push({
+            title:$scope.program.title,
+            status:'pending'
+        });
         $uibModalInstance.close();
     };
 

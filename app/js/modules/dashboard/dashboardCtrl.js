@@ -1,21 +1,13 @@
 brightstormApp.controller('DashboardCtrl', function($scope, $rootScope, $uibModal) {
     //console.log('dashboard');
 
-    $scope.open = function (){
-        $rootScope.user.programs.push({
-            title:'Nieuw programma',
-            status:'pending'
-        })
-    };
-
     $scope.addProgram = function () {
 
         var modalInstance = $uibModal.open({
-            animation:false,
             templateUrl: '/app/js/modals/create-program-modal/create-program-modal.html',
             controller: 'createProgramModelCtrl',
             resolve: {
-                items: function () {
+                programs: function () {
                     return $rootScope.user.programs;
                 }
             }

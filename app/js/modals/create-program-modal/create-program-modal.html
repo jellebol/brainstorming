@@ -1,17 +1,22 @@
 <div class="modal">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <form role="form" class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Programma toevoegen</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2 class="modal-title">Nieuwe Brightstorm</h2>
             </div>
             <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <div class="form-group form-group-lg">
+                    <input type="text" id="program-title" class="form-control" placeholder="Geef je Brightstorm een titel..."
+                           ng-model="program.title" required/>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-border-dark btn-lg uppercase" data-dismiss="modal" ng-click="cancel()">Annuleer</button>
+                <button type="submit" class="btn btn-primary-odd btn-lg uppercase" ng-click="ok()">Maak aan</button>
             </div>
-        </div><!-- /.modal-content -->
+        </form><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

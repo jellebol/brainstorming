@@ -24,6 +24,10 @@
   @include button($orange, transparent, white, $orange, $orange, $orange);
 }
 
+.btn-border-dark {
+  @include button(transparent, $main-color, $main-color, white, $main-color, $main-color);
+}
+
 .btn-tab {
   margin-right: 5px;
   padding: 20px 10px;

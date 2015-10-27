@@ -7545,6 +7545,9 @@ a {
     a.link-orange:hover {
       color: #e95922; }
 
+h2 {
+  font-weight: 600; }
+
 .clear {
   clear: both; }
 
@@ -7586,6 +7589,15 @@ a {
     background-color: transparent;
     color: #e95922;
     border: 3px solid #e95922; }
+
+.btn-border-dark {
+  background-color: transparent;
+  color: #333;
+  border: 3px solid #333; }
+  .btn-border-dark:hover, .btn-border-dark:active, .btn-border-dark:focus, .btn-border-dark:active:focus {
+    background-color: #333;
+    color: white;
+    border: 3px solid #333; }
 
 .btn-tab {
   margin-right: 5px;
@@ -7637,6 +7649,25 @@ body {
       font-weight: 700; }
   .box .box-footer {
     padding-top: 20px; }
+
+.modal {
+  overflow-x: inherit !important;
+  overflow-y: inherit !important;
+  display: block; }
+  .modal .modal-dialog {
+    width: 500px; }
+  .modal .modal-header {
+    padding: 40px;
+    border-bottom: 0;
+    color: #e95922;
+    text-align: center;
+    font-weight: 700; }
+  .modal .modal-body {
+    padding: 0 40px; }
+  .modal .modal-footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 0; }
 
 .main-header {
   height: 95px;
