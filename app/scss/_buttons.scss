@@ -36,6 +36,10 @@
   @include button($orange, transparent, white, $orange, $orange, $orange);
 }
 
+.btn-dark-trans {
+  @include button(rgba(0, 0, 0, 0.5), black, white, white, rgba(0, 0, 0, 0.5), black);
+}
+
 .btn-border-dark {
   @include button(transparent, $main-color, $main-color, white, $main-color, $main-color);
 }

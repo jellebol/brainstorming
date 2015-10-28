@@ -1,4 +1,4 @@
-angular.module('brightstormApp').controller('createProgramModelCtrl', function ($scope, $rootScope, $uibModalInstance, programs) {
+angular.module('brightstormApp').controller('createProgramModelCtrl', function ($scope, $rootScope, $location, $uibModalInstance, programs) {
 
     $scope.programs = programs;
 
@@ -12,6 +12,7 @@ angular.module('brightstormApp').controller('createProgramModelCtrl', function (
         };
         $rootScope.user.programs.push(program);
         $uibModalInstance.close();
+        $location.path('/setup/' + program.id + '/1')
     };
 
     $scope.cancel = function () {

@@ -7600,6 +7600,15 @@ h2 {
     color: #e95922;
     border: 3px solid #e95922; }
 
+.btn-dark-trans {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 3px solid rgba(0, 0, 0, 0.5); }
+  .btn-dark-trans:hover, .btn-dark-trans:active, .btn-dark-trans:focus, .btn-dark-trans:active:focus {
+    background-color: black;
+    color: white;
+    border: 3px solid black; }
+
 .btn-border-dark {
   background-color: transparent;
   color: #333;
