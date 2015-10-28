@@ -13,6 +13,10 @@ brightstormApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/js/modules/dashboard/dashboard.html',
             controller: 'DashboardCtrl'
         }).
+        when('/setup/:id/:page', {
+            templateUrl: 'app/js/modules/setup/setup.html',
+            controller: 'SetupCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });
@@ -32,6 +36,12 @@ brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
     $rootScope.user = {
         firstName:'Murielle',
         lastName:'Smit',
-        programs:[]
+        programs:[{
+            createdAt:new Date(),
+            id:1,
+            title: 'Test program',
+            status:'concept',
+            setup:[]
+        }]
     };
 });

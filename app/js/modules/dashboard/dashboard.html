@@ -21,11 +21,11 @@
             <div class="container">
                 <div class="dashboard-empty" ng-if="user.programs.length == 0">
                     <p class="empty-one">{{user.firstName}} je hebt nog geen Brightstorms aangemaakt.</p>
-                    <p class="empty-two">Wees niet verlegen. <a href="#" class="link-orange">Stel snel een programma samen</a></p>
+                    <p class="empty-two">Wees niet verlegen. <a href="" class="link-orange" ng-click="addProgram()">Stel snel een programma samen</a></p>
                 </div>
                 <ul class="list-inline dashboard-programs" ng-if="user.programs.length > 0">
-                    <li class="dashboard-program" ng-repeat="program in user.programs">
-                        <a href="#" class="dashboard-program-box display-table">
+                    <li class="dashboard-program" ng-repeat="program in user.programs | orderBy:'createdAt':true">
+                        <a href="#/setup/{{program.id}}/1" class="dashboard-program-box display-table">
                             <h3 class="dashboard-program-title table-cell">{{program.title}}</h3>
                         </a>
                         <footer>

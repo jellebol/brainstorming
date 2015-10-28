@@ -7536,6 +7536,8 @@ a {
   color: grey; }
   a:hover {
     color: #2b2e3a; }
+  a:active:focus, a:focus {
+    outline: 0; }
   a.link-yellow {
     color: #ffca4c; }
     a.link-yellow:hover {
@@ -7567,10 +7569,18 @@ h2 {
   display: table-cell;
   vertical-align: middle; }
 
+.btn:hover, .btn:active, .btn:focus, .btn:active:focus, button:hover, button:active, button:focus, button:active:focus {
+  outline: 0 !important; }
+
 .btn {
   border-radius: 6px; }
-  .btn:hover, .btn:active, .btn:focus, .btn:active:focus {
-    outline: 0; }
+
+.btn-lg {
+  font-weight: 600; }
+
+.btn-xl {
+  font-size: 24px;
+  padding: 12px 45px; }
 
 .btn-primary {
   background-color: #ffca4c;
@@ -7598,6 +7608,24 @@ h2 {
     background-color: #333;
     color: white;
     border: 3px solid #333; }
+
+.btn-border-primary {
+  background-color: transparent;
+  color: #ffca4c;
+  border: 3px solid #ffca4c; }
+  .btn-border-primary:hover, .btn-border-primary:active, .btn-border-primary:focus, .btn-border-primary:active:focus {
+    background-color: #ffca4c;
+    color: black;
+    border: 3px solid #ffca4c; }
+
+.btn-border-trans {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5); }
+  .btn-border-trans:hover, .btn-border-trans:active, .btn-border-trans:focus, .btn-border-trans:active:focus {
+    background-color: transparent;
+    color: white;
+    border: 3px solid white; }
 
 .btn-tab {
   margin-right: 5px;
@@ -7628,11 +7656,28 @@ input.form-control, textarea.form-control {
     box-shadow: none;
     border-color: #ffca4c; }
 
+.input-trans {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0;
+  box-shadow: none; }
+
+.form-group-xl textarea {
+  padding: 25px 30px;
+  font-size: 28px; }
+
 body {
   background-color: #c7c5c5;
   color: #333;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 400; }
+
+.full-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; }
 
 .box {
   margin: auto;
@@ -7719,6 +7764,71 @@ body.LoginCtrl {
   color: lightgrey; }
   .login-links p {
     margin-bottom: 5px; }
+
+.setup-page {
+  color: white; }
+  .setup-page .setup-process-holder {
+    position: relative;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.5); }
+    .setup-page .setup-process-holder .setup-process {
+      height: 100%;
+      width: 16%;
+      background-color: #ffca4c; }
+  .setup-page .setup-container {
+    max-width: 1000px; }
+  .setup-page .setup-nr, .setup-page .setup-done-text {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 30px; }
+  .setup-page .setup-title {
+    margin: 50px 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 64px; }
+  .setup-page .setup-choices {
+    text-align: center; }
+    .setup-page .setup-choices ul {
+      margin: auto; }
+  .setup-page .setup-choice {
+    margin: 20px 30px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid white; }
+    .setup-page .setup-choice:hover {
+      background-color: transparent;
+      border-color: white; }
+  .setup-page .setup-choice-label {
+    font-size: 28px;
+    font-weight: 600; }
+  .setup-page #setup-focus {
+    margin-bottom: 40px; }
+  .setup-page #to-program {
+    margin-right: 20px; }
+  .setup-page.setup-page-1 {
+    background-color: #5a267a; }
+  .setup-page.setup-page-2 {
+    background-color: #b30857; }
+    .setup-page.setup-page-2 .setup-process {
+      width: 33%; }
+  .setup-page.setup-page-3 {
+    background-color: #0e932a; }
+    .setup-page.setup-page-3 .setup-process {
+      width: 50%; }
+  .setup-page.setup-page-4 {
+    background-color: #1994af; }
+    .setup-page.setup-page-4 .setup-process {
+      width: 66%; }
+  .setup-page.setup-page-5 {
+    background-color: #06a485; }
+    .setup-page.setup-page-5 .setup-process {
+      width: 83%; }
+  .setup-page.setup-page-6 {
+    background-color: #2b2e3a; }
+    .setup-page.setup-page-6 .setup-process {
+      width: 100%; }
 
 .dashboard {
   background-color: #f8f7fb; }

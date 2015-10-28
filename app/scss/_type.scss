@@ -8,6 +8,9 @@ a {
   &:hover {
     color:$blue-dark;
   }
+  &:active:focus, &:focus {
+    outline: 0;
+  }
   &.link-yellow {
     color:$yellow;
     &:hover {

@@ -1,0 +1,96 @@
+<div class="setup-page full-page" ng-class="'setup-page-' + page">
+    <header>
+        <section class="setup-process-holder">
+            <div class="setup-process"></div>
+        </section>
+    </header>
+    <main>
+        <div class="container setup-container">
+            <div class="setup-nr">
+                <span ng-if="page != 6">{{page}} / 5</span>
+                <span ng-if="page == 6">Klaar!</span>
+            </div>
+            <h2 class="setup-title">
+                <span ng-if="page == 1">Hoe lang wil je Brightstormen?</span>
+                <span ng-if="page == 2">Met hoeveel mensen ga je nadenken?</span>
+                <span ng-if="page == 3">Hoever wil je uit de comfort zone gaan?</span>
+                <span ng-if="page == 4">Wat voor soort ideeën zoek je?</span>
+                <span ng-if="page == 5">Wat is je focus?</span>
+                <span ng-if="page == 6">Je bent klaar voor de perfecte Brightstorm</span>
+            </h2>
+            <div class="setup-choices">
+                <ul class="list-inline" ng-if="page == 1">
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('1 uur')"></button>
+                        <p class="setup-choice-label">1 uur</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('2 uur')"></button>
+                        <p class="setup-choice-label">2 uur</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('3 uur')"></button>
+                        <p class="setup-choice-label">3 uur</p>
+                    </li>
+                </ul>
+                <ul class="list-inline" ng-if="page == 2">
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('1')"></button>
+                        <p class="setup-choice-label">1</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('2-5')"></button>
+                        <p class="setup-choice-label">2 - 5</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('6-12')"></button>
+                        <p class="setup-choice-label">6 - 12</p>
+                    </li>
+                </ul>
+                <ul class="list-inline" ng-if="page == 3">
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('easy')"></button>
+                        <p class="setup-choice-label">Ik blijf waar ik ben</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('medium')"></button>
+                        <p class="setup-choice-label">Ik neem een gokje</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('hard')"></button>
+                        <p class="setup-choice-label">Kom maar op!</p>
+                    </li>
+                </ul>
+                <ul class="list-inline" ng-if="page == 4">
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('Verbeteringen')"></button>
+                        <p class="setup-choice-label">Verbeteringen</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('Oplossingen')"></button>
+                        <p class="setup-choice-label">Oplossingen</p>
+                    </li>
+                    <li>
+                        <button class="setup-choice" ng-click="setupPick('Kansen')"></button>
+                        <p class="setup-choice-label">Kansen</p>
+                    </li>
+                </ul>
+                <form ng-if="page == 5">
+                    <div class="form-group-xl">
+                        <textarea id="setup-focus" class="form-control input-trans" ng-model="focus" rows="3"></textarea>
+                        <button type="submit" class="btn btn-xl btn-border-trans pull-right"
+                                ng-click="setupPick()">Verder</button>
+                    </div>
+                </form>
+                <div class="setup-done" ng-if="page == 6">
+                    <p class="setup-done-text">Lees het programma voordat je begint en controleer met de checklist of je alles hebt.</p>
+                    <div>
+                        <a href="#/program/{{program.id}}" id="to-program" class="btn btn-primary btn-xl">Programma</a>
+                        <a href="#/dashboard" id="to-dashboard" class="btn btn-border-primary btn-xl">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</div>

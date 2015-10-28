@@ -1,8 +1,20 @@
+.btn, button {
+  &:hover, &:active, &:focus, &:active:focus {
+    outline:0!important;
+  }
+}
+
 .btn {
   border-radius:$border-radius;
-  &:hover, &:active, &:focus, &:active:focus {
-    outline:0;
-  }
+}
+
+.btn-lg {
+  font-weight: 600;
+}
+
+.btn-xl {
+  font-size: 24px;
+  padding: 12px 45px;
 }
 
 @mixin button($background, $background-hover, $color, $color-hover, $border, $border-hover) {
@@ -26,6 +38,14 @@
 
 .btn-border-dark {
   @include button(transparent, $main-color, $main-color, white, $main-color, $main-color);
+}
+
+.btn-border-primary {
+  @include button(transparent, $yellow, $yellow, black, $yellow, $yellow);
+}
+
+.btn-border-trans {
+  @include button(transparent, transparent, rgba(255, 255, 255, 0.5), white, rgba(255, 255, 255, 0.5), white);
 }
 
 .btn-tab {

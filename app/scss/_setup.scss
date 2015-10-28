@@ -1,0 +1,89 @@
+.setup-page {
+  color:white;
+  .setup-process-holder {
+    position: relative;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    .setup-process {
+      height: 100%;
+      width: 16%;
+      background-color: $yellow;
+    }
+  }
+  .setup-container {
+    max-width: 1000px;
+  }
+  .setup-nr, .setup-done-text {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 30px;
+  }
+  .setup-title {
+    margin: 50px 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 64px;
+  }
+  .setup-choices {
+    text-align: center;
+    ul {
+      margin:auto;
+    }
+  }
+  .setup-choice {
+    margin: 20px 30px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    &:hover {
+      background-color: transparent;
+      border-color:white;
+    }
+  }
+  .setup-choice-label {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  #setup-focus {
+    margin-bottom: 40px;
+  }
+  #to-program {
+    margin-right: 20px;
+  }
+
+  &.setup-page-1 {
+    background-color: $purple;
+  }
+  &.setup-page-2 {
+    background-color: $pink;
+    .setup-process {
+      width: 33%;
+    }
+  }
+  &.setup-page-3 {
+    background-color: $green;
+    .setup-process {
+      width: 50%;
+    }
+  }
+  &.setup-page-4 {
+    background-color: $blue;
+    .setup-process {
+      width: 66%;
+    }
+  }
+  &.setup-page-5 {
+    background-color: $cyan;
+    .setup-process {
+      width: 83%;
+    }
+  }
+  &.setup-page-6 {
+    background-color: $blue-dark;
+    .setup-process {
+      width: 100%;
+    }
+  }
+}
