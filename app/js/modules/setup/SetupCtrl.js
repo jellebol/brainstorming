@@ -2,6 +2,7 @@ brightstormApp.controller('SetupCtrl', function($scope, $rootScope, $routeParams
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
     console.log($scope.program);
+    $scope.focus = 'Test';
 
     $scope.setupPick = function (choice) {
         switch ($scope.page) {
@@ -25,5 +26,11 @@ brightstormApp.controller('SetupCtrl', function($scope, $rootScope, $routeParams
         var nextPage = Number($routeParams.page) + 1;
         if($scope.page != 6)
             $location.path('/setup/' + ($scope.program.id) + '/' + nextPage);
+    };
+
+    $scope.stepBack = function(){
+        var previousPage = Number($routeParams.page) - 1;
+        if(previousPage != 0)
+            $location.path('/setup/' + ($scope.program.id) + '/' + previousPage);
     }
 });

@@ -3,11 +3,13 @@
 $main-color: #333;
 
 $grey-light: #f8f7fb;
+$grey-medium-light: #e5e5e5;
 $grey-medium: #c7c5c5;
 
 $blue: #1994af;
 $blue-dark: #2b2e3a;
 $cyan: #06a485;
+$ocean: #127656;
 $green: #0e932a;
 $yellow: #ffca4c;
 $yellow-light: #fddc6c;
@@ -23,6 +25,7 @@ $header-height:95px;
         //base
 @import 'bootstrap.scss',
         'font-awesome',
+        'owl-carousel',
         //general
         'animations.scss',
         'type.scss',
@@ -30,9 +33,11 @@ $header-height:95px;
         'buttons.scss',
         'forms.scss',
         'general.scss',
+        'themes.scss',
         //includes
         'header.scss',
         //pages
         'login.scss',
+        'overview.scss',
         'setup.scss',
         'dashboard.scss';

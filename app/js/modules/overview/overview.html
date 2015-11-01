@@ -1,0 +1,29 @@
+<div class="overview-page">
+    <header>
+
+    </header>
+    <main>
+        <section class="overview-title align-center">
+            <div class="container-fluid"></div>
+            <h3 class="font-lg">Inhoudsopgave</h3>
+            <h2 class="font-lg">Het Programma</h2>
+        </section>
+
+        <section class="overview-carousel-holder">
+            <div class="container">
+                <div id="overview-carousel" class="owl-carousel">
+                    <div ng-repeat="item in overview track by $index" class="full-height">
+                        <div class="overview-item" ng-class="item.id">
+                            <div class="overview-content" ng-if="item.column == 1">
+                                <p class="overview-item-count">{{}}</p>
+                                <h4 class="overview-item-title">{{item.title}}</h4>
+                                <p class="overview-item-description">{{item.description}}</p>
+                            </div>
+                            <span ng-if="$index == (overview.length - 1)" ng-init="renderCarousel()"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

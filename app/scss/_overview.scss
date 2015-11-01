@@ -1,0 +1,30 @@
+.OverviewCtrl {
+  background-color: white;
+}
+
+.overview-page {
+  .overview-title {
+    margin: 50px 0;
+  }
+}
+
+.overview-carousel-holder {
+  background-color: $grey-medium-light;
+  .owl-item {
+    height: 330px;
+    padding: 60px 0;
+    border-right: 1px solid $grey-medium;
+    &:first-child {
+      border-left: 1px solid $grey-medium;
+    }
+    .overview-item {
+      height: 100%;
+      background-color: white;
+    }
+  }
+  .owl-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}

@@ -3,6 +3,8 @@
   font-weight: $weight;
 }
 
+.font-lg { font-size: 30px; }
+
 a {
   color:grey;
   &:hover {
@@ -27,4 +29,8 @@ a {
 
 h2 {
   font-weight: 600;
+  &.font-lg {
+    font-weight: 800;
+    font-size: 64px;
+  }
 }

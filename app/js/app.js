@@ -17,6 +17,10 @@ brightstormApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/js/modules/setup/setup.html',
             controller: 'SetupCtrl'
         }).
+        when('/overview/:id', {
+            templateUrl: 'app/js/modules/overview/overview.html',
+            controller: 'OverviewCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });

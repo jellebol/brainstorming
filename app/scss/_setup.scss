@@ -16,22 +16,25 @@
   .setup-nr, .setup-done-text {
     margin: 50px 0;
     text-align: center;
-    font-size: 30px;
   }
   .setup-title {
     margin: 50px 0;
     text-align: center;
-    font-weight: 800;
-    font-size: 64px;
   }
   .setup-choices {
     text-align: center;
     ul {
       margin:auto;
+      li {
+        margin: 0 30px;
+        width: 210px;
+        vertical-align: top;
+        cursor: pointer;
+      }
     }
   }
   .setup-choice {
-    margin: 20px 30px;
+    margin: 20px auto;
     width: 200px;
     height: 200px;
     background-color: white;
@@ -51,6 +54,32 @@
   }
   #to-program {
     margin-right: 20px;
+  }
+  #step-back {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .setup-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 100px;
+  }
+  .setup-bullets {
+    margin: 0;
+    text-align: center;
+    .setup-bullet {
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      &.active {
+        background-color: $yellow;
+      }
+    }
   }
 
   &.setup-page-1 {

@@ -1,0 +1,32 @@
+.theme-page {
+  color:white;
+  h2, .theme-color {
+    color:$yellow;
+  }
+}
+
+.theme-page-white {
+  color:white;
+  h2, .theme-color {
+    color:white;
+  }
+}
+
+.theme-blue-dark {
+  background-color: $blue-dark;
+}
+.theme-blue {
+  background-color: $blue;
+}
+.theme-ocean {
+  background-color: $ocean;
+}
+.theme-green {
+  background-color: $green;
+}
+.theme-pink {
+  background-color: $pink;
+}
+.theme-purple {
+  background-color: $purple;
+}
