@@ -4,27 +4,83 @@
 
 .overview-page {
   .overview-title {
-    margin: 50px 0;
+    margin: 50px 0 80px 0;
   }
 }
 
 .overview-carousel-holder {
   background-color: $grey-medium-light;
+  height: 320px;
+  .owl-wrapper {
+//    background-color: $grey-medium-light;
+    margin-bottom: 40px;
+  }
   .owl-item {
-    height: 330px;
-    padding: 60px 0;
+    padding: 75px 0;
     border-right: 1px solid $grey-medium;
     &:first-child {
       border-left: 1px solid $grey-medium;
     }
     .overview-item {
-      height: 100%;
-      background-color: white;
+      height: 170px;
+      .overview-content {
+        height: 100%;
+        margin: 0 -1px;
+        padding: 20px;
+        .overview-item-title {
+          height: 60px;
+          color:white;
+          font-weight: 600;
+          font-size: 23px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .overview-item-description {
+          color:white;
+        }
+        &.basic {
+          background-color: $yellow;
+        }
+        &.refresh {
+          background-color: $pink-soft;
+        }
+        &.think {
+          background-color: $green-soft;
+        }
+        &.ideas {
+          background-color: $blue-soft;
+        }
+      }
+      .item-time {
+        position: absolute;
+        bottom: -30px;
+        right: -37px;
+        font-weight: 600;
+        font-size: 18px;
+        &.time-start {
+          left:0px;
+          right:auto;
+        }
+      }
     }
   }
   .owl-controls {
     position: absolute;
     left: 0;
     right: 0;
+    .owl-page {
+      span {
+        width: 60px;
+        height: 10px;
+        border-radius: 3px;
+        background-color: $grey-medium;
+      }
+      &.active {
+        span {
+          background-color: grey;
+        }
+      }
+    }
   }
 }

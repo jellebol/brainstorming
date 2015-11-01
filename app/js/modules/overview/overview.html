@@ -12,13 +12,15 @@
         <section class="overview-carousel-holder">
             <div class="container">
                 <div id="overview-carousel" class="owl-carousel">
-                    <div ng-repeat="item in overview track by $index" class="full-height">
-                        <div class="overview-item" ng-class="item.id">
-                            <div class="overview-content" ng-if="item.column == 1">
-                                <p class="overview-item-count">{{}}</p>
+                    <div ng-repeat="item in overviewRendered track by $index">
+                        <div class="overview-item">
+                            <div class="overview-content" ng-class="item.type">
+                                <p class="overview-item-count" ng-if="item.title">{{item.count}} / {{overview.length}}</p>
                                 <h4 class="overview-item-title">{{item.title}}</h4>
                                 <p class="overview-item-description">{{item.description}}</p>
                             </div>
+                            <div class="item-time time-start" ng-if="$index == 0">0:00</div>
+                            <div class="item-time">{{item.time | date:'m:ss'}}</div>
                             <span ng-if="$index == (overview.length - 1)" ng-init="renderCarousel()"></span>
                         </div>
                     </div>

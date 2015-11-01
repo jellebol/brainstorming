@@ -8164,23 +8164,61 @@ body.LoginCtrl {
   background-color: white; }
 
 .overview-page .overview-title {
-  margin: 50px 0; }
+  margin: 50px 0 80px 0; }
 
 .overview-carousel-holder {
-  background-color: #e5e5e5; }
+  background-color: #e5e5e5;
+  height: 320px; }
+  .overview-carousel-holder .owl-wrapper {
+    margin-bottom: 40px; }
   .overview-carousel-holder .owl-item {
-    height: 330px;
-    padding: 60px 0;
+    padding: 75px 0;
     border-right: 1px solid #c7c5c5; }
     .overview-carousel-holder .owl-item:first-child {
       border-left: 1px solid #c7c5c5; }
     .overview-carousel-holder .owl-item .overview-item {
-      height: 100%;
-      background-color: white; }
+      height: 170px; }
+      .overview-carousel-holder .owl-item .overview-item .overview-content {
+        height: 100%;
+        margin: 0 -1px;
+        padding: 20px; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content .overview-item-title {
+          height: 60px;
+          color: white;
+          font-weight: 600;
+          font-size: 23px; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content p {
+          font-size: 16px; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content .overview-item-description {
+          color: white; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content.basic {
+          background-color: #ffca4c; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content.refresh {
+          background-color: #eb6468; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content.think {
+          background-color: #77c04b; }
+        .overview-carousel-holder .owl-item .overview-item .overview-content.ideas {
+          background-color: #20b1ea; }
+      .overview-carousel-holder .owl-item .overview-item .item-time {
+        position: absolute;
+        bottom: -30px;
+        right: -37px;
+        font-weight: 600;
+        font-size: 18px; }
+        .overview-carousel-holder .owl-item .overview-item .item-time.time-start {
+          left: 0px;
+          right: auto; }
   .overview-carousel-holder .owl-controls {
     position: absolute;
     left: 0;
     right: 0; }
+    .overview-carousel-holder .owl-controls .owl-page span {
+      width: 60px;
+      height: 10px;
+      border-radius: 3px;
+      background-color: #c7c5c5; }
+    .overview-carousel-holder .owl-controls .owl-page.active span {
+      background-color: grey; }
 
 .setup-page {
   color: white; }
