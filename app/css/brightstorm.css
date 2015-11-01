@@ -8160,7 +8160,7 @@ body.LoginCtrl {
   .login-links p {
     margin-bottom: 5px; }
 
-.OverviewCtrl {
+.overviewCtrl {
   background-color: white; }
 
 .overview-page .overview-title {
@@ -8321,6 +8321,57 @@ body.LoginCtrl {
     background-color: #2b2e3a; }
     .setup-page.setup-page-6 .setup-process {
       width: 100%; }
+
+.checklistCtrl {
+  background-color: #f8f7fb; }
+
+.checklist-page .checklist-title {
+  margin: 50px 0 80px 0; }
+.checklist-page > footer {
+  margin-top: 20px; }
+
+.checklist-box {
+  max-width: 600px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 7px 30px rgba(0, 0, 0, 0.2); }
+  .checklist-box main {
+    padding: 50px 40px; }
+    .checklist-box main .checkbox {
+      float: left;
+      width: 50%;
+      margin-bottom: 20px; }
+      .checklist-box main .checkbox label {
+        padding-left: 40px;
+        font-size: 18px;
+        font-weight: 600; }
+        .checklist-box main .checkbox label input {
+          margin-left: -40px; }
+          .checklist-box main .checkbox label input:after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            background-color: white;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            border: 2px solid #20b1ea;
+            cursor: pointer; }
+          .checklist-box main .checkbox label input:checked:after {
+            background-color: #20b1ea; }
+  .checklist-box footer {
+    padding: 20px 30px;
+    text-align: center;
+    background-color: #20b1ea; }
+    .checklist-box footer button {
+      margin: 0 30px;
+      color: white;
+      font-size: 18px; }
+      .checklist-box footer button:hover {
+        text-decoration: none;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2); }
 
 .dashboard {
   background-color: #f8f7fb; }

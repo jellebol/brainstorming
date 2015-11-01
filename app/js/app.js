@@ -15,11 +15,15 @@ brightstormApp.config(['$routeProvider', function($routeProvider) {
         }).
         when('/setup/:id/:page', {
             templateUrl: 'app/js/modules/setup/setup.html',
-            controller: 'SetupCtrl'
+            controller: 'setupCtrl'
         }).
         when('/overview/:id', {
             templateUrl: 'app/js/modules/overview/overview.html',
-            controller: 'OverviewCtrl'
+            controller: 'overviewCtrl'
+        }).
+        when('/checklist/:id', {
+            templateUrl: 'app/js/modules/checklist/checklist.html',
+            controller: 'checklistCtrl'
         }).
         otherwise({
             redirectTo: '/login'
@@ -34,8 +38,7 @@ brightstormApp.run(function($rootScope) {
 });
 
 brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
-
-    $scope.location = $location.path();
+    $rootScope.location = $location.path();
 
     $rootScope.user = {
         firstName:'Murielle',

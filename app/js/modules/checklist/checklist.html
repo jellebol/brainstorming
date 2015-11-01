@@ -1,0 +1,51 @@
+<div class="checklist-page">
+    <header>
+
+    </header>
+    <main>
+        <section class="checklist-title align-center">
+            <div class="container-fluid"></div>
+            <h3 class="font-lg">Benodigdheden</h3>
+            <h2 class="font-lg">Checklist</h2>
+        </section>
+
+        <section class="checklist-holder">
+            <div class="container">
+                <div class="checklist-box">
+                    <main>
+                        <form role="form" id="checklistForm" name="checklistForm">
+                            <div class="form-group" ng-repeat="check in checks">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"/> {{check.label}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </main>
+                    <footer>
+                        <button class="btn btn-link" id="download-checklist">
+                            <i class="fa fa-download"></i> Download
+                        </button>
+                        <button class="btn btn-link" id="print-checklist">
+                            <i class="fa fa-print"></i> Print
+                        </button>
+                        <button class="btn btn-link" id="email-checklist">
+                            <i class="fa fa-envelope"></i> Email
+                        </button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container">
+        <a href="#/overview/{{program.id}}" class="btn btn-dark-trans pull-left to-dashboard">
+            <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+            Terug
+        </a>
+        <a href="#/dashboard" class="btn btn-primary pull-right to-dashboard">
+            Dashboard
+        </a>
+    </footer>
+</div>
