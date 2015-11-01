@@ -43,7 +43,7 @@ brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
         programs:[{
             createdAt:new Date(),
             id:1,
-            title: 'Test program',
+            title: 'Brightstorming Demo',
             status:'concept',
             setup:[]
         }]

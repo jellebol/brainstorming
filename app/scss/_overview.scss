@@ -6,6 +6,9 @@
   .overview-title {
     margin: 50px 0 80px 0;
   }
+  .to-checklist {
+    margin-top: 130px;
+  }
 }
 
 .overview-carousel-holder {
@@ -13,7 +16,7 @@
   height: 320px;
   .owl-wrapper {
 //    background-color: $grey-medium-light;
-    margin-bottom: 40px;
+    margin-bottom: 95px;
   }
   .owl-item {
     padding: 75px 0;
@@ -54,10 +57,10 @@
       }
       .item-time {
         position: absolute;
-        bottom: -30px;
-        right: -37px;
+        bottom: -55px;
+        right: 0px;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 22px;
         &.time-start {
           left:0px;
           right:auto;
@@ -66,9 +69,29 @@
     }
   }
   .owl-controls {
-    position: absolute;
-    left: 0;
-    right: 0;
+//    position: absolute;
+//    left: 0;
+//    right: 0;
+    .owl-buttons {
+      position: absolute;
+      top: 140px;
+      left: -50px;
+      right: -50px;
+      div {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 21px;
+        line-height: 29px;
+      }
+      .owl-prev {
+        float:left;
+      }
+      .owl-next {
+        float:right;
+      }
+    }
     .owl-page {
       span {
         width: 60px;
