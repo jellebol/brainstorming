@@ -3,13 +3,33 @@
     <header class="program-header">
 
     </header>
-    <section class="program-start full-page theme-blue-dark" ng-if="page == 'start'">
+    <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{program.title}}</h2>
             </div>
             <div class="program-buttons align-center">
                 <button class="btn btn-border-primary btn-lg">Start Brightstorm</button>
+            </div>
+        </div>
+    </section>
+    <section class="program-start full-page theme-green" ng-if="current.type == 'intro'">
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">Waar gaan we vandaag over nadenken?</h2>
+                <p class="program-description">Bespreek kort de uitdaging.</p>
+            </div>
+        </div>
+    </section>
+    <section class="program-start full-page theme-pink" ng-if="current.type == 'rules'">
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">Brightstorm Spelregels</h2>
+                <p class="program-description">Volledige vrijheid is niet altijd goed.</p>
+            </div>
+            <div class="program-buttons">
+                <button class="btn btn-primary btn-lg">Bekijk</button>
+                <button class="btn btn-border-primary btn-lg">Sla over</button>
             </div>
         </div>
     </section>

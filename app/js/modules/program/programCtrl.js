@@ -7,13 +7,14 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $routePara
 
     $scope.steps = [
         {
+            id:'start',
             type:'start'
-        },
-        {
+        },{
+            id:'intro',
             type:'intro',
             time:10
-        },
-        {
+        },{
+            id:'rules',
             type:'rules',
             explain:{
                 slides:[
@@ -26,15 +27,29 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $routePara
                     }
                 ]
             }
-        },
-        {
-            type:'braindump'
+        },{
+            id:'braindump',
+            type:'braindump',
+            action:{
+                title:'Hoe zorgen we dat er altijd plek is om te vergaderen?',
+                description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
+                time:10,
+                alarm:true
+            }
+        },{
+            id:'discuss',
+            type:'discuss',
+            time:10
         }
     ];
 
-    $scope.current = $scope.steps[0];
-    $scope.previous = false;
-    $scope.next = $scope.steps[1];
+    var currentObj = _.where($scope.steps, {id:$scope.page});
+    var currentIndex = _.findIndex($scope.steps, {id:$scope.page});
+
+    $scope.current = currentObj[0];
+    $scope.previous = $scope.steps[currentIndex - 1];
+    $scope.next = $scope.steps[currentIndex + 1];
+    console.log($scope.next);
 
 
 
