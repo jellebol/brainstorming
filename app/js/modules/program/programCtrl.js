@@ -1,4 +1,4 @@
-brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $routeParams, $uibModal) {
+brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
 
@@ -47,11 +47,17 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $routePara
     var currentIndex = _.findIndex($scope.steps, {id:$scope.page});
 
     $scope.current = currentObj[0];
-    $scope.previous = $scope.steps[currentIndex - 1];
-    $scope.next = $scope.steps[currentIndex + 1];
+    $scope.previousStep = $scope.steps[currentIndex - 1];
+    $scope.nextStep = $scope.steps[currentIndex + 1];
     console.log($scope.next);
 
 
+    $scope.next = function(){
+        $location.path('/program/' + $scope.program.id + '/' + $scope.nextStep.id);
+    };
+    $scope.previous = function(){
+        $location.path('/program/' + $scope.program.id + '/' + $scope.previousStep.id);
+    };
 
     $scope.moreInfo = function () {
         var modalInstance = $uibModal.open({
