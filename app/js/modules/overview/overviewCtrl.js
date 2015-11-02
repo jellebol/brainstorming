@@ -1,4 +1,4 @@
-brightstormApp.controller('overviewCtrl', function($scope, $rootScope, $routeParams, $location, $uibModal) {
+brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routeParams, $location, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
 
     var timeString = new Date();

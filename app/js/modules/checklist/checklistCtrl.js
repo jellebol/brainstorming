@@ -1,4 +1,4 @@
-brightstormApp.controller('checklistCtrl', function($scope, $rootScope, $routeParams, $location, $uibModal) {
+brightstormApp.controller('ChecklistCtrl', function($scope, $rootScope, $routeParams, $location, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
 
     $scope.checks = [

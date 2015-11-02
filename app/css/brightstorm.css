@@ -7997,6 +7997,23 @@ h2 {
     color: white;
     border: 3px solid white; }
 
+.btn-control {
+  float: left;
+  height: 60px;
+  width: 55px;
+  font-size: 19px;
+  color: white;
+  background-color: transparent;
+  border-radius: 0;
+  border-right: 1px solid grey; }
+  .btn-control:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15); }
+  .btn-control[disabled] {
+    color: rgba(255, 255, 255, 0.3); }
+    .btn-control[disabled]:hover {
+      background-color: transparent; }
+
 .btn-tab {
   margin-right: 5px;
   padding: 20px 10px;
@@ -8163,7 +8180,7 @@ body.LoginCtrl {
   .login-links p {
     margin-bottom: 5px; }
 
-.overviewCtrl {
+.OverviewCtrl {
   background-color: white; }
 
 .overview-page .overview-title {
@@ -8328,7 +8345,7 @@ body.LoginCtrl {
     .setup-page.setup-page-6 .setup-process {
       width: 100%; }
 
-.checklistCtrl {
+.ChecklistCtrl {
   background-color: #f8f7fb; }
 
 .checklist-page .checklist-title {
@@ -8378,6 +8395,31 @@ body.LoginCtrl {
         text-decoration: none;
         color: white;
         background-color: rgba(255, 255, 255, 0.2); }
+
+.program-page .program-title {
+  font-size: 80px;
+  font-weight: 800; }
+  @media (max-width: 1200px) {
+    .program-page .program-title {
+      font-size: 60px; } }
+.program-page .program-footer {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  border-top: 1px solid grey; }
+  .program-page .program-footer .footer-text {
+    float: left;
+    margin: 0;
+    padding: 0 23px;
+    font-size: 18px;
+    line-height: 59px;
+    font-weight: 600; }
+    .program-page .program-footer .footer-text.footer-title {
+      color: #FFCA4C; }
+    .program-page .program-footer .footer-text.footer-time {
+      border-right: 1px solid grey; }
 
 .dashboard {
   background-color: #f8f7fb; }

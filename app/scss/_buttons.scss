@@ -52,6 +52,27 @@
   @include button(transparent, transparent, rgba(255, 255, 255, 0.5), white, rgba(255, 255, 255, 0.5), white);
 }
 
+.btn-control {
+  float:left;
+  height: 60px;
+  width: 55px;
+  font-size: 19px;
+  color:white;
+  background-color: transparent;
+  border-radius: 0;
+  border-right: 1px solid grey;
+  &:hover {
+    color:white;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  &[disabled]{
+    color: rgba(255, 255, 255, 0.30);
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
 .btn-tab {
   margin-right: 5px;
   padding: 20px 10px;

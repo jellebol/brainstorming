@@ -15,15 +15,19 @@ brightstormApp.config(['$routeProvider', function($routeProvider) {
         }).
         when('/setup/:id/:page', {
             templateUrl: 'app/js/modules/setup/setup.html',
-            controller: 'setupCtrl'
+            controller: 'SetupCtrl'
         }).
         when('/overview/:id', {
             templateUrl: 'app/js/modules/overview/overview.html',
-            controller: 'overviewCtrl'
+            controller: 'OverviewCtrl'
         }).
         when('/checklist/:id', {
             templateUrl: 'app/js/modules/checklist/checklist.html',
-            controller: 'checklistCtrl'
+            controller: 'ChecklistCtrl'
+        }).
+        when('/program/:id/:page', {
+            templateUrl: 'app/js/modules/program/program.html',
+            controller: 'ProgramCtrl'
         }).
         otherwise({
             redirectTo: '/login'

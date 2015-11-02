@@ -1,0 +1,41 @@
+<div class="program-page theme-page full-page">
+
+    <header class="program-header">
+
+    </header>
+    <section class="program-start full-page theme-blue-dark" ng-if="page == 'start'">
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{program.title}}</h2>
+            </div>
+            <div class="program-buttons align-center">
+                <button class="btn btn-border-primary btn-lg">Start Brightstorm</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="program-footer">
+        <div class="pull-left">
+            <button class="btn btn-control" id="program-previous" ng-disabled="!previous">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <button class="btn btn-control" id="program-pause" ng-disabled="!current.time">
+                <i class="fa fa-pause"></i>
+            </button>
+            <button class="btn btn-control" id="program-sound">
+                <i class="fa fa-volume-up"></i>
+            </button>
+            <p class="footer-text footer-title">Brightstorming</p>
+        </div>
+        <div class="pull-right">
+            <p class="footer-text footer-time">15:31</p>
+            <button class="btn btn-control" id="program-next" ng-disabled="!next">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+            <button class="btn btn-control" id="program-fullscreen">
+                <i class="fa fa-expand"></i>
+            </button>
+        </div>
+    </footer>
+
+</div>
