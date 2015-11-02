@@ -77,6 +77,10 @@
       top: 140px;
       left: -50px;
       right: -50px;
+      @media (max-width:$large) {
+        left: -42px;
+        right: -42px;
+      }
       div {
         height: 35px;
         width: 35px;

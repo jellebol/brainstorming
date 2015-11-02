@@ -32,5 +32,8 @@ h2 {
   &.font-lg {
     font-weight: 800;
     font-size: 64px;
+    @media (max-width:$large) {
+      font-size: 49px;
+    }
   }
 }

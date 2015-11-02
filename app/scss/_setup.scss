@@ -1,5 +1,11 @@
 .setup-page {
   color:white;
+  .setup-main {
+    height: 700px;
+    @media (max-width:$large) {
+      height: 650px;
+    }
+  }
   .setup-process-holder {
     position: relative;
     height: 15px;
@@ -61,11 +67,11 @@
     bottom: 0;
   }
   .setup-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 100px;
+//    position: absolute;
+//    bottom: 0;
+//    left: 0;
+//    right: 0;
+//    padding-bottom: 100px;
   }
   .setup-bullets {
     margin: 0;

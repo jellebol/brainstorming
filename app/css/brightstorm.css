@@ -7901,6 +7901,9 @@ h2 {
   h2.font-lg {
     font-weight: 800;
     font-size: 64px; }
+    @media (max-width: 1200px) {
+      h2.font-lg {
+        font-size: 49px; } }
 
 .is-relative {
   position: relative; }
@@ -8215,6 +8218,10 @@ body.LoginCtrl {
     top: 140px;
     left: -50px;
     right: -50px; }
+    @media (max-width: 1200px) {
+      .overview-carousel-holder .owl-controls .owl-buttons {
+        left: -42px;
+        right: -42px; } }
     .overview-carousel-holder .owl-controls .owl-buttons div {
       height: 35px;
       width: 35px;
@@ -8236,6 +8243,11 @@ body.LoginCtrl {
 
 .setup-page {
   color: white; }
+  .setup-page .setup-main {
+    height: 700px; }
+    @media (max-width: 1200px) {
+      .setup-page .setup-main {
+        height: 650px; } }
   .setup-page .setup-process-holder {
     position: relative;
     height: 15px;
@@ -8282,12 +8294,6 @@ body.LoginCtrl {
     position: absolute;
     left: 0;
     bottom: 0; }
-  .setup-page .setup-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 100px; }
   .setup-page .setup-bullets {
     margin: 0;
     text-align: center; }
