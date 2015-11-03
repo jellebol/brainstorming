@@ -12,7 +12,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'intro',
             type:'intro',
-            time:10
+            time:300
         },{
             id:'rules',
             type:'rules',
@@ -33,13 +33,13 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             action:{
                 title:'Hoe zorgen we dat er altijd plek is om te vergaderen?',
                 description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
-                time:10,
+                time:300,
                 alarm:true
             }
         },{
             id:'discuss',
             type:'discuss',
-            time:10
+            time:300
         }
     ];
 

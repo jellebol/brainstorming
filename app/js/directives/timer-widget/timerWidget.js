@@ -18,6 +18,7 @@ angular.module('brightstormApp').
                     $scope.durationFull = $scope.duration * 1000;
                     $scope.current = 1;
                     $scope.max = 1;
+                    $scope.color = '#ffca4c';
 
                     $scope.finished = function(){
                         console.log('done');
@@ -25,6 +26,9 @@ angular.module('brightstormApp').
 
                     $scope.$on('timer-tick', function (event, args) {
                         $scope.current = (args.millis / $scope.durationFull);
+                        if ($scope.current < 0.98) {
+                            $scope.color = 'red';
+                        }
                         $timeout(function() {
                             $scope.$apply();
                         },0);
