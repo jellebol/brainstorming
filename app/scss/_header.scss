@@ -9,10 +9,16 @@
         text-decoration: none;
       }
     }
+    .logo {
+      width: 35px;
+      margin-right: 15px;
+    }
     .title {
+      display:inline-block;
+      vertical-align: middle;
       margin: 0;
       color:white;
-      font-size: 28px;
+      font-size: 26px;
       @include main-font(600);
     }
   }

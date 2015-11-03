@@ -21,3 +21,12 @@
   display:table-cell;
   vertical-align: middle;
 }
+
+.hidden-text {
+  text-indent: -9999px;
+  position: absolute;
+  visibility: hidden;
+  color: transparent;
+  width: 1px;
+  height: 1px;
+}

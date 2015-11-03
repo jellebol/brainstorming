@@ -7,20 +7,15 @@
     }
   }
   .setup-process-holder {
-    position: relative;
-    height: 15px;
-    background-color: rgba(255, 255, 255, 0.5);
     .setup-process {
-      height: 100%;
       width: 16%;
-      background-color: $yellow;
     }
   }
   .setup-container {
     max-width: 1000px;
   }
   .setup-nr, .setup-done-text {
-    margin: 50px 0;
+    margin: -10px 0 50px 0;
     text-align: center;
   }
   .setup-title {
@@ -46,9 +41,21 @@
     background-color: white;
     border-radius: 50%;
     border: 10px solid white;
+    img {
+      width: 100%;
+    }
+    .img-hover {
+      display: none;
+    }
     &:hover {
       background-color: transparent;
       border-color:white;
+      .img {
+        display: none;
+      }
+      .img-hover {
+        display: block;
+      }
     }
   }
   .setup-choice-label {

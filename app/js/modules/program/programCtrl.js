@@ -2,8 +2,8 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
 
-    console.log($scope.program);
-    console.log($scope.page);
+//    console.log($scope.program);
+//    console.log($scope.page);
 
     $scope.steps = [
         {
@@ -49,7 +49,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     $scope.current = currentObj[0];
     $scope.previousStep = $scope.steps[currentIndex - 1];
     $scope.nextStep = $scope.steps[currentIndex + 1];
-    console.log($scope.next);
+//    console.log($scope.next);
 
 
     $scope.next = function(){

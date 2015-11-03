@@ -1,8 +1,11 @@
 <div class="setup-page full-page" ng-class="'setup-page-' + page">
     <header>
-        <section class="setup-process-holder">
-            <div class="setup-process"></div>
+        <section class="setup-process-holder process-holder">
+            <div class="setup-process process"></div>
         </section>
+        <div class="container-fluid">
+            <div ng-include="'/app/js/includes/logo-corner.html'"></div>
+        </div>
     </header>
     <main class="setup-main">
         <div class="container setup-container">
@@ -21,57 +24,93 @@
             <div class="setup-choices">
                 <ul class="list-inline" ng-if="page == 1">
                     <li ng-click="setupPick('1 uur')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-1a-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-1a-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">1 uur</p>
                     </li>
                     <li ng-click="setupPick('2 uur')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-1b-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-1b-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">2 uur</p>
                     </li>
                     <li ng-click="setupPick('3 uur')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-1c-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-1c-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">3 uur</p>
                     </li>
                 </ul>
                 <ul class="list-inline" ng-if="page == 2">
                     <li ng-click="setupPick('1')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-2a-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-2a-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">1</p>
                     </li>
                     <li ng-click="setupPick('2-5')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-2b-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-2b-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">2 - 5</p>
                     </li>
                     <li ng-click="setupPick('6-12')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-2c-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-2c-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">6 - 12</p>
                     </li>
                 </ul>
                 <ul class="list-inline" ng-if="page == 3">
                     <li ng-click="setupPick('easy')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-3a-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-3a-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Ik blijf waar ik ben</p>
                     </li>
                     <li ng-click="setupPick('medium')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-3b-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-3b-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Ik neem een gokje</p>
                     </li>
                     <li ng-click="setupPick('hard')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-3c-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-3c-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Kom maar op!</p>
                     </li>
                 </ul>
                 <ul class="list-inline" ng-if="page == 4">
                     <li ng-click="setupPick('Verbeteringen')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-4a-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-4a-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Verbeteringen</p>
                     </li>
                     <li ng-click="setupPick('Oplossingen')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-4b-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-4b-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Oplossingen</p>
                     </li>
                     <li ng-click="setupPick('Kansen')">
-                        <div class="setup-choice"></div>
+                        <div class="setup-choice">
+                            <img src="/app/img/setup/setup-4c-black.png" class="img"/>
+                            <img src="/app/img/setup/setup-4c-white.png" class="img-hover"/>
+                        </div>
                         <p class="setup-choice-label">Kansen</p>
                     </li>
                 </ul>

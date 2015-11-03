@@ -1,9 +1,10 @@
 <div class="program-page theme-page full-page">
 
-    <header class="program-header">
-
-    </header>
+    <!-- start -->
     <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
+        <div class="container-fluid">
+            <div ng-include="'/app/js/includes/logo-corner.html'"></div>
+        </div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{program.title}}</h2>
@@ -13,7 +14,10 @@
             </div>
         </div>
     </section>
+
+    <!-- intro -->
     <section class="program-start full-page theme-green" ng-if="current.type == 'intro'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">Waar gaan we vandaag over nadenken?</h2>
@@ -22,7 +26,10 @@
             <timer-widget></timer-widget>
         </div>
     </section>
+
+    <!-- rules -->
     <section class="program-start full-page theme-pink" ng-if="current.type == 'rules'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">Brightstorm Spelregels</h2>

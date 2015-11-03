@@ -1,6 +1,8 @@
 var brightstormApp = angular.module('brightstormApp', [
     'ngRoute',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'timer',
+    'angular-svg-round-progress'
 ]);
 
 brightstormApp.config(['$routeProvider', function($routeProvider) {
