@@ -1,16 +1,24 @@
-<div class="timer">
-    <div round-progress max="max"
-            current="current"
-            color="#ffca4c"
-            bgcolor="white"
-            radius="50"
-            stroke="10"
-            semi="false"
-            rounded="true"
-            clockwise="false"
-            responsive="false"
-            duration="800"
-            animation="easeInOutQuart"></div>
-    <timer countdown="amountSeconds" max-time-unit="'minute'" interval="1000"
-           finish-callback="finished()">{{mminutes}}:{{sseconds}}</timer>
+<div class="timer-holder">
+    <div class="timer">
+        <div round-progress
+             max="max"
+             current="current"
+             color="#ffca4c"
+             bgcolor="transparent"
+             radius="70"
+             stroke="13"
+             semi="false"
+             rounded="false"
+             clockwise="true"
+             responsive="false"
+             duration="800"
+             animation="easeInOutQuart"></div>
+        <div class="timer-time">
+            <timer countdown="duration" max-time-unit="'minute'" interval="1000"
+                   finish-callback="finished()">{{mminutes}}:{{sseconds}}</timer>
+        </div>
+    </div>
+    <div class="timer-type">
+        {{type}}
+    </div>
 </div>

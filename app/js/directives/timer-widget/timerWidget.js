@@ -7,21 +7,30 @@ angular.module('brightstormApp').
             restrict: 'EA',
             templateUrl: 'app/js/directives/timer-widget/timer-widget.html',
             scope: {
-                user: '='
+                user: '=',
+                type: '=',
+                duration: '='
             },
-            controller: ['$scope', '$rootScope',
-                function ($scope, $rootScope) {
-                    console.log('timer!');
-                    $scope.amountSeconds = 300;
+            controller: ['$scope', '$rootScope', '$timeout',
+                function ($scope, $rootScope, $timeout) {
+//                    console.log('timer!');
 //                    $scope.$broadcast('timer-start');
+                    $scope.durationFull = $scope.duration * 1000;
+                    $scope.current = 1;
+                    $scope.max = 1;
 
                     $scope.finished = function(){
                         console.log('done');
-                    }
+                    };
 
                     $scope.$on('timer-tick', function (event, args) {
-//                        console.log(args);
+                        $scope.current = (args.millis / $scope.durationFull);
+                        $timeout(function() {
+                            $scope.$apply();
+                        },0);
                     });
+
+
                 }]
         };
     }]);

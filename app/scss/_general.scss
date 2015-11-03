@@ -31,6 +31,35 @@ body {
   }
 }
 
+.timer-holder {
+  display: inline-block;
+  .timer {
+    position: relative;
+    display: inline-block;
+    .timer-time {
+      position: absolute;
+      top: 12px;
+      bottom: 18px;
+      left: 12px;
+      right: 12px;
+      padding: 32px 0px;
+      border: 3px solid white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+  .timer-type {
+    margin-top: 5px;
+    color: $yellow;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
 .box {
   margin:auto;
   width: 100%;
