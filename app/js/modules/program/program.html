@@ -25,7 +25,7 @@
                 <p class="program-description">Bespreek kort de uitdaging.</p>
             </div>
             <div class="program-timer-holder">
-                <timer-widget duration="current.time" type="'Plenair'" class="pull-right"></timer-widget>
+                <timer-widget duration="current.time" type="'Plenair'"></timer-widget>
             </div>
         </div>
     </section>
@@ -73,6 +73,66 @@
         </div>
     </section>
 
+    <!-- whatif -->
+    <section class="program-whatif full-page theme-cyan" ng-if="current.type == 'whatif' && !action">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src=""/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="program-title-holder">
+                        <h2 class="program-title">{{current.title}}</h2>
+                        <p class="program-description">{{current.description}}</p>
+                    </div>
+                    <div class="program-buttons">
+                        <button class="btn btn-primary btn-xl" ng-click="next()">Start</button>
+                        <button class="btn btn-border-primary btn-xl" ng-click="next('skipAction')">Sla over</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- discusss -->
+    <section class="program-discuss full-page theme-eggplant" ng-if="current.type == 'discuss'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container-fluid align-center">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src=""/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="program-title-holder">
+                        <h2 class="program-title">{{current.title}}</h2>
+                        <p class="program-description">{{current.description}}</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <img src=""/>
+                </div>
+            </div>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.time" type="'Plenair'" alarm="current.alarm"></timer-widget>
+            </div>
+        </div>
+    </section>
+
+    <!-- random -->
+    <section class="program-random full-page theme-blue" ng-if="current.type == 'random' && !action">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container align-center">
+            <div class="program-title-holder">
+                <h2 class="program-title">{{current.title}}</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+            <div class="program-buttons">
+                <button class="btn btn-primary btn-xl" ng-click="">Bekijk uitleg</button>
+                <button class="btn btn-border-primary btn-xl" ng-click="next()">Start</button>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -80,7 +140,7 @@
 
 
     <!-- action -->
-    <section class="program-intro full-page theme-page-white theme-purple" ng-if="action">
+    <section class="program-intro full-page" ng-class="current.action.class" ng-if="action">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
@@ -88,7 +148,7 @@
                 <p class="program-description">{{current.action.description}}</p>
             </div>
             <div class="program-timer-holder">
-                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm" class="pull-right"></timer-widget>
+                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm"></timer-widget>
             </div>
         </div>
     </section>

@@ -41,6 +41,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 id:'action-braindump',
                 type:'action',
                 parent:'braindump',
+                class:'theme-page-white theme-purple',
                 title:'Hoe zorgen we dat er altijd plek is om te vergaderen?',
                 description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
                 time:600,
@@ -49,21 +50,65 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'discuss',
             type:'discuss',
-            time:300
+            title:'Bespreek de ideeën',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            time:600
+        },{
+            id:'whatif',
+            type:'whatif',
+            title:'Wat als...',
+            description:'Gebruik je fantasie en kom in de juiste creatieve mindset. Begin met deze eenvoudige denkoefening',
+            action:{
+                id:'action-whatif',
+                type:'action',
+                parent:'whatif',
+                class:'theme-brown',
+                title:'Wat als iedereen een spion was?',
+                description:'Wat zouden de gevolgen hiervan zijn? Bedenk zoveel mogelijk situaties.',
+                time:300,
+                alarm:true
+            }
+        },{
+            id:'random',
+            type:'random',
+            title:'Willekeurige afbeelding',
+            description:'Door je uitdaging te combineren met een willekeurige afbeelding dwing je jezelf om op een andere manier naar problemen te kijken.',
+            action:{
+                id:'action-whatif',
+                type:'action',
+                parent:'whatif',
+                class:'theme-green',
+                title:'Hoe zorgen we dat er altijd een plek is om te vergaderen?',
+                slides:[
+                    {
+                        title:'Ga voor kwaliteit',
+                        time:300
+                    },
+                    {
+                        title:'Nog een slide',
+                        time:300
+                    },
+                    {
+                        title:'Nog een slide',
+                        time:300,
+                        alarm:true
+                    }
+                ]
+            }
         }
     ];
 
     var currentObj = _.where($scope.steps, {id:$scope.page});
-    var currentIndex = _.findIndex($scope.steps, {id:$scope.page});
+    $scope.currentIndex = _.findIndex($scope.steps, {id:$scope.page});
 
     $scope.current = currentObj[0];
-    console.log($scope.current);
+    console.log($scope.currentIndex);
 
-    $scope.next = function(){
-        if($scope.current.action && !$scope.action) {
+    $scope.next = function(option){
+        if($scope.current.action && !$scope.action && option != 'skipAction') {
             $location.path('/program/' + $scope.program.id + '/' + $scope.current.id + '/' + $scope.current.action.id);
         } else {
-            $scope.nextStep = $scope.steps[currentIndex + 1];
+            $scope.nextStep = $scope.steps[$scope.currentIndex + 1];
             $location.path('/program/' + $scope.program.id + '/' + $scope.nextStep.id);
         }
     };
@@ -72,7 +117,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             $scope.previousStep = _.where($scope.steps, {id : $scope.current.parent});
             $location.path('/program/' + $scope.program.id + '/' + $scope.current.id);
         } else {
-            $scope.previousStep = $scope.steps[currentIndex - 1];
+            $scope.previousStep = $scope.steps[$scope.currentIndex - 1];
             $location.path('/program/' + $scope.program.id + '/' + $scope.previousStep.id);
         }
     };
