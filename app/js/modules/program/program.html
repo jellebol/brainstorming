@@ -2,50 +2,103 @@
 
     <!-- start -->
     <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
-        <div class="container-fluid">
+        <div class="container-fluid is-relative">
             <div ng-include="'/app/js/includes/logo-corner.html'"></div>
+            <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()"><i class="fa fa-times"></i></button>
         </div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{program.title}}</h2>
             </div>
             <div class="program-buttons align-center">
-                <button class="btn btn-border-primary btn-lg" ng-click="next()">Start Brightstorm</button>
+                <button class="btn btn-border-primary btn-xl" ng-click="next()">Start Brightstorm</button>
             </div>
         </div>
     </section>
 
     <!-- intro -->
-    <section class="program-start full-page theme-green" ng-if="current.type == 'intro'">
+    <section class="program-intro full-page theme-green" ng-if="current.type == 'intro'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">Waar gaan we vandaag over nadenken?</h2>
                 <p class="program-description">Bespreek kort de uitdaging.</p>
             </div>
-            <timer-widget duration="current.time" type="'Plenair'" class="pull-right"></timer-widget>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.time" type="'Plenair'" class="pull-right"></timer-widget>
+            </div>
         </div>
     </section>
 
     <!-- rules -->
-    <section class="program-start full-page theme-pink" ng-if="current.type == 'rules'">
+    <section class="program-rules full-page theme-pink" ng-if="current.type == 'rules'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
-            <div class="program-title-holder align-center">
-                <h2 class="program-title">Brightstorm Spelregels</h2>
-                <p class="program-description">Volledige vrijheid is niet altijd goed.</p>
-            </div>
-            <div class="program-buttons">
-                <button class="btn btn-primary btn-lg">Bekijk</button>
-                <button class="btn btn-border-primary btn-lg" ng-click="next()">Sla over</button>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src=""/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="program-title-holder">
+                        <h2 class="program-title">{{current.title}}</h2>
+                        <p class="program-description">{{current.description}}</p>
+                    </div>
+                    <div class="program-buttons">
+                        <button class="btn btn-primary btn-xl">Bekijk</button>
+                        <button class="btn btn-border-primary btn-xl" ng-click="next()">Sla over</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- braindump -->
+    <section class="program-braindump full-page theme-brown" ng-if="current.type == 'braindump' && !action">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src=""/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="program-title-holder">
+                        <h2 class="program-title">{{current.title}}</h2>
+                        <p class="program-description">{{current.description}}</p>
+                    </div>
+                    <div class="program-buttons">
+                        <button class="btn btn-primary btn-xl" ng-click="next()">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- action -->
+    <section class="program-intro full-page theme-page-white theme-purple" ng-if="action">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{current.action.title}}</h2>
+                <p class="program-description">{{current.action.description}}</p>
+            </div>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm" class="pull-right"></timer-widget>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
     <footer class="program-footer">
         <div class="pull-left">
             <button class="btn btn-control" id="program-previous"
-                    ng-click="previous()" ng-disabled="!previousStep">
+                    ng-click="previous()" ng-disabled="currentIndex == 0">
                 <i class="fa fa-chevron-left"></i>
             </button>
             <button class="btn btn-control" id="program-pause" ng-disabled="!current.time">
@@ -59,7 +112,7 @@
         <div class="pull-right">
             <p class="footer-text footer-time">15:31</p>
             <button class="btn btn-control" id="program-next"
-                    ng-click="next()" ng-disabled="!nextStep">
+                    ng-click="next()">
                 <i class="fa fa-chevron-right"></i>
             </button>
             <button class="btn btn-control" id="program-fullscreen">

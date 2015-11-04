@@ -31,6 +31,10 @@ brightstormApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/js/modules/program/program.html',
             controller: 'ProgramCtrl'
         }).
+        when('/program/:id/:page/:action', {
+            templateUrl: 'app/js/modules/program/program.html',
+            controller: 'ProgramCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });

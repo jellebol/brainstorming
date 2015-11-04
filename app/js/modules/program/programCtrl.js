@@ -1,6 +1,7 @@
 brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
+    $scope.action = $routeParams.action;
 
 //    console.log($scope.program);
 //    console.log($scope.page);
@@ -16,7 +17,11 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'rules',
             type:'rules',
+            title:'Brightstorm Spelregels',
+            description:'Volledige vrijheid is niet altijd goed. Met beperkingen wordt je vindingrijk. Volg daarom de regels. Je zult zien dat je tot meer en betere ideeën komt.',
             explain:{
+                id:'explain-rules',
+                type:'explain',
                 slides:[
                     {
                         title:'Ga voor kwaliteit',
@@ -30,10 +35,15 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'braindump',
             type:'braindump',
+            title:'Maak je hoofd leeg',
+            description:'Voordat we beginnen gaan we eerst alle bestaande ideeën verzamelen. Zo gaan we allemaal met een leeg hoofd en frisse blik de Brightstorm in.',
             action:{
+                id:'action-braindump',
+                type:'action',
+                parent:'braindump',
                 title:'Hoe zorgen we dat er altijd plek is om te vergaderen?',
                 description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
-                time:300,
+                time:600,
                 alarm:true
             }
         },{
@@ -47,16 +57,24 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     var currentIndex = _.findIndex($scope.steps, {id:$scope.page});
 
     $scope.current = currentObj[0];
-    $scope.previousStep = $scope.steps[currentIndex - 1];
-    $scope.nextStep = $scope.steps[currentIndex + 1];
-//    console.log($scope.next);
-
+    console.log($scope.current);
 
     $scope.next = function(){
-        $location.path('/program/' + $scope.program.id + '/' + $scope.nextStep.id);
+        if($scope.current.action && !$scope.action) {
+            $location.path('/program/' + $scope.program.id + '/' + $scope.current.id + '/' + $scope.current.action.id);
+        } else {
+            $scope.nextStep = $scope.steps[currentIndex + 1];
+            $location.path('/program/' + $scope.program.id + '/' + $scope.nextStep.id);
+        }
     };
     $scope.previous = function(){
-        $location.path('/program/' + $scope.program.id + '/' + $scope.previousStep.id);
+        if($scope.action) {
+            $scope.previousStep = _.where($scope.steps, {id : $scope.current.parent});
+            $location.path('/program/' + $scope.program.id + '/' + $scope.current.id);
+        } else {
+            $scope.previousStep = $scope.steps[currentIndex - 1];
+            $location.path('/program/' + $scope.program.id + '/' + $scope.previousStep.id);
+        }
     };
 
     $scope.moreInfo = function () {
@@ -75,4 +93,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             console.log('Modal dismissed at: ' + new Date());
         });
     };
+
+    $scope.closeProgram = function(){
+        //todo: are you sure?
+        $location.path('/dashboard');
+    }
 });
