@@ -140,12 +140,28 @@
 
 
     <!-- action -->
-    <section class="program-intro full-page" ng-class="current.action.class" ng-if="action">
+    <section class="program-action full-page" ng-class="current.action.class" ng-if="action && !current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{current.action.title}}</h2>
                 <p class="program-description">{{current.action.description}}</p>
+            </div>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm"></timer-widget>
+            </div>
+        </div>
+    </section>
+
+    <!-- action slides -->
+    <section class="program-action-slides full-page" ng-class="current.action.class" ng-if="action && current.action.slides">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="program-title-holder align-center">
+            <h2 class="program-title">{{current.action.title}}</h2>
+        </div>
+        <div class="container">
+            <div class="program-slides-holder">
+                slides!
             </div>
             <div class="program-timer-holder">
                 <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm"></timer-widget>
