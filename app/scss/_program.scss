@@ -54,3 +54,14 @@
     margin: 100px 0 80px 0;
   }
 }
+
+.program-action-slides {
+  .program-title-holder {
+    margin-top: -100px;
+    border-bottom: 1px solid white;
+    .program-title {
+      font-size: 50px;
+      font-weight: 500;
+    }
+  }
+}

@@ -157,14 +157,31 @@
     <section class="program-action-slides full-page" ng-class="current.action.class" ng-if="action && current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="program-title-holder align-center">
-            <h2 class="program-title">{{current.action.title}}</h2>
+            <div class="container">
+                <h2 class="program-title">{{current.action.title}}</h2>
+            </div>
         </div>
         <div class="container">
-            <div class="program-slides-holder">
-                slides!
-            </div>
-            <div class="program-timer-holder">
-                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm"></timer-widget>
+            <div class="action-slides-holder">
+                <div id="action-slides-carousel" class="owl-carousel owl-theme">
+                    <div class="item" ng-repeat="slide in current.action.slides">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{{slide.img}}" class="slide-img"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="slide-count">
+                                    <span ng-repeat="count in current.action.slides track by $index">{{$index + 1}}</span>
+                                </div>
+                                <p class="slide-title">{{slide.title}}</p>
+                            </div>
+                        </div>
+                        <div class="slide-timer-holder">
+                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm"></timer-widget>
+                        </div>
+                        <div ng-init="initSlides()" ng-if="$index == (current.action.slides.length - 1)"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

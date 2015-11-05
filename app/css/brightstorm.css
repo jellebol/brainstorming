@@ -8148,6 +8148,47 @@ body {
     text-align: center;
     border-top: 0; }
 
+.action-slides-holder .item {
+  padding: 40px; }
+  .action-slides-holder .item .slide-title {
+    color: white;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 54px; }
+  .action-slides-holder .item .slide-count {
+    margin: 20px 0;
+    font-size: 30px; }
+    .action-slides-holder .item .slide-count span {
+      margin-right: 20px; }
+  .action-slides-holder .item .slide-img {
+    max-width: 100%; }
+  .action-slides-holder .item .slide-timer-holder {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+.action-slides-holder .owl-buttons {
+  position: absolute;
+  top: 45%;
+  left: -40px;
+  right: -40px; }
+  .action-slides-holder .owl-buttons div {
+    height: 45px;
+    width: 45px;
+    padding: 8px 0px !important;
+    border-radius: 50%;
+    color: grey !important;
+    text-align: center;
+    font-size: 21px !important;
+    line-height: 29px;
+    background-color: white !important;
+    opacity: 1 !important; }
+    .action-slides-holder .owl-buttons div:hover {
+      opacity: 0.7; }
+  .action-slides-holder .owl-buttons .owl-prev {
+    float: left; }
+  .action-slides-holder .owl-buttons .owl-next {
+    float: right; }
+
 .theme-page {
   color: white; }
   .theme-page h2, .theme-page .theme-color {
@@ -8501,6 +8542,13 @@ body.LoginCtrl {
 
 .program-start .program-title {
   margin: 100px 0 80px 0; }
+
+.program-action-slides .program-title-holder {
+  margin-top: -100px;
+  border-bottom: 1px solid white; }
+  .program-action-slides .program-title-holder .program-title {
+    font-size: 50px;
+    font-weight: 500; }
 
 .dashboard {
   background-color: #f8f7fb; }

@@ -81,28 +81,81 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 title:'Hoe zorgen we dat er altijd een plek is om te vergaderen?',
                 slides:[
                     {
-                        title:'Ga voor kwaliteit',
-                        time:300
+                        title:'Noteer vijf kenmerken van het object op de foto.',
+                        time:120,
+                        img:'/app/img/random/lemons.JPG'
                     },
                     {
-                        title:'Nog een slide',
-                        time:300
+                        title:'Kies één kenmerk.',
+                        time:30,
+                        img:'/app/img/random/lemons.JPG'
                     },
                     {
-                        title:'Nog een slide',
+                        title:'Bedenk zoveel mogelijk ideeën aan de hand van je kenmerk.',
                         time:300,
-                        alarm:true
+                        alarm:true,
+                        img:'/app/img/random/lemons.JPG'
                     }
                 ]
             }
+        },{
+            id:'discuss2',
+            type:'discuss',
+            title:'Bespreek de ideeën',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            time:600
+        },{
+            id:'quote',
+            type:'quote',
+            title:'Voor goede ideeën, heb je ideeën nodig.',
+            description:'Linus Pauling',
+            time:600
+        },{
+            id:'scamper',
+            type:'scamper',
+            title:'Wat gebeurd er als we de volgorde omdraaien?',
+            description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
+            time:300,
+            alarm:true
+        },{
+            id:'discuss3',
+            type:'discuss',
+            title:'Bespreek de ideeën',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            time:600
+        },{
+            id:'break',
+            type:'break',
+            title:'Korte pauze',
+            description:'Tijd om de hersentjes te laten afkoelen, koffie te halen of eventjes de benen te strekken.',
+            time:600
+        },{
+            id:'quote2',
+            type:'quote',
+            title:'Een vernieuwend idee ziet er altijd gek uit.',
+            description:'Alfred North Whitehead',
+            time:600
         }
     ];
+
+    $scope.move = function(){
+        console.log('move');
+    }
+
+    $scope.initSlides = function(){
+        $("#action-slides-carousel").owlCarousel({
+            singleItem:true,
+            pagination:false,
+            navigation:true,
+            navigationText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+        });
+    };
 
     var currentObj = _.where($scope.steps, {id:$scope.page});
     $scope.currentIndex = _.findIndex($scope.steps, {id:$scope.page});
 
     $scope.current = currentObj[0];
-    console.log($scope.currentIndex);
+//    console.log($scope.currentIndex);
 
     $scope.next = function(option){
         if($scope.current.action && !$scope.action && option != 'skipAction') {
