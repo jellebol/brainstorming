@@ -58,7 +58,7 @@ brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
             id:1,
             title: 'Brightstorming Demo',
             status:'concept',
-            setup:[]
+            focus:'Hoe zorgen we dat er altijd plek is om te vergaderen?'
         }]
     };
 });

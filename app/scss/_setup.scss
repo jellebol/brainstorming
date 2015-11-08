@@ -3,7 +3,7 @@
   .setup-main {
     height: 700px;
     @media (max-width:$large) {
-      height: 650px;
+      height: 550px;
     }
   }
   .setup-process-holder {
@@ -13,6 +13,9 @@
   }
   .setup-container {
     max-width: 1000px;
+    @media (max-width:$large) {
+      margin-top: -40px;
+    }
   }
   .setup-nr, .setup-done-text {
     margin: -10px 0 50px 0;
@@ -21,6 +24,9 @@
   .setup-title {
     margin: 50px 0;
     text-align: center;
+    @media (max-width:$large) {
+      margin: 40px 0;
+    }
   }
   .setup-choices {
     text-align: center;
@@ -61,6 +67,9 @@
   .setup-choice-label {
     font-size: 28px;
     font-weight: 600;
+    @media (max-width:$large) {
+      font-size: 20px;
+    }
   }
   #setup-focus {
     margin-bottom: 40px;

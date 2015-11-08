@@ -18,7 +18,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             id:'rules',
             type:'rules',
             title:'Brightstorm Spelregels',
-            description:'Volledige vrijheid is niet altijd goed. Met beperkingen wordt je vindingrijk. Volg daarom de regels. Je zult zien dat je tot meer en betere ideeën komt.',
+            description:'Volledige vrijheid is niet altijd goed. Met beperkingen wordt je vindingrijk. Volg daarom de regels. Je zult zien dat je tot meer en betere idee\353n komt.',
             explain:{
                 id:'explain-rules',
                 type:'explain',
@@ -28,16 +28,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                         subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
                     },{
                         title:'Stel je oordeel uit',
-                        subtitle:'Het evalueren van ideeën komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
+                        subtitle:'Het evalueren van idee\353n komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
                     },{
                         title:'Ga voor originaliteit',
-                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke ideeën.'
+                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke idee\353n.'
                     },{
-                        title:'Gebruik ideeën als springplank',
+                        title:'Gebruik idee\353n als springplank',
                         subtitle:'Het is makkelijker om een gek idee realistisch te maken dan om een saai idee spannend te maken.'
                     },{
                         title:'Schrijf elk idee op',
-                        subtitle:'Elk idee is waardevol. Een idee dat jij niet bijzonder vindt brengt iemand anders wellicht wel op ideeën.'
+                        subtitle:'Elk idee is waardevol. Een idee dat jij niet bijzonder vindt brengt iemand anders wellicht wel op idee\353n.'
                     }
                 ]
             }
@@ -45,22 +45,22 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             id:'braindump',
             type:'braindump',
             title:'Maak je hoofd leeg',
-            description:'Voordat we beginnen gaan we eerst alle bestaande ideeën verzamelen. Zo gaan we allemaal met een leeg hoofd en frisse blik de Brightstorm in.',
+            description:'Voordat we beginnen gaan we eerst alle bestaande idee\353n verzamelen. Zo gaan we allemaal met een leeg hoofd en frisse blik de Brightstorm in.',
             action:{
                 id:'action-braindump',
                 type:'action',
                 parent:'braindump',
                 class:'theme-page-white theme-purple',
-                title:'Hoe zorgen we dat er altijd plek is om te vergaderen?',
-                description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
+                title:$scope.program.focus,
+                description:'Bedenk zoveel mogelijk idee\353n en schrijf elk idee apart op.',
                 time:600,
                 alarm:true
             }
         },{
             id:'discuss',
             type:'discuss',
-            title:'Bespreek de ideeën',
-            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
         },{
             id:'whatif',
@@ -87,7 +87,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 type:'action',
                 parent:'whatif',
                 class:'theme-green',
-                title:'Hoe zorgen we dat er altijd een plek is om te vergaderen?',
+                title:$scope.program.focus,
                 slides:[
                     {
                         title:'Noteer vijf kenmerken van het object op de foto.',
@@ -100,7 +100,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                         img:'/app/img/random/lemons.JPG'
                     },
                     {
-                        title:'Bedenk zoveel mogelijk ideeën aan de hand van je kenmerk.',
+                        title:'Bedenk zoveel mogelijk idee\353n aan de hand van je kenmerk.',
                         time:300,
                         alarm:true,
                         img:'/app/img/random/lemons.JPG'
@@ -112,16 +112,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 type:'explain',
                 slides:[
                     {
-                        title:'Bedenk ideeën',
+                        title:'Bedenk idee\353n',
                         subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
                     },{
                         title:'Stel je oordeel uit',
-                        subtitle:'Het evalueren van ideeën komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
+                        subtitle:'Het evalueren van idee\353n komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
                     },{
                         title:'Ga voor originaliteit',
-                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke ideeën.'
+                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke idee\353n.'
                     },{
-                        title:'Gebruik ideeën als springplank',
+                        title:'Gebruik idee\353n als springplank',
                         subtitle:'Het is makkelijker om een gek idee realistisch te maken dan om een saai idee spannend te maken.'
                     }
                 ]
@@ -129,27 +129,27 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'discuss2',
             type:'discuss',
-            title:'Bespreek de ideeën',
-            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
         },{
             id:'quote',
             type:'quote',
-            title:'Voor goede ideeën, heb je ideeën nodig.',
+            title:'Voor goede idee\353n, heb je idee\353n nodig.',
             description:'Linus Pauling',
             time:600
         },{
             id:'scamper',
             type:'scamper',
             title:'Wat gebeurd er als we de volgorde omdraaien?',
-            description:'Bedenk zoveel mogelijk ideeën en schrijf elk idee apart op.',
+            description:'Bedenk zoveel mogelijk idee\353n en schrijf elk idee apart op.',
             time:300,
             alarm:true
         },{
             id:'discuss3',
             type:'discuss',
-            title:'Bespreek de ideeën',
-            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op ideeën mogen worden genoteerd.',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
         },{
             id:'break',

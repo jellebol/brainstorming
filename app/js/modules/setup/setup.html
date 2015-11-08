@@ -118,7 +118,7 @@
                     <div class="form-group-xl">
                         <textarea id="setup-focus" name="setupFocus" class="form-control input-trans" ng-model="focus" rows="3" required></textarea>
                         <button type="submit" class="btn btn-xl pull-right" ng-class="focusForm.setupFocus.$invalid && !focusForm.setupFocus.$pristine ? 'btn-border-trans' : 'btn-primary'"
-                                ng-click="setupPick()" ng-disabled="focusForm.$invalid">Verder</button>
+                                ng-click="setupPick(focus)" ng-disabled="focusForm.$invalid">Verder</button>
                     </div>
                 </form>
                 <div class="setup-done" ng-if="page == 6">

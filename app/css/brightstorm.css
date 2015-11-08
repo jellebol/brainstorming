@@ -8260,17 +8260,23 @@ body.LoginCtrl {
     height: 700px; }
     @media (max-width: 1200px) {
       .setup-page .setup-main {
-        height: 650px; } }
+        height: 550px; } }
   .setup-page .setup-process-holder .setup-process {
     width: 16%; }
   .setup-page .setup-container {
     max-width: 1000px; }
+    @media (max-width: 1200px) {
+      .setup-page .setup-container {
+        margin-top: -40px; } }
   .setup-page .setup-nr, .setup-page .setup-done-text {
     margin: -10px 0 50px 0;
     text-align: center; }
   .setup-page .setup-title {
     margin: 50px 0;
     text-align: center; }
+    @media (max-width: 1200px) {
+      .setup-page .setup-title {
+        margin: 40px 0; } }
   .setup-page .setup-choices {
     text-align: center; }
     .setup-page .setup-choices ul {
@@ -8301,6 +8307,9 @@ body.LoginCtrl {
   .setup-page .setup-choice-label {
     font-size: 28px;
     font-weight: 600; }
+    @media (max-width: 1200px) {
+      .setup-page .setup-choice-label {
+        font-size: 20px; } }
   .setup-page #setup-focus {
     margin-bottom: 40px; }
   .setup-page #to-program {
@@ -8439,6 +8448,7 @@ body.LoginCtrl {
 
 .program-action-slides .program-title-holder {
   margin-top: -100px;
+  min-height: 120px;
   border-bottom: 1px solid white; }
   .program-action-slides .program-title-holder .program-title {
     font-size: 50px;
