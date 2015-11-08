@@ -4,7 +4,7 @@
 
 .overview-page {
   .overview-title {
-    margin: 50px 0 80px 0;
+    margin: -50px 0 80px 0;
   }
   .to-checklist {
     margin-top: 130px;
@@ -14,7 +14,7 @@
 .overview-carousel-holder {
   background-color: $grey-medium-light;
   height: 320px;
-  .owl-wrapper {
+  .owl-stage {
 //    background-color: $grey-medium-light;
     margin-bottom: 95px;
   }
@@ -94,14 +94,18 @@
     .owl-dots {
       text-align: center;
       .owl-dot {
-        display:inline-block;
-        margin: 10px;
-        width: 60px;
-        height: 10px;
-        border-radius: 3px;
-        background-color: $grey-medium;
+        span {
+          display:inline-block;
+          margin: 10px;
+          width: 60px;
+          height: 10px;
+          border-radius: 3px;
+          background-color: $grey-medium;
+        }
         &.active {
-          background-color: grey;
+          span {
+            background-color: grey;
+          }
         }
       }
     }

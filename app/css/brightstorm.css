@@ -8179,14 +8179,14 @@ body.LoginCtrl {
   background-color: white; }
 
 .overview-page .overview-title {
-  margin: 50px 0 80px 0; }
+  margin: -50px 0 80px 0; }
 .overview-page .to-checklist {
   margin-top: 130px; }
 
 .overview-carousel-holder {
   background-color: #e5e5e5;
   height: 320px; }
-  .overview-carousel-holder .owl-wrapper {
+  .overview-carousel-holder .owl-stage {
     margin-bottom: 95px; }
   .overview-carousel-holder .owl-item {
     padding: 75px 0;
@@ -8244,15 +8244,15 @@ body.LoginCtrl {
       line-height: 35px; }
   .overview-carousel-holder .owl-controls .owl-dots {
     text-align: center; }
-    .overview-carousel-holder .owl-controls .owl-dots .owl-dot {
+    .overview-carousel-holder .owl-controls .owl-dots .owl-dot span {
       display: inline-block;
       margin: 10px;
       width: 60px;
       height: 10px;
       border-radius: 3px;
       background-color: #c7c5c5; }
-      .overview-carousel-holder .owl-controls .owl-dots .owl-dot.active {
-        background-color: grey; }
+    .overview-carousel-holder .owl-controls .owl-dots .owl-dot.active span {
+      background-color: grey; }
 
 .setup-page {
   color: white; }
@@ -8356,7 +8356,7 @@ body.LoginCtrl {
   background-color: #f8f7fb; }
 
 .checklist-page .checklist-title {
-  margin: 50px 0 80px 0; }
+  margin: -50px 0 80px 0; }
 .checklist-page > footer {
   margin-top: 20px; }
 
