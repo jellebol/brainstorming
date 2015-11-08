@@ -70,6 +70,52 @@
   }
 }
 
+.program-explain {
+  .explain-container {
+    position: relative;
+    margin-top: -50px;
+    .program-title {
+      margin-top: -10px;
+    }
+  }
+  img.explain-img {
+    height: 260px;
+    width: auto;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+  .program-buttons {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .owl-nav {
+    top: 45%;
+    left: -40px;
+    right: -40px;
+    @media (max-width:$large) {
+      left: 0px;
+      right: 0px;
+    }
+    div {
+      height: 45px;
+      width: 45px;
+      padding: 8px 0px;
+      border-radius: 50%;
+      color:white;
+      text-align: center;
+      font-size: 21px;
+      line-height: 29px;
+      background-color: black;
+      opacity: 1;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
 .program-alarm {
   z-index: 1;
 }

@@ -12,6 +12,14 @@
   }
 }
 
+.theme-white {
+  color:$main-color;
+  background-color: $grey-light;
+  h2, .theme-color {
+    color:$main-color;
+  }
+}
+
 .theme-blue-dark {
   background-color: $blue-dark;
 }

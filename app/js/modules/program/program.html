@@ -44,7 +44,7 @@
                         <p class="program-description">{{current.description}}</p>
                     </div>
                     <div class="program-buttons">
-                        <button class="btn btn-primary btn-xl">Bekijk</button>
+                        <button class="btn btn-primary btn-xl" ng-click="explainFn.open()">Bekijk</button>
                         <button class="btn btn-border-primary btn-xl" ng-click="next()">Sla over</button>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                 <p class="program-description">{{current.description}}</p>
             </div>
             <div class="program-buttons">
-                <button class="btn btn-primary btn-xl" ng-click="">Bekijk uitleg</button>
+                <button class="btn btn-primary btn-xl" ng-click="explainFn.open()">Bekijk uitleg</button>
                 <button class="btn btn-border-primary btn-xl" ng-click="next()">Start</button>
             </div>
         </div>
@@ -190,31 +190,24 @@
     <!-- explain -->
     <section class="program-explain full-page theme-white" ng-if="explain">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
-        <div class="program-title-holder align-center">
-            <div class="container">
-                <h2 class="program-title">{{current.action.title}}</h2>
-            </div>
-        </div>
-        <div class="container">
-            <div class="action-slides-holder">
-                <div id="explain-slides-carousel" class="owl-carousel owl-theme">
-                    <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img src="{{slide.img}}" class="slide-img"/>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="slide-count">
-                                    <span ng-repeat="count in current.action.slides track by $index" ng-class="$index == activeIndex ? 'active' : ''">{{$index + 1}}</span>
-                                </div>
-                                <p class="slide-title">{{slide.title}}</p>
-                            </div>
+        <div class="container explain-container">
+            <div class="explain-slides-holder">
+                <div id="explain-slides-carousel" class="owl-carousel owl-theme align-center">
+                    <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index">
+                        <p class="font-lg align-center">
+                            <span ng-if="current.type == 'rules'">Spelregels</span>
+                            <span ng-if="current.type != 'rules'">Stap {{$index + 1}}</span>
+                        </p>
+                        <div class="program-title-holder">
+                            <h2 class="program-title">{{slide.title}}</h2>
+                            <img ng-src="/app/img/explain/{{current.type}}/{{$index + 1}}.png" class="explain-img"/>
+                            <p class="program-description">{{slide.subtitle}}</p>
                         </div>
-                        <div class="slide-timer-holder" ng-if="$index == activeIndex">
-                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
-                        </div>
-                        <div ng-init="initSlides()" ng-if="$index == (current.action.slides.length - 1)"></div>
+                        <div ng-init="initExplain()" ng-if="$index == (current.explain.slides.length - 1)"></div>
                     </div>
+                </div>
+                <div class="program-buttons">
+                    <button class="btn btn-primary btn-lg pull-right" ng-click="explainFn.close()">Verder</button>
                 </div>
             </div>
         </div>

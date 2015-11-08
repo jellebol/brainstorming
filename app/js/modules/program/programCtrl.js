@@ -25,10 +25,19 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 slides:[
                     {
                         title:'Ga voor kwaliteit',
-                        subtitle:'Schrijf zoveel mogelijk ideeën op'
-                    },
-                    {
-                        title:'Nog een slide'
+                        subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
+                    },{
+                        title:'Stel je oordeel uit',
+                        subtitle:'Het evalueren van ideeën komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
+                    },{
+                        title:'Ga voor originaliteit',
+                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke ideeën.'
+                    },{
+                        title:'Gebruik ideeën als springplank',
+                        subtitle:'Het is makkelijker om een gek idee realistisch te maken dan om een saai idee spannend te maken.'
+                    },{
+                        title:'Schrijf elk idee op',
+                        subtitle:'Elk idee is waardevol. Een idee dat jij niet bijzonder vindt brengt iemand anders wellicht wel op ideeën.'
                     }
                 ]
             }
@@ -97,6 +106,25 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                         img:'/app/img/random/lemons.JPG'
                     }
                 ]
+            },
+            explain:{
+                id:'explain-random',
+                type:'explain',
+                slides:[
+                    {
+                        title:'Bedenk ideeën',
+                        subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
+                    },{
+                        title:'Stel je oordeel uit',
+                        subtitle:'Het evalueren van ideeën komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
+                    },{
+                        title:'Ga voor originaliteit',
+                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke ideeën.'
+                    },{
+                        title:'Gebruik ideeën als springplank',
+                        subtitle:'Het is makkelijker om een gek idee realistisch te maken dan om een saai idee spannend te maken.'
+                    }
+                ]
             }
         },{
             id:'discuss2',
@@ -162,6 +190,19 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             },0);
         })
     };
+    $scope.initExplain = function(){
+        var owl = $('#explain-slides-carousel');
+        owl.owlCarousel({
+            responsive:{
+                0:{
+                    items:1
+                }
+            },
+            dots:true,
+            nav:true,
+            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+        });
+    };
 
     var currentObj = _.where($scope.steps, {id:$scope.page});
     $scope.currentIndex = _.findIndex($scope.steps, {id:$scope.page});
@@ -212,21 +253,13 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }
     });
 
-    $scope.moreInfo = function () {
-        var modalInstance = $uibModal.open({
-            templateUrl: '/app/js/modals/create-program-modal/create-program-modal.html',
-            controller: 'createProgramModelCtrl',
-            resolve: {
-                programs: function () {
-                    return $rootScope.user.programs;
-                }
-            }
-        });
-        modalInstance.result.then(function (selectedItem) {
-//            $scope.selected = selectedItem;
-        }, function () {
-            console.log('Modal dismissed at: ' + new Date());
-        });
+    $scope.explainFn = {
+        open:function(){
+            $scope.explain = true;
+        },
+        close:function(){
+            $scope.explain = false;
+        }
     };
 
     $scope.pause = function(){

@@ -103,6 +103,18 @@ body {
   }
 }
 
+.owl-carousel {
+  .owl-nav {
+    position: absolute;
+    .owl-prev {
+      float: left;
+    }
+    .owl-next {
+      float: right;
+    }
+  }
+}
+
 .action-slides-holder {
   .item {
     padding: 40px;
@@ -132,7 +144,6 @@ body {
     }
   }
   .owl-nav {
-    position: absolute;
     top: 45%;
     left: -40px;
     right: -40px;
@@ -150,12 +161,6 @@ body {
       &:hover {
         opacity: 0.7;
       }
-    }
-    .owl-prev {
-      float: left;
-    }
-    .owl-next {
-      float: right;
     }
   }
 }

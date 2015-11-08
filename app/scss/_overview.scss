@@ -73,7 +73,6 @@
 //    left: 0;
 //    right: 0;
     .owl-nav {
-      position: absolute;
       top: 140px;
       left: -50px;
       right: -50px;
@@ -90,12 +89,6 @@
         text-align: center;
         font-size: 21px;
         line-height: 35px;
-      }
-      .owl-prev {
-        float:left;
-      }
-      .owl-next {
-        float:right;
       }
     }
     .owl-dots {

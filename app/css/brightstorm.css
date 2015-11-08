@@ -7611,6 +7611,29 @@ button.close {
   -ms-user-select: none;
   user-select: none; }
 
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1; }
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 15px;
+  height: 15px;
+  margin: 5px 7px;
+  background: #d6d6d6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: opacity 200ms ease;
+  -moz-transition: opacity 200ms ease;
+  -ms-transition: opacity 200ms ease;
+  -o-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px; }
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791; }
+
 .owl-carousel.owl-loaded {
   display: block; }
 
@@ -8004,6 +8027,13 @@ body {
     text-align: center;
     border-top: 0; }
 
+.owl-carousel .owl-nav {
+  position: absolute; }
+  .owl-carousel .owl-nav .owl-prev {
+    float: left; }
+  .owl-carousel .owl-nav .owl-next {
+    float: right; }
+
 .action-slides-holder .item {
   padding: 40px; }
   .action-slides-holder .item .slide-title {
@@ -8025,7 +8055,6 @@ body {
     bottom: 0;
     right: 0; }
 .action-slides-holder .owl-nav {
-  position: absolute;
   top: 45%;
   left: -40px;
   right: -40px; }
@@ -8042,10 +8071,6 @@ body {
     opacity: 1 !important; }
     .action-slides-holder .owl-nav div:hover {
       opacity: 0.7; }
-  .action-slides-holder .owl-nav .owl-prev {
-    float: left; }
-  .action-slides-holder .owl-nav .owl-next {
-    float: right; }
 
 .theme-page {
   color: white; }
@@ -8056,6 +8081,12 @@ body {
   color: white; }
   .theme-page-white h2, .theme-page-white .theme-color {
     color: white; }
+
+.theme-white {
+  color: #333;
+  background-color: #f8f7fb; }
+  .theme-white h2, .theme-white .theme-color {
+    color: #333; }
 
 .theme-blue-dark {
   background-color: #2b2e3a; }
@@ -8195,7 +8226,6 @@ body.LoginCtrl {
           left: 0px;
           right: auto; }
   .overview-carousel-holder .owl-controls .owl-nav {
-    position: absolute;
     top: 140px;
     left: -50px;
     right: -50px; }
@@ -8212,10 +8242,6 @@ body.LoginCtrl {
       text-align: center;
       font-size: 21px;
       line-height: 35px; }
-    .overview-carousel-holder .owl-controls .owl-nav .owl-prev {
-      float: left; }
-    .overview-carousel-holder .owl-controls .owl-nav .owl-next {
-      float: right; }
   .overview-carousel-holder .owl-controls .owl-dots {
     text-align: center; }
     .overview-carousel-holder .owl-controls .owl-dots .owl-dot {
@@ -8420,6 +8446,43 @@ body.LoginCtrl {
     @media (max-width: 1200px) {
       .program-action-slides .program-title-holder .program-title {
         font-size: 40px; } }
+
+.program-explain .explain-container {
+  position: relative;
+  margin-top: -50px; }
+  .program-explain .explain-container .program-title {
+    margin-top: -10px; }
+.program-explain img.explain-img {
+  height: 260px;
+  width: auto;
+  max-width: 100%;
+  margin: 10px auto; }
+.program-explain .program-buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1; }
+.program-explain .owl-nav {
+  top: 45%;
+  left: -40px;
+  right: -40px; }
+  @media (max-width: 1200px) {
+    .program-explain .owl-nav {
+      left: 0px;
+      right: 0px; } }
+  .program-explain .owl-nav div {
+    height: 45px;
+    width: 45px;
+    padding: 8px 0px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 21px;
+    line-height: 29px;
+    background-color: black;
+    opacity: 1; }
+    .program-explain .owl-nav div:hover {
+      opacity: 0.7; }
 
 .program-alarm {
   z-index: 1; }
