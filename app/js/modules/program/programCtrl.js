@@ -1,4 +1,4 @@
-brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $uibModal) {
+brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $timeout, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
     $scope.action = $routeParams.action;
@@ -138,17 +138,29 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }
     ];
 
-    $scope.move = function(){
-        console.log('move');
-    }
 
+    //OWL FUNCTIONS
     $scope.initSlides = function(){
-        $("#action-slides-carousel").owlCarousel({
-            singleItem:true,
-            pagination:false,
-            navigation:true,
-            navigationText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+        var owl = $('#action-slides-carousel');
+        owl.owlCarousel({
+            responsive:{
+                0:{
+                    items:1
+                }
+            },
+            dots:false,
+            nav:true,
+            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
         });
+
+        $scope.activeIndex = 0;
+
+        owl.on('changed.owl.carousel', function(event) {
+            $scope.activeIndex = event.item.index;
+            $timeout(function() {
+                $scope.$apply();
+            },0);
+        })
     };
 
     var currentObj = _.where($scope.steps, {id:$scope.page});
@@ -175,6 +187,31 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }
     };
 
+    $scope.$on('nextPage', function(event, args) {
+        if(!$scope.current.action.slides) {
+            if(($scope.current.action && $scope.current.action.alarm) || $scope.current.alarm) {
+                $timeout(function(){
+                    $scope.alarm = true;
+                },1000);
+            } else {
+                $timeout(function(){
+                    $scope.next(args);
+                },1000);
+            }
+        } else {
+            //next slide
+            if($scope.activeIndex == ($scope.current.action.slides.length - 1)){
+                $timeout(function(){
+                    $scope.alarm = true;
+                },1000);
+            } else {
+                $timeout(function(){
+                    $('#action-slides-carousel').trigger('next.owl.carousel');
+                },1000);
+            }
+        }
+    });
+
     $scope.moreInfo = function () {
         var modalInstance = $uibModal.open({
             templateUrl: '/app/js/modals/create-program-modal/create-program-modal.html',
@@ -190,6 +227,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }, function () {
             console.log('Modal dismissed at: ' + new Date());
         });
+    };
+
+    $scope.pause = function(){
+        $rootScope.$broadcast('pause');
+        $scope.paused = true;
+    };
+
+    $scope.play = function(){
+        $rootScope.$broadcast('play');
+        $scope.paused = false;
     };
 
     $scope.closeProgram = function(){

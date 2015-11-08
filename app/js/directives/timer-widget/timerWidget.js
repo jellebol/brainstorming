@@ -9,7 +9,8 @@ angular.module('brightstormApp').
             scope: {
                 user: '=',
                 type: '=',
-                duration: '='
+                duration: '=',
+                slider: '='
             },
             controller: ['$scope', '$rootScope', '$timeout',
                 function ($scope, $rootScope, $timeout) {
@@ -20,9 +21,22 @@ angular.module('brightstormApp').
                     $scope.max = 1;
                     $scope.color = '#ffca4c';
 
+                    if($scope.slider) {
+//                        $rootScope.$broadcast('timer-stop');
+                    }
+                    $rootScope.$broadcast('timer-start');
+
                     $scope.finished = function(){
-                        console.log('done');
+                        $rootScope.$broadcast('nextPage');
                     };
+
+                    $scope.$on('pause', function(event, args) {
+                        $rootScope.$broadcast('timer-stop');
+                    });
+
+                    $scope.$on('play', function(event, args) {
+                        $rootScope.$broadcast('timer-resume');
+                    });
 
                     $scope.$on('timer-tick', function (event, args) {
                         $scope.current = (args.millis / $scope.durationFull);

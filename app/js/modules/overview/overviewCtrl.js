@@ -89,9 +89,10 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
     $scope.renderCarousel = function(){
         $("#overview-carousel").owlCarousel({
             items:6,
-            navigation:true,
-            navigationText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-            scrollPerPage: true
+            nav:true,
+            dots:true,
+            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+            slideBy: 'page'
         });
     };
     $(document).ready(function() {

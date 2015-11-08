@@ -164,24 +164,74 @@
         <div class="container">
             <div class="action-slides-holder">
                 <div id="action-slides-carousel" class="owl-carousel owl-theme">
-                    <div class="item" ng-repeat="slide in current.action.slides">
+                    <div class="owl-item item" ng-repeat="slide in current.action.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
                         <div class="row">
                             <div class="col-sm-6">
                                 <img src="{{slide.img}}" class="slide-img"/>
                             </div>
                             <div class="col-sm-6">
                                 <div class="slide-count">
-                                    <span ng-repeat="count in current.action.slides track by $index">{{$index + 1}}</span>
+                                    <span ng-repeat="count in current.action.slides track by $index" ng-class="$index == activeIndex ? 'active' : ''">{{$index + 1}}</span>
                                 </div>
                                 <p class="slide-title">{{slide.title}}</p>
                             </div>
                         </div>
-                        <div class="slide-timer-holder">
-                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm"></timer-widget>
+                        <div class="slide-timer-holder" ng-if="$index == activeIndex">
+                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
                         </div>
                         <div ng-init="initSlides()" ng-if="$index == (current.action.slides.length - 1)"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- explain -->
+    <section class="program-explain full-page theme-white" ng-if="explain">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="program-title-holder align-center">
+            <div class="container">
+                <h2 class="program-title">{{current.action.title}}</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="action-slides-holder">
+                <div id="explain-slides-carousel" class="owl-carousel owl-theme">
+                    <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{{slide.img}}" class="slide-img"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="slide-count">
+                                    <span ng-repeat="count in current.action.slides track by $index" ng-class="$index == activeIndex ? 'active' : ''">{{$index + 1}}</span>
+                                </div>
+                                <p class="slide-title">{{slide.title}}</p>
+                            </div>
+                        </div>
+                        <div class="slide-timer-holder" ng-if="$index == activeIndex">
+                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
+                        </div>
+                        <div ng-init="initSlides()" ng-if="$index == (current.action.slides.length - 1)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- alarm -->
+    <section class="program-alarm full-page theme-red" ng-if="alarm">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container align-center">
+            <div class="program-title-holder">
+                <img src="/app/img/logo/logo-white.png" class="alarm-img"/>
+                <h2 class="program-title">Het is tijd!</h2>
+                <p class="program-description">Pennen neer. Het is nu tijd om de ideeën te bespreken</p>
+            </div>
+            <div class="program-buttons">
+                <button class="btn btn-primary btn-xl" ng-click="next()">Oké</button>
             </div>
         </div>
     </section>
@@ -194,8 +244,13 @@
                     ng-click="previous()" ng-disabled="currentIndex == 0">
                 <i class="fa fa-chevron-left"></i>
             </button>
-            <button class="btn btn-control" id="program-pause" ng-disabled="!current.time">
+            <button class="btn btn-control" id="program-pause"
+                    ng-click="pause()" ng-if="!paused">
                 <i class="fa fa-pause"></i>
+            </button>
+            <button class="btn btn-control" id="program-play"
+                    ng-click="play()" ng-if="paused">
+                <i class="fa fa-play"></i>
             </button>
             <button class="btn btn-control" id="program-sound">
                 <i class="fa fa-volume-up"></i>

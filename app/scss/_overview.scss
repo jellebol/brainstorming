@@ -72,7 +72,7 @@
 //    position: absolute;
 //    left: 0;
 //    right: 0;
-    .owl-buttons {
+    .owl-nav {
       position: absolute;
       top: 140px;
       left: -50px;
@@ -84,10 +84,12 @@
       div {
         height: 35px;
         width: 35px;
+        background-color: white;
+        color: $grey-medium;
         border-radius: 50%;
         text-align: center;
         font-size: 21px;
-        line-height: 29px;
+        line-height: 35px;
       }
       .owl-prev {
         float:left;
@@ -96,15 +98,16 @@
         float:right;
       }
     }
-    .owl-page {
-      span {
+    .owl-dots {
+      text-align: center;
+      .owl-dot {
+        display:inline-block;
+        margin: 10px;
         width: 60px;
         height: 10px;
         border-radius: 3px;
         background-color: $grey-medium;
-      }
-      &.active {
-        span {
+        &.active {
           background-color: grey;
         }
       }

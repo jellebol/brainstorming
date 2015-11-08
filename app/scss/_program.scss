@@ -32,6 +32,7 @@
     right: 0;
     height: 60px;
     border-top: 1px solid grey;
+    z-index: 2;
     .footer-text {
       float: left;
       margin: 0;
@@ -62,6 +63,13 @@
     .program-title {
       font-size: 50px;
       font-weight: 500;
+      @media(max-width: $large) {
+        font-size: 40px;
+      }
     }
   }
+}
+
+.program-alarm {
+  z-index: 1;
 }
