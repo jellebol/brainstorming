@@ -7839,6 +7839,15 @@ h2 {
     color: #ffca4c;
     border: 3px solid #ffca4c; }
 
+.btn-cyan {
+  background-color: #06a485;
+  color: white;
+  border: 3px solid #06a485; }
+  .btn-cyan:hover, .btn-cyan:active, .btn-cyan:focus, .btn-cyan:active:focus {
+    background-color: transparent;
+    color: #06a485;
+    border: 3px solid #06a485; }
+
 .btn-primary-odd {
   background-color: #e95922;
   color: white;
@@ -8034,12 +8043,53 @@ body {
     color: #e95922;
     text-align: center;
     font-weight: 700; }
+    .modal .modal-header .close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      color: white;
+      width: 30px;
+      height: 30px;
+      margin-top: -2px;
+      font-size: 23px;
+      text-align: center;
+      background-color: black;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.3);
+      opacity: 1; }
   .modal .modal-body {
     padding: 0 40px; }
   .modal .modal-footer {
     padding: 40px;
     text-align: center;
     border-top: 0; }
+  .modal.modal-cyan {
+    color: grey; }
+    .modal.modal-cyan .modal-header {
+      color: #06a485; }
+    .modal.modal-cyan .modal-body p {
+      color: grey;
+      font-size: 20px;
+      font-weight: 700; }
+    .modal.modal-cyan .modal-body ul {
+      margin-top: 20px; }
+      .modal.modal-cyan .modal-body ul li {
+        font-size: 18px; }
+
+.list-check li {
+  position: relative;
+  padding-left: 30px; }
+  .list-check li:before {
+    position: absolute;
+    left: 0;
+    font-family: FontAwesome;
+    content: "\f00c";
+    color: #06a485;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit; }
 
 .owl-carousel .owl-nav {
   position: absolute; }
@@ -8329,6 +8379,14 @@ body.LoginCtrl {
     @media (max-width: 1200px) {
       .setup-page .setup-choice-label {
         font-size: 20px; } }
+  .setup-page .more-info {
+    color: white;
+    font-size: 24px; }
+    .setup-page .more-info:hover {
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.2); }
+    .setup-page .more-info:active, .setup-page .more-info:focus, .setup-page .more-info:focus:active {
+      text-decoration: none; }
   .setup-page #setup-focus {
     margin-bottom: 40px; }
   .setup-page #to-program {

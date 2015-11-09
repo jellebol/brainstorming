@@ -165,6 +165,9 @@
                 <form role="form" id="focus-form" name="focusForm" ng-if="page == 5" novalidate>
                     <div class="form-group-xl">
                         <textarea id="setup-focus" name="setupFocus" class="form-control input-trans" ng-model="focus" rows="3" required></textarea>
+                        <button type="button" class="btn btn-link more-info pull-left" ng-click="moreInfo()">
+                            <img src="/app/img/icons/information.png"/> Meer Uitleg
+                        </button>
                         <button type="submit" class="btn btn-xl pull-right" ng-class="focusForm.setupFocus.$invalid && !focusForm.setupFocus.$pristine ? 'btn-border-trans' : 'btn-primary'"
                                 ng-click="setupPick(focus)" ng-disabled="focusForm.$invalid">Verder</button>
                     </div>

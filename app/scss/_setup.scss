@@ -71,6 +71,17 @@
       font-size: 20px;
     }
   }
+  .more-info {
+    color: white;
+    font-size: 24px;
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    &:active, &:focus, &:focus:active {
+      text-decoration: none;
+    }
+  }
   #setup-focus {
     margin-bottom: 40px;
   }

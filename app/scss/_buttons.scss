@@ -32,6 +32,10 @@
   @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
 }
 
+.btn-cyan {
+  @include button($cyan, transparent, white, $cyan, $cyan, $cyan);
+}
+
 .btn-primary-odd {
   @include button($orange, transparent, white, $orange, $orange, $orange);
 }
