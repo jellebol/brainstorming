@@ -24,15 +24,15 @@
                     <p class="empty-two">Wees niet verlegen. <a href="" class="link-orange" ng-click="addProgram()">Stel snel een programma samen</a></p>
                 </div>
                 <ul class="list-inline dashboard-programs" ng-if="user.programs.length > 0">
-                    <li class="dashboard-program" ng-repeat="program in user.programs | orderBy:'createdAt':true">
+                    <li class="dashboard-program" ng-repeat="program in user.programs track by $index | orderBy:'createdAt':true">
                         <a href="#/program/{{program.id}}/start" class="dashboard-program-box display-table">
                             <h3 class="dashboard-program-title table-cell">{{program.title}}</h3>
                         </a>
                         <footer>
-                            <button class="btn btn-link dashboard-program-button">
+                            <a href="#/setup/{{program.id}}/5" class="btn btn-link dashboard-program-button">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Wijzig
-                            </button>
-                            <button class="btn btn-link dashboard-program-button">
+                            </a>
+                            <button class="btn btn-link dashboard-program-button" ng-click="deleteProgram(program, $index)">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Verwijder
                             </button>
                             <button class="btn btn-link dashboard-program-button">

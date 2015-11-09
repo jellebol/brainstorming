@@ -1,4 +1,4 @@
-<div class="program-page theme-page full-page">
+<div class="program-page theme-page full-page {{explain ? 'dark-details' : 'light-details'}}" ng-class="'program-page-' + current.type">
 
     <!-- start -->
     <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
@@ -195,7 +195,7 @@
                 <div id="explain-slides-carousel" class="owl-carousel owl-theme align-center">
                     <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index">
                         <p class="font-lg align-center">
-                            <span ng-if="current.type == 'rules'">Spelregels</span>
+                            <span ng-if="current.type == 'rules'">Regel {{$index + 1}}</span>
                             <span ng-if="current.type != 'rules'">Stap {{$index + 1}}</span>
                         </p>
                         <div class="program-title-holder">
@@ -235,18 +235,25 @@
         <div class="pull-left">
             <button class="btn btn-control" id="program-previous"
                     ng-click="previous()" ng-disabled="currentIndex == 0">
-                <i class="fa fa-chevron-left"></i>
+                <img src="/app/img/icons/previous-white.png" class="img-light"/>
+                <img src="/app/img/icons/previous-black.png" class="img-dark"/>
             </button>
             <button class="btn btn-control" id="program-pause"
                     ng-click="pause()" ng-if="!paused">
-                <i class="fa fa-pause"></i>
+                <img src="/app/img/icons/pause-white.png" class="img-light"/>
+                <img src="/app/img/icons/pause-black.png" class="img-dark"/>
             </button>
             <button class="btn btn-control" id="program-play"
                     ng-click="play()" ng-if="paused">
                 <i class="fa fa-play"></i>
             </button>
-            <button class="btn btn-control" id="program-sound">
-                <i class="fa fa-volume-up"></i>
+            <button class="btn btn-control" id="program-sound-on" ng-if="!soundOff">
+                <img src="/app/img/icons/sound-on-white.png" class="img-light"/>
+                <img src="/app/img/icons/sound-on-black.png" class="img-dark"/>
+            </button>
+            <button class="btn btn-control" id="program-sound-off" ng-if="soundOff">
+                <img src="/app/img/icons/sound-on-white.png" class="img-light"/>
+                <img src="/app/img/icons/sound-on-black.png" class="img-dark"/>
             </button>
             <p class="footer-text footer-title">Brightstorming</p>
         </div>
@@ -254,10 +261,12 @@
             <p class="footer-text footer-time">15:31</p>
             <button class="btn btn-control" id="program-next"
                     ng-click="next()">
-                <i class="fa fa-chevron-right"></i>
+                <img src="/app/img/icons/next-white.png" class="img-light"/>
+                <img src="/app/img/icons/next-black.png" class="img-dark"/>
             </button>
             <button class="btn btn-control" id="program-fullscreen">
-                <i class="fa fa-expand"></i>
+                <img src="/app/img/icons/full-screen-white.png" class="img-light"/>
+                <img src="/app/img/icons/full-screen-black.png" class="img-dark"/>
             </button>
         </div>
     </footer>

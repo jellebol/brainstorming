@@ -1,4 +1,18 @@
 .program-page {
+  .program-dark-logo {
+    display:none;
+  }
+  &.dark-details {
+    .program-light-logo {
+      display:none;
+    }
+    .program-dark-logo {
+      display:block;
+    }
+    .program-process-holder {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
   .close-program {
     position: absolute;
     top: 10px;
@@ -31,7 +45,7 @@
     left: 0;
     right: 0;
     height: 60px;
-    border-top: 1px solid grey;
+    border-top: 1px solid white;
     z-index: 2;
     .footer-text {
       float: left;
@@ -44,7 +58,32 @@
         color: #FFCA4C;
       }
       &.footer-time {
-        border-right: 1px solid grey;
+        border-right: 1px solid white;
+      }
+    }
+  }
+  &.dark-details {
+    .program-footer {
+      border-top: 1px solid black;
+      .btn-control {
+        border-right: 1px solid black;
+        color:black;
+        img {
+          &.img-dark {
+            display: block;
+          }
+          &.img-light {
+            display: none;
+          }
+        }
+      }
+      .footer-text {
+        &.footer-title {
+          color: $main-color;
+        }
+        &.footer-time {
+          border-right: 1px solid black;
+        }
       }
     }
   }

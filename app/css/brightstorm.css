@@ -7888,16 +7888,20 @@ h2 {
   float: left;
   height: 60px;
   width: 55px;
+  padding: 0;
   font-size: 19px;
   color: white;
   background-color: transparent;
   border-radius: 0;
-  border-right: 1px solid grey; }
+  border-right: 1px solid white; }
+  .btn-control img.img-dark {
+    display: none; }
   .btn-control:hover {
     color: white;
     background-color: rgba(255, 255, 255, 0.15); }
   .btn-control[disabled] {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0.7; }
     .btn-control[disabled]:hover {
       background-color: transparent; }
 
@@ -8007,6 +8011,16 @@ body {
       font-weight: 700; }
   .box .box-footer {
     padding-top: 20px; }
+
+.popover {
+  padding: 10px; }
+  .popover .popover-title {
+    padding-bottom: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 800;
+    border-bottom: 0; }
 
 .modal {
   overflow-x: inherit !important;
@@ -8158,6 +8172,11 @@ body.LoginCtrl {
 .login-page .logo-holder {
   padding: 50px;
   text-align: center; }
+  @media (max-width: 1200px) {
+    .login-page .logo-holder {
+      padding: 40px; }
+      .login-page .logo-holder img {
+        width: 130px; } }
 
 .login-box {
   padding: 40px; }
@@ -8403,6 +8422,14 @@ body.LoginCtrl {
         color: white;
         background-color: rgba(255, 255, 255, 0.2); }
 
+.program-page .program-dark-logo {
+  display: none; }
+.program-page.dark-details .program-light-logo {
+  display: none; }
+.program-page.dark-details .program-dark-logo {
+  display: block; }
+.program-page.dark-details .program-process-holder {
+  background-color: rgba(0, 0, 0, 0.2); }
 .program-page .close-program {
   position: absolute;
   top: 10px;
@@ -8429,7 +8456,7 @@ body.LoginCtrl {
   left: 0;
   right: 0;
   height: 60px;
-  border-top: 1px solid grey;
+  border-top: 1px solid white;
   z-index: 2; }
   .program-page .program-footer .footer-text {
     float: left;
@@ -8441,7 +8468,20 @@ body.LoginCtrl {
     .program-page .program-footer .footer-text.footer-title {
       color: #FFCA4C; }
     .program-page .program-footer .footer-text.footer-time {
-      border-right: 1px solid grey; }
+      border-right: 1px solid white; }
+.program-page.dark-details .program-footer {
+  border-top: 1px solid black; }
+  .program-page.dark-details .program-footer .btn-control {
+    border-right: 1px solid black;
+    color: black; }
+    .program-page.dark-details .program-footer .btn-control img.img-dark {
+      display: block; }
+    .program-page.dark-details .program-footer .btn-control img.img-light {
+      display: none; }
+  .program-page.dark-details .program-footer .footer-text.footer-title {
+    color: #333; }
+  .program-page.dark-details .program-footer .footer-text.footer-time {
+    border-right: 1px solid black; }
 
 .program-start .program-title {
   margin: 100px 0 80px 0; }
@@ -8548,11 +8588,11 @@ body.LoginCtrl {
   .dashboard-program footer {
     padding: 7px;
     text-align: center; }
-    .dashboard-program footer button {
+    .dashboard-program footer button, .dashboard-program footer a {
       color: grey; }
-      .dashboard-program footer button span {
+      .dashboard-program footer button span, .dashboard-program footer a span {
         color: #c7c5c5; }
-      .dashboard-program footer button:hover {
+      .dashboard-program footer button:hover, .dashboard-program footer a:hover {
         text-decoration: none;
         color: #e95922; }
 

@@ -6,6 +6,12 @@ body.LoginCtrl {
   .logo-holder{
     padding: 50px;
     text-align: center;
+    @media (max-width:$large){
+      padding: 40px;
+      img {
+        width: 130px;
+      }
+    }
   }
 }
 

@@ -27,7 +27,7 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
         {
             type:'ideas',
             title:'Bespreken',
-            description:'Ideeën delen',
+            description:'Idee\353n delen',
             span:2
         },
         {
@@ -45,7 +45,7 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
         {
             type:'ideas',
             title:'Bespreken',
-            description:'Ideeën delen',
+            description:'Idee\353n delen',
             span:2
         },
         {
@@ -57,7 +57,7 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
         {
             type:'ideas',
             title:'Bespreken',
-            description:'Ideeën delen',
+            description:'Idee\353n delen',
             span:2
         },
         {

@@ -95,7 +95,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                         img:'/app/img/random/lemons.JPG'
                     },
                     {
-                        title:'Kies één kenmerk.',
+                        title:'Kies \xE9\xE9n kenmerk.',
                         time:30,
                         img:'/app/img/random/lemons.JPG'
                     },
@@ -272,8 +272,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         $scope.paused = false;
     };
 
-    $scope.closeProgram = function(){
-        //todo: are you sure?
-        $location.path('/dashboard');
+    $scope.closeProgram = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: '/app/js/modals/close-program-modal/close-program-modal.html',
+            controller: 'closeProgramModelCtrl'
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+//            $scope.selected = selectedItem;
+        }, function () {
+            console.log('Modal dismissed at: ' + new Date());
+        });
     }
 });

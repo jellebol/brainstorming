@@ -17,6 +17,9 @@
                         <input type="password" id="login-password" class="form-control" placeholder="Wachtwoord"
                                 ng-model="login.password" required/>
                     </div>
+                    <div class="form-group alert alert-danger" ng-if="wrongLogin">
+                        <p>Verkeerde email/wachtwoord combinatie.</p>
+                    </div>
                     <div class="form-group">
                         <div class="checkbox pull-left">
                             <label>

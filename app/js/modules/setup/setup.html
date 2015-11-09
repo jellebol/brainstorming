@@ -22,96 +22,144 @@
                 <span ng-if="page == 6">Je bent klaar voor de perfecte Brightstorm</span>
             </h2>
             <div class="setup-choices">
-                <ul class="list-inline" ng-if="page == 1">
+                <ul class="list-inline" ng-show="page == 1">
                     <li ng-click="setupPick('1 uur')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-1a-black.png" class="img"/>
                             <img src="/app/img/setup/setup-1a-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">1 uur</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Kort"
+                           data-content="Pressure cooker. Voor wie vernieuwende ideeën zoekt, maar krap in de tijd zit.">
+                            1 uur
+                        </p>
                     </li>
                     <li ng-click="setupPick('2 uur')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-1b-black.png" class="img"/>
                             <img src="/app/img/setup/setup-1b-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">2 uur</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Volledig"
+                           data-content="Intensieve denksessie. Voor wie het creatief nadenken snel doch serieus wil aanpakken.">
+                            2 uur
+                        </p>
                     </li>
                     <li ng-click="setupPick('3 uur')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-1c-black.png" class="img"/>
                             <img src="/app/img/setup/setup-1c-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">3 uur</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Uitgebreid"
+                           data-content="Royale denksessie met alles erop en eraan. Voor wie het onderste uit de kan wil halen.">
+                            3 uur
+                        </p>
                     </li>
                 </ul>
-                <ul class="list-inline" ng-if="page == 2">
+                <ul class="list-inline" ng-show="page == 2">
                     <li ng-click="setupPick('1')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-2a-black.png" class="img"/>
                             <img src="/app/img/setup/setup-2a-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">1</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Ik ben alleen"
+                           data-content="Geen zorgen, ook in je eentje kun je de meest verrassende ideeën bedenken.">
+                            1
+                        </p>
                     </li>
                     <li ng-click="setupPick('2-5')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-2b-black.png" class="img"/>
                             <img src="/app/img/setup/setup-2b-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">2 - 5</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Klein groepje"
+                           data-content="Klein genoeg om snel te schakelen en groot genoeg om verrassend te blijven.">
+                            2 - 5
+                        </p>
                     </li>
                     <li ng-click="setupPick('6-12')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-2c-black.png" class="img"/>
                             <img src="/app/img/setup/setup-2c-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">6 - 12</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Flinke groep"
+                           data-content="Hoe meer slimme koppen je bij elkaar steekt, hoe groter de oogst aan ideeën.">
+                            6 - 12
+                        </p>
                     </li>
                 </ul>
-                <ul class="list-inline" ng-if="page == 3">
+                <ul class="list-inline" ng-show="page == 3">
                     <li ng-click="setupPick('easy')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-3a-black.png" class="img"/>
                             <img src="/app/img/setup/setup-3a-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Ik blijf waar ik ben</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Vertrouwd"
+                           data-content="Een veilige aanpak voor conventionele deelnemers die creatief willen nadenken.">
+                            Ik blijf waar ik ben
+                        </p>
                     </li>
                     <li ng-click="setupPick('medium')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-3b-black.png" class="img"/>
                             <img src="/app/img/setup/setup-3b-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Ik neem een gokje</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Uitdagend"
+                           data-content="Uit de comfortzone, maar niet te. Daag je deelnemers uit om creatief te denken.">
+                            Ik neem een gokje
+                        </p>
                     </li>
                     <li ng-click="setupPick('hard')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-3c-black.png" class="img"/>
                             <img src="/app/img/setup/setup-3c-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Kom maar op!</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Extreem"
+                           data-content="Haal alles uit de deelnemers en daag ze uit met echt verrassende ideeën te komen.">
+                            Kom maar op!
+                        </p>
                     </li>
                 </ul>
-                <ul class="list-inline" ng-if="page == 4">
+                <ul class="list-inline" ng-show="page == 4">
                     <li ng-click="setupPick('Verbeteringen')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-4a-black.png" class="img"/>
                             <img src="/app/img/setup/setup-4a-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Verbeteringen</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Verbeteringen"
+                           data-content="Iets kan of moet beter. Verbeter bestaande producten, diensten of processen.">
+                            Verbeteringen
+                        </p>
                     </li>
                     <li ng-click="setupPick('Oplossingen')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-4b-black.png" class="img"/>
                             <img src="/app/img/setup/setup-4b-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Oplossingen</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Oplossingen"
+                           data-content="Je loopt tegen iets aan. Dit kan van alles zijn. Vind een oplossing voor je probleem.">
+                            Oplossingen
+                        </p>
                     </li>
                     <li ng-click="setupPick('Kansen')">
                         <div class="setup-choice">
                             <img src="/app/img/setup/setup-4c-black.png" class="img"/>
                             <img src="/app/img/setup/setup-4c-white.png" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">Kansen</p>
+                        <p class="setup-choice-label popover-trigger"
+                           data-container="body" data-toggle="popover" data-placement="bottom" title="Kansen"
+                           data-content="Iets uit niets. Ontwikkel compleet nieuwe producten en diensten.">
+                            Kansen
+                        </p>
                     </li>
                 </ul>
                 <form role="form" id="focus-form" name="focusForm" ng-if="page == 5" novalidate>
@@ -131,7 +179,7 @@
             </div>
         </div>
     </main>
-    <footer class="setup-footer">
+    <footer class="setup-footer" ng-init="renderPopovers()">
         <div class="container">
             <div class="is-relative">
                 <button id="step-back" class="btn btn-dark-trans" ng-click="stepBack()" ng-if="page != 1">
