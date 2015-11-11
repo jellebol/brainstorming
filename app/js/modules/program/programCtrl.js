@@ -22,10 +22,11 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             explain:{
                 id:'explain-rules',
                 type:'explain',
+                exitToNext:true,
                 slides:[
                     {
                         title:'Ga voor kwaliteit',
-                        subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
+                        subtitle:'Schrijf zoveel mogelijk idee\353n op. Hoe meer idee\353n je hebt hoe groter de kans dat je iets geniaals tegen komt.'
                     },{
                         title:'Stel je oordeel uit',
                         subtitle:'Het evalueren van idee\353n komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
@@ -137,7 +138,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             type:'quote',
             title:'Voor goede idee\353n, heb je idee\353n nodig.',
             description:'Linus Pauling',
-            time:600
+            time:6
         },{
             id:'scamper',
             type:'scamper',
@@ -162,9 +163,28 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             type:'quote',
             title:'Een vernieuwend idee ziet er altijd gek uit.',
             description:'Alfred North Whitehead',
-            time:600
+            time:6
+        },{
+            id:'end',
+            type:'end',
+            title:'Genoeg idee\353n, nu evalueren en aan de slag.',
+            description:'Beoordeel de idee\353n en bespreek de opvolging'
         }
     ];
+
+    $scope.calcProgress = function (){
+        var length = $scope.steps.length;
+        var stepIndex = _.findIndex($scope.steps, 'id', $routeParams.page) + 1;
+        var percentage = (stepIndex / length) * 100;
+        console.log(length, stepIndex, percentage);
+        var prevPercentage = $rootScope.savedPercentage || 0;
+        $scope.percentage = Math.ceil(prevPercentage) + '%';
+        $timeout(function(){
+            $scope.percentage = Math.ceil(percentage) + '%';
+        },50);
+        $rootScope.savedPercentage = percentage;
+    };
+    $scope.calcProgress();
 
 
     //OWL FUNCTIONS
@@ -211,7 +231,8 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
 //    console.log($scope.currentIndex);
 
     $scope.next = function(option){
-        if($scope.current.action && !$scope.action && option != 'skipAction') {
+//        if($scope.current.action && !$scope.action && option != 'skipAction') {
+        if(option == 'startAction') {
             $location.path('/program/' + $scope.program.id + '/' + $scope.current.id + '/' + $scope.current.action.id);
         } else {
             $scope.nextStep = $scope.steps[$scope.currentIndex + 1];
@@ -229,7 +250,30 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     };
 
     $scope.$on('nextPage', function(event, args) {
-        if(!$scope.current.action.slides) {
+        if($scope.current.action && $scope.current.action.slides) {
+            //next slide
+            if($scope.activeIndex == ($scope.current.action.slides.length - 1)){
+                $timeout(function(){
+                    $scope.alarm = true;
+                },1000);
+            } else {
+                $timeout(function(){
+                    $('#action-slides-carousel').trigger('next.owl.carousel');
+                },1000);
+            }
+        } else {
+            if(($scope.current.action && $scope.current.action.alarm) || $scope.current.alarm) {
+                $timeout(function(){
+                    $scope.alarm = true;
+                },1000);
+            } else {
+                $timeout(function(){
+                    $scope.next(args);
+                },1000);
+            }
+        }
+
+        /*if(!$scope.current.action.slides) {
             if(($scope.current.action && $scope.current.action.alarm) || $scope.current.alarm) {
                 $timeout(function(){
                     $scope.alarm = true;
@@ -250,15 +294,18 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     $('#action-slides-carousel').trigger('next.owl.carousel');
                 },1000);
             }
-        }
+        }*/
     });
 
     $scope.explainFn = {
         open:function(){
             $scope.explain = true;
         },
-        close:function(){
+        close:function(exitToNext){
             $scope.explain = false;
+            if(exitToNext){
+                $scope.next();
+            }
         }
     };
 

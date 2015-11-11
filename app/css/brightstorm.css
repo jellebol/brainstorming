@@ -8170,6 +8170,9 @@ body {
 .theme-red {
   background-color: #b5091f; }
 
+.theme-orange {
+  background-color: #e95922; }
+
 .theme-pink {
   background-color: #b30857; }
 
@@ -8488,6 +8491,11 @@ body.LoginCtrl {
   display: block; }
 .program-page.dark-details .program-process-holder {
   background-color: rgba(0, 0, 0, 0.2); }
+.program-page .process {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
 .program-page .close-program {
   position: absolute;
   top: 10px;
@@ -8539,6 +8547,7 @@ body.LoginCtrl {
   .program-page.dark-details .program-footer .footer-text.footer-title {
     color: #333; }
   .program-page.dark-details .program-footer .footer-text.footer-time {
+    color: #333;
     border-right: 1px solid black; }
 
 .program-start .program-title {
@@ -8559,9 +8568,12 @@ body.LoginCtrl {
   position: relative;
   margin-top: -50px; }
   .program-explain .explain-container .program-title {
-    margin-top: -10px; }
+    margin-top: -10px;
+    font-size: 65px; }
+  .program-explain .explain-container .program-description {
+    padding: 0 100px; }
 .program-explain img.explain-img {
-  height: 260px;
+  height: 310px;
   width: auto;
   max-width: 100%;
   margin: 10px auto; }
@@ -8591,6 +8603,9 @@ body.LoginCtrl {
     opacity: 1; }
     .program-explain .owl-nav div:hover {
       opacity: 0.7; }
+
+.program-quote .program-title {
+  font-weight: 600; }
 
 .program-alarm {
   z-index: 1; }

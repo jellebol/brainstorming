@@ -35,8 +35,8 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <img src=""/>
+                <div class="col-sm-6 align-center">
+                    <img src="/app/img/rules.png" class="program-img"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="program-title-holder">
@@ -57,8 +57,8 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <img src=""/>
+                <div class="col-sm-6 align-center">
+                    <img src="/app/img/braindump.png" class="program-img"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="program-title-holder">
@@ -66,7 +66,7 @@
                         <p class="program-description">{{current.description}}</p>
                     </div>
                     <div class="program-buttons">
-                        <button class="btn btn-primary btn-xl" ng-click="next()">Start</button>
+                        <button class="btn btn-primary btn-xl" ng-click="next('startAction')">Start</button>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,8 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <img src=""/>
+                <div class="col-sm-6 align-center">
+                    <img src="/app/img/whatif.png" class="program-img"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="program-title-holder">
@@ -87,8 +87,8 @@
                         <p class="program-description">{{current.description}}</p>
                     </div>
                     <div class="program-buttons">
-                        <button class="btn btn-primary btn-xl" ng-click="next()">Start</button>
-                        <button class="btn btn-border-primary btn-xl" ng-click="next('skipAction')">Sla over</button>
+                        <button class="btn btn-primary btn-xl" ng-click="next('startAction')">Start</button>
+                        <button class="btn btn-border-primary btn-xl" ng-click="next()">Sla over</button>
                     </div>
                 </div>
             </div>
@@ -100,17 +100,17 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container-fluid align-center">
             <div class="row">
-                <div class="col-sm-3">
-                    <img src=""/>
+                <div class="col-sm-3 col-md-4">
+                    <img src="/app/img/discuss1.png" class="program-img"/>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-md-4">
                     <div class="program-title-holder">
                         <h2 class="program-title">{{current.title}}</h2>
                         <p class="program-description">{{current.description}}</p>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <img src=""/>
+                <div class="col-sm-3 col-md-4">
+                    <img src="/app/img/discuss2.png" class="program-img"/>
                 </div>
             </div>
             <div class="program-timer-holder">
@@ -129,12 +129,35 @@
             </div>
             <div class="program-buttons">
                 <button class="btn btn-primary btn-xl" ng-click="explainFn.open()">Bekijk uitleg</button>
-                <button class="btn btn-border-primary btn-xl" ng-click="next()">Start</button>
+                <button class="btn btn-border-primary btn-xl" ng-click="next('startAction')">Start</button>
             </div>
         </div>
     </section>
 
+    <!-- quote -->
+    <section class="program-quote full-page theme-page-white theme-green" ng-if="current.type == 'quote'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">"{{current.title}}"</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+            <div class="program-timer-holder hidden">
+                <timer-widget duration="current.time" type="'Plenair'"></timer-widget>
+            </div>
+        </div>
+    </section>
 
+    <!-- end -->
+    <section class="program-intro full-page theme-orange" ng-if="current.type == 'end'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{current.title}}</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -207,7 +230,7 @@
                     </div>
                 </div>
                 <div class="program-buttons">
-                    <button class="btn btn-primary btn-lg pull-right" ng-click="explainFn.close()">Verder</button>
+                    <button class="btn btn-primary btn-lg pull-right" ng-click="explainFn.close(current.explain.exitToNext)">Verder</button>
                 </div>
             </div>
         </div>
@@ -260,7 +283,7 @@
         <div class="pull-right">
             <p class="footer-text footer-time">15:31</p>
             <button class="btn btn-control" id="program-next"
-                    ng-click="next()">
+                    ng-click="next()" ng-disabled="current.id == 'end'">
                 <img src="/app/img/icons/next-white.png" class="img-light"/>
                 <img src="/app/img/icons/next-black.png" class="img-dark"/>
             </button>

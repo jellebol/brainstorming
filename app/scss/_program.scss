@@ -13,6 +13,9 @@
       background-color: rgba(0, 0, 0, 0.2);
     }
   }
+  .process {
+    @include transition(all, 0.5s, ease);
+  }
   .close-program {
     position: absolute;
     top: 10px;
@@ -82,6 +85,7 @@
           color: $main-color;
         }
         &.footer-time {
+          color: $main-color;
           border-right: 1px solid black;
         }
       }
@@ -116,10 +120,14 @@
     margin-top: -50px;
     .program-title {
       margin-top: -10px;
+      font-size: 65px;
+    }
+    .program-description {
+      padding: 0 100px;
     }
   }
   img.explain-img {
-    height: 260px;
+    height: 310px;
     width: auto;
     max-width: 100%;
     margin: 10px auto;
@@ -153,6 +161,12 @@
         opacity: 0.7;
       }
     }
+  }
+}
+
+.program-quote {
+  .program-title {
+    font-weight: 600;
   }
 }
 
