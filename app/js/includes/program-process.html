@@ -3,8 +3,10 @@
         <div class="program-process process" style="width:{{percentage}}"></div>
     </section>
     <div class="container-fluid">
-        <div ng-include="'/app/js/includes/logo-corner.html'" class="program-light-logo"></div>
-        <div ng-include="'/app/js/includes/logo-corner-dark.html'" class="program-dark-logo"></div>
-        <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()"><i class="fa fa-times"></i></button>
+        <div ng-include="'/app/js/includes/logo-corner.html'" class="program-light-logo is-inline" ng-click="closeProgram()"></div>
+        <div ng-include="'/app/js/includes/logo-corner-dark.html'" class="program-dark-logo is-inline" ng-click="closeProgram()"></div>
+        <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()">
+            <img src="/app/img/close.png" class="close-img"/>
+        </button>
     </div>
 </header>

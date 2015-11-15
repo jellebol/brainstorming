@@ -41,7 +41,7 @@
 }
 
 .btn-dark-trans {
-  @include button(rgba(0, 0, 0, 0.5), black, white, white, rgba(0, 0, 0, 0.5), black);
+  @include button(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), white, white, transparent, transparent);
 }
 
 .btn-border-dark {

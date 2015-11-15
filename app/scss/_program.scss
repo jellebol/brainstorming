@@ -1,4 +1,7 @@
 .program-page {
+  .container.thin {
+    max-width: 850px;
+  }
   .program-dark-logo {
     display:none;
   }
@@ -18,14 +21,17 @@
   }
   .close-program {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 20px;
+  }
+  .program-name {
+    padding-bottom: 20px;
     font-size: 30px;
-    color: grey;
+    color: $yellow;
   }
   .program-title {
     margin: 50px 0 30px 0;
-    font-size: 80px;
+    font-size: 90px;
     font-weight: 800;
     @media(max-width: $large) {
       margin: 30px 0 20px 0;
@@ -99,20 +105,21 @@
   }
 }
 
-.program-action-slides {
-  .program-title-holder {
+//.program-action-slides {
+  .program-title-top-holder {
     margin-top: -100px;
     min-height: 120px;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid white;
     .program-title {
       font-size: 50px;
       font-weight: 500;
+      color:white;
       @media(max-width: $large) {
         font-size: 40px;
       }
     }
   }
-}
+//}
 
 .program-explain {
   .explain-container {
@@ -127,10 +134,13 @@
     }
   }
   img.explain-img {
-    height: 310px;
+    height: 360px;
     width: auto;
     max-width: 100%;
-    margin: 10px auto;
+    margin: 10px auto -5px auto;
+    @media(max-width: $large){
+      height: 310px;
+    }
   }
   .program-buttons {
     position: absolute;

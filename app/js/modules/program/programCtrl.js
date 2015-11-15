@@ -51,10 +51,12 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 id:'action-braindump',
                 type:'action',
                 parent:'braindump',
-                class:'theme-page-white theme-purple',
+                theme:'theme-page-white theme-blue-medium',
+                name:'Ophaalronde',
                 title:$scope.program.focus,
-                description:'Bedenk zoveel mogelijk idee\353n en schrijf elk idee apart op.',
+                description:'Welke idee\353bn heb je al voor deze uitdaging? Noteer zoveel mogelijk idee\353n en schrijf elk idee apart op.',
                 time:600,
+                timerType: 'Individueel',
                 alarm:true
             }
         },{
@@ -72,12 +74,26 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 id:'action-whatif',
                 type:'action',
                 parent:'whatif',
-                class:'theme-brown',
+                theme:'theme-brown-light',
+                name:'Warming up oefening',
                 title:'Wat als iedereen een spion was?',
-                description:'Wat zouden de gevolgen hiervan zijn? Bedenk zoveel mogelijk situaties.',
+                description:"Wat zouden de gevolgen hiervan zijn? Bespreek in de groep de mogelijke scenario's.",
                 time:300,
                 alarm:true
             }
+        },{
+            id:'continue',
+            type:'continue',
+            title:'Klaar voor het echte werk?',
+            description:"Alle huidige idee\353n zijn genoteerd en de deelnemers zijn opgewarmd. Nu is het tijd om aan de slag te gaan met creatieve denktechnieken.",
+            theme:'theme-purple-soft'
+        },{
+            id:'quote3',
+            type:'quote',
+            title:'Creativiteit is intelligentie die plezier heeft.',
+            description:'Albert Einstein',
+            time:6,
+            theme:'theme-pink'
         },{
             id:'random',
             type:'random',
@@ -86,8 +102,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             action:{
                 id:'action-whatif',
                 type:'action',
+                timerType:"Duo's",
                 parent:'whatif',
-                class:'theme-green',
+                theme:'theme-green',
                 title:$scope.program.focus,
                 slides:[
                     {
@@ -111,6 +128,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             explain:{
                 id:'explain-random',
                 type:'explain',
+                exitToNext:'startAction',
                 slides:[
                     {
                         title:'Bedenk idee\353n',
@@ -136,15 +154,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'quote',
             type:'quote',
-            title:'Voor goede idee\353n, heb je idee\353n nodig.',
+            title:'Voor goede idee\353n, heb je veel idee\353n nodig.',
             description:'Linus Pauling',
             time:6
         },{
             id:'scamper',
             type:'scamper',
-            title:'Wat gebeurd er als we de volgorde omdraaien?',
+            title:'Wat kunnen we VERWIJDEREN om ons doel te bereiken?',
             description:'Bedenk zoveel mogelijk idee\353n en schrijf elk idee apart op.',
             time:300,
+            timerType:"Duo's",
             alarm:true
         },{
             id:'discuss3',
@@ -159,16 +178,23 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             description:'Tijd om de hersentjes te laten afkoelen, koffie te halen of eventjes de benen te strekken.',
             time:600
         },{
+            id:'continue2',
+            type:'continue',
+            title:'Klaar om verder te gaan?',
+            description:"Wissel van plek en vorm nieuwe duo's",
+            theme:'theme-orange'
+        },{
             id:'quote2',
             type:'quote',
             title:'Een vernieuwend idee ziet er altijd gek uit.',
             description:'Alfred North Whitehead',
-            time:6
+            time:6,
+            theme:'theme-purple'
         },{
             id:'end',
             type:'end',
-            title:'Genoeg idee\353n, nu evalueren en aan de slag.',
-            description:'Beoordeel de idee\353n en bespreek de opvolging'
+            title:'Genoeg idee\353n \n\n nu aan de slag',
+            description:'Beoordeel de idee\353n & bespreek de opvolging'
         }
     ];
 
@@ -304,7 +330,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         close:function(exitToNext){
             $scope.explain = false;
             if(exitToNext){
-                $scope.next();
+                $scope.next(exitToNext);
             }
         }
     };
@@ -320,6 +346,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     };
 
     $scope.closeProgram = function () {
+        event.preventDefault();
         var modalInstance = $uibModal.open({
             templateUrl: '/app/js/modals/close-program-modal/close-program-modal.html',
             controller: 'closeProgramModelCtrl'

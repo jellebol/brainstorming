@@ -37,30 +37,32 @@
         width: 210px;
         vertical-align: top;
         cursor: pointer;
-      }
-    }
-  }
-  .setup-choice {
-    margin: 20px auto;
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    border-radius: 50%;
-    border: 10px solid white;
-    img {
-      width: 100%;
-    }
-    .img-hover {
-      display: none;
-    }
-    &:hover {
-      background-color: transparent;
-      border-color:white;
-      .img {
-        display: none;
-      }
-      .img-hover {
-        display: block;
+        .setup-choice {
+          margin: 20px auto;
+          width: 200px;
+          height: 200px;
+          background-color: white;
+          border-radius: 50%;
+          border: 10px solid white;
+          img {
+            width: 100%;
+          }
+          .img-hover {
+            display: none;
+          }
+        }
+        &:hover {
+          .setup-choice {
+            background-color: transparent;
+            border-color:white;
+            .img {
+              display: none;
+            }
+            .img-hover {
+              display: block;
+            }
+          }
+        }
       }
     }
   }
@@ -92,6 +94,11 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    padding: 10px 15px;
+    span {
+      font-size: 8px;
+      margin-right: 3px;
+    }
   }
   .setup-footer {
 //    position: absolute;

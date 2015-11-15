@@ -3,7 +3,12 @@
   font-weight: $weight;
 }
 
-.font-lg { font-size: 30px; }
+.font-lg {
+  font-size: 33px;
+  @media (max-width:$large) {
+    font-size: 28px;
+  }
+}
 
 a {
   color:grey;

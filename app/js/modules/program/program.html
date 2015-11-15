@@ -3,10 +3,12 @@
     <!-- start -->
     <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
         <div class="container-fluid is-relative">
-            <div ng-include="'/app/js/includes/logo-corner.html'"></div>
-            <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()"><i class="fa fa-times"></i></button>
+            <div ng-include="'/app/js/includes/logo-corner.html'" ng-click="closeProgram()" class="is-inline"></div>
+            <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()">
+                <img src="/app/img/close.png" class="close-img"/>
+            </button>
         </div>
-        <div class="container">
+        <div class="container thin">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{program.title}}</h2>
             </div>
@@ -19,7 +21,7 @@
     <!-- intro -->
     <section class="program-intro full-page theme-green" ng-if="current.type == 'intro'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
-        <div class="container">
+        <div class="container thin">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">Waar gaan we vandaag over nadenken?</h2>
                 <p class="program-description">Bespreek kort de uitdaging.</p>
@@ -74,7 +76,7 @@
     </section>
 
     <!-- whatif -->
-    <section class="program-whatif full-page theme-cyan" ng-if="current.type == 'whatif' && !action">
+    <section class="program-whatif full-page theme-blue-mint" ng-if="current.type == 'whatif' && !action">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="row">
@@ -120,9 +122,9 @@
     </section>
 
     <!-- random -->
-    <section class="program-random full-page theme-blue" ng-if="current.type == 'random' && !action">
+    <section class="program-random full-page theme-grey" ng-if="current.type == 'random' && !action">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
-        <div class="container align-center">
+        <div class="container thin align-center">
             <div class="program-title-holder">
                 <h2 class="program-title">{{current.title}}</h2>
                 <p class="program-description">{{current.description}}</p>
@@ -135,7 +137,7 @@
     </section>
 
     <!-- quote -->
-    <section class="program-quote full-page theme-page-white theme-green" ng-if="current.type == 'quote'">
+    <section class="program-quote full-page theme-page-white" ng-class="current.theme || 'theme-green'" ng-if="current.type == 'quote'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
@@ -148,10 +150,59 @@
         </div>
     </section>
 
-    <!-- end -->
-    <section class="program-intro full-page theme-orange" ng-if="current.type == 'end'">
+
+    <!-- scamper -->
+    <section class="program-scamper full-page theme-coral" ng-if="current.type == 'scamper'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="program-title-top-holder align-center">
+            <div class="container">
+                <h2 class="program-title">{{program.focus}}</h2>
+            </div>
+        </div>
         <div class="container">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{current.title}}</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.time" type="current.timerType || 'Plenair'" alarm="current.alarm" slider="true"></timer-widget>
+            </div>
+        </div>
+    </section>
+
+    <!-- continue -->
+    <section class="program-continue full-page" ng-class="current.theme || 'theme-orange'" ng-if="current.type == 'continue'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container thin">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{current.title}}</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+            <div class="program-buttons align-center">
+                <button class="btn btn-primary btn-xl" ng-click="next()">Ga Verder</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- break -->
+    <section class="program-break full-page theme-blue-medium" ng-if="current.type == 'break'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container thin">
+            <div class="program-title-holder align-center">
+                <h2 class="program-title">{{current.title}}</h2>
+                <p class="program-description">{{current.description}}</p>
+            </div>
+            <div class="program-timer-holder">
+                <timer-widget duration="current.time" type="''"></timer-widget>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- end -->
+    <section class="program-intro full-page theme-dark" ng-if="current.type == 'end'">
+        <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="container thin">
             <div class="program-title-holder align-center">
                 <h2 class="program-title">{{current.title}}</h2>
                 <p class="program-description">{{current.description}}</p>
@@ -163,23 +214,24 @@
 
 
     <!-- action -->
-    <section class="program-action full-page" ng-class="current.action.class" ng-if="action && !current.action.slides">
+    <section class="program-action full-page" ng-class="current.action.theme" ng-if="action && !current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container">
             <div class="program-title-holder align-center">
+                <p class="program-name" ng-if="current.action.name">{{current.action.name}}</p>
                 <h2 class="program-title">{{current.action.title}}</h2>
                 <p class="program-description">{{current.action.description}}</p>
             </div>
             <div class="program-timer-holder">
-                <timer-widget duration="current.action.time" type="'Plenair'" alarm="current.action.alarm"></timer-widget>
+                <timer-widget duration="current.action.time" type="current.action.timerType || 'Plenair'" alarm="current.action.alarm"></timer-widget>
             </div>
         </div>
     </section>
 
     <!-- action slides -->
-    <section class="program-action-slides full-page" ng-class="current.action.class" ng-if="action && current.action.slides">
+    <section class="program-action-slides full-page" ng-class="current.action.theme" ng-if="action && current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
-        <div class="program-title-holder align-center">
+        <div class="program-title-top-holder align-center">
             <div class="container">
                 <h2 class="program-title">{{current.action.title}}</h2>
             </div>
@@ -200,7 +252,7 @@
                             </div>
                         </div>
                         <div class="slide-timer-holder" ng-if="$index == activeIndex">
-                            <timer-widget duration="slide.time" type="'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
+                            <timer-widget duration="slide.time" type="current.action.timerType || 'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
                         </div>
                         <div ng-init="initSlides()" ng-if="$index == (current.action.slides.length - 1)"></div>
                     </div>
@@ -242,12 +294,12 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container align-center">
             <div class="program-title-holder">
-                <img src="/app/img/logo/logo-white.png" class="alarm-img"/>
+                <img src="/app/img/alarm.png" class="alarm-img"/>
                 <h2 class="program-title">Het is tijd!</h2>
                 <p class="program-description">Pennen neer. Het is nu tijd om de ideeën te bespreken</p>
             </div>
             <div class="program-buttons">
-                <button class="btn btn-primary btn-xl" ng-click="next()">Oké</button>
+                <button class="btn btn-primary uppercase btn-xl" ng-click="next()">Oké</button>
             </div>
         </div>
     </section>
