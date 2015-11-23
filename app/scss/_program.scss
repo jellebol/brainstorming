@@ -5,12 +5,21 @@
   .program-dark-logo {
     display:none;
   }
+  .close-img-dark {
+    display:none;
+  }
   &.dark-details {
     .program-light-logo {
       display:none;
     }
     .program-dark-logo {
       display:block;
+    }
+    .close-img-dark {
+      display:block;
+    }
+    .close-img-light {
+      display:none;
     }
     .program-process-holder {
       background-color: rgba(0, 0, 0, 0.2);
@@ -21,8 +30,8 @@
   }
   .close-program {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 40px;
+    right: 25px;
   }
   .program-name {
     padding-bottom: 20px;
@@ -97,6 +106,11 @@
       }
     }
   }
+}
+
+.program-img {
+  margin-top: 50px;
+  max-width: 100%;
 }
 
 .program-start {

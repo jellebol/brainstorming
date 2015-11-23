@@ -1,4 +1,4 @@
-brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $timeout, $uibModal) {
+brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location, $routeParams, $timeout, $interval, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     $scope.page = $routeParams.page;
     $scope.action = $routeParams.action;
@@ -54,7 +54,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 theme:'theme-page-white theme-blue-medium',
                 name:'Ophaalronde',
                 title:$scope.program.focus,
-                description:'Welke idee\353bn heb je al voor deze uitdaging? Noteer zoveel mogelijk idee\353n en schrijf elk idee apart op.',
+                description:'Welke idee\353n heb je al voor deze<br/>uitdaging? Noteer zoveel mogelijk idee\353n<br/>en schrijf elk idee apart op.',
                 time:600,
                 timerType: 'Individueel',
                 alarm:true
@@ -77,7 +77,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 theme:'theme-brown-light',
                 name:'Warming up oefening',
                 title:'Wat als iedereen een spion was?',
-                description:"Wat zouden de gevolgen hiervan zijn? Bespreek in de groep de mogelijke scenario's.",
+                description:"Wat zouden de gevolgen hiervan zijn? <br/>Bespreek in de groep de mogelijke scenario's.",
                 time:300,
                 alarm:true
             }
@@ -131,17 +131,21 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 exitToNext:'startAction',
                 slides:[
                     {
+                        name:'Uitleg',
+                        title:'Voorbeeld',
+                        subtitle:'Stel je wilt een nieuw soort tafel ontwerpen en je gebruikt de techniek: "willekeurige afbeelding".'
+                    },{
+                        name:'Stap 1 / 3',
+                        title:'Neem een willekeurige afbeelding',
+                        subtitle:'Stel je neemt een plaatje van een olifant. Kenmerken: slurf, log, zwaar, grote oren, slagtanden etc.'
+                    },{
+                        name:'Stap 2 / 3',
+                        title:'Kies \xE9\xE9n kenmerk',
+                        subtitle:'Je kiest \xE9\xE9n kenmerk (bijvoorbeeld "Slurf") en gebruikt deze om idee\353n mee te bedenken.'
+                    },{
+                        name:'Stap 3 / 3',
                         title:'Bedenk idee\353n',
-                        subtitle:'Wat kun je bedenken met je gekozen kenmerk?  (Wees creatief en laat je inspireren)'
-                    },{
-                        title:'Stel je oordeel uit',
-                        subtitle:'Het evalueren van idee\353n komt na de creatieve fase. Tijdens de brainstorm is het leveren van kritiek verboden.'
-                    },{
-                        title:'Ga voor originaliteit',
-                        subtitle:'Laat je niet beperken door de werkelijkheid. Tijdens het brainstormen zijn we juist opzoek naar gekke idee\353n.'
-                    },{
-                        title:'Gebruik idee\353n als springplank',
-                        subtitle:'Het is makkelijker om een gek idee realistisch te maken dan om een saai idee spannend te maken.'
+                        subtitle:'Wat kun je bedenken met je gekozen kenmerk? (Wees creatief en laat je inspireren)'
                     }
                 ]
             }
@@ -160,7 +164,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'scamper',
             type:'scamper',
-            title:'Wat kunnen we VERWIJDEREN om ons doel te bereiken?',
+            title:'Wat kunnen we <span class="uppercase white">verwijderen</span> om ons doel te bereiken?',
             description:'Bedenk zoveel mogelijk idee\353n en schrijf elk idee apart op.',
             time:300,
             timerType:"Duo's",
@@ -193,7 +197,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'end',
             type:'end',
-            title:'Genoeg idee\353n \n\n nu aan de slag',
+            title:'Genoeg idee\353n <br/>nu aan de slag',
             description:'Beoordeel de idee\353n & bespreek de opvolging'
         }
     ];
@@ -344,6 +348,11 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         $rootScope.$broadcast('play');
         $scope.paused = false;
     };
+
+    $scope.date = new Date();
+    $interval(function () {
+        $scope.date = new Date();
+    }, 30000);
 
     $scope.closeProgram = function () {
         event.preventDefault();

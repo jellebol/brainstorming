@@ -7808,6 +7808,12 @@ h2 {
 .align-center {
   text-align: center; }
 
+.no-margin {
+  margin: 0; }
+
+.margin-top-0 {
+  margin-top: 0; }
+
 .display-table {
   display: table; }
 
@@ -7822,6 +7828,9 @@ h2 {
   color: transparent;
   width: 1px;
   height: 1px; }
+
+.white {
+  color: white; }
 
 .btn:hover, .btn:active, .btn:focus, .btn:active:focus, button:hover, button:active, button:focus, button:active:focus {
   outline: 0 !important; }
@@ -7974,7 +7983,7 @@ body {
   bottom: 0; }
 
 .logo-corner .logo {
-  padding: 10px 10px 0 10px;
+  padding: 10px 10px 0 20px;
   margin-top: 10px; }
 
 .process-holder {
@@ -8044,6 +8053,9 @@ body {
   overflow-x: inherit !important;
   overflow-y: inherit !important;
   display: block; }
+  .modal .modal-content {
+    box-shadow: none;
+    border: 0; }
   .modal .modal-dialog {
     width: 500px; }
   .modal .modal-header {
@@ -8108,6 +8120,7 @@ body {
     float: right; }
 
 .action-slides-holder .item {
+  width: 100%;
   padding: 40px; }
   .action-slides-holder .item .slide-title {
     color: white;
@@ -8422,6 +8435,10 @@ body.LoginCtrl {
       text-decoration: none; }
   .setup-page #setup-focus {
     margin-bottom: 40px; }
+    .setup-page #setup-focus::-webkit-input-placeholder {
+      color: #618b82; }
+    .setup-page #setup-focus:-moz-placeholder, .setup-page #setup-focus::-moz-placeholder, .setup-page #setup-focus:-ms-input-placeholder {
+      color: #618b82; }
   .setup-page #to-program {
     margin-right: 20px; }
   .setup-page #step-back {
@@ -8521,10 +8538,16 @@ body.LoginCtrl {
   max-width: 850px; }
 .program-page .program-dark-logo {
   display: none; }
+.program-page .close-img-dark {
+  display: none; }
 .program-page.dark-details .program-light-logo {
   display: none; }
 .program-page.dark-details .program-dark-logo {
   display: block; }
+.program-page.dark-details .close-img-dark {
+  display: block; }
+.program-page.dark-details .close-img-light {
+  display: none; }
 .program-page.dark-details .program-process-holder {
   background-color: rgba(0, 0, 0, 0.2); }
 .program-page .process {
@@ -8534,8 +8557,8 @@ body.LoginCtrl {
   transition: all 0.5s ease; }
 .program-page .close-program {
   position: absolute;
-  top: 30px;
-  right: 20px; }
+  top: 40px;
+  right: 25px; }
 .program-page .program-name {
   padding-bottom: 20px;
   font-size: 30px;
@@ -8587,6 +8610,10 @@ body.LoginCtrl {
   .program-page.dark-details .program-footer .footer-text.footer-time {
     color: #333;
     border-right: 1px solid black; }
+
+.program-img {
+  margin-top: 50px;
+  max-width: 100%; }
 
 .program-start .program-title {
   margin: 100px 0 80px 0; }

@@ -1,5 +1,6 @@
 var brightstormApp = angular.module('brightstormApp', [
     'ngRoute',
+    'ngSanitize',
     'ui.bootstrap',
     'timer',
     'angular-svg-round-progress'

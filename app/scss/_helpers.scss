@@ -17,6 +17,14 @@
 .uppercase {text-transform: uppercase; }
 .align-center { text-align: center; }
 
+.no-margin {
+  margin: 0;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
 .display-table {
   display: table;
 }
@@ -33,3 +41,5 @@
   width: 1px;
   height: 1px;
 }
+
+.white {color:white;}

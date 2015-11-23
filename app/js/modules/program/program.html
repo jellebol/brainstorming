@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 align-center">
-                    <img src="/app/img/rules.png" class="program-img"/>
+                    <img src="/app/img/rules.png" class="program-img pull-left"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="program-title-holder">
@@ -65,7 +65,7 @@
                 <div class="col-sm-6">
                     <div class="program-title-holder">
                         <h2 class="program-title">{{current.title}}</h2>
-                        <p class="program-description">{{current.description}}</p>
+                        <p class="program-description" ng-bind-html="current.description"></p>
                     </div>
                     <div class="program-buttons">
                         <button class="btn btn-primary btn-xl" ng-click="next('startAction')">Start</button>
@@ -86,7 +86,7 @@
                 <div class="col-sm-6">
                     <div class="program-title-holder">
                         <h2 class="program-title">{{current.title}}</h2>
-                        <p class="program-description">{{current.description}}</p>
+                        <p class="program-description" ng-bind-html="current.description"></p>
                     </div>
                     <div class="program-buttons">
                         <button class="btn btn-primary btn-xl" ng-click="next('startAction')">Start</button>
@@ -161,8 +161,8 @@
         </div>
         <div class="container">
             <div class="program-title-holder align-center">
-                <h2 class="program-title">{{current.title}}</h2>
-                <p class="program-description">{{current.description}}</p>
+                <h2 class="program-title" ng-bind-html="current.title"></h2>
+                <p class="program-description" ng-bind-html="current.description"></p>
             </div>
             <div class="program-timer-holder">
                 <timer-widget duration="current.time" type="current.timerType || 'Plenair'" alarm="current.alarm" slider="true"></timer-widget>
@@ -204,8 +204,8 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container thin">
             <div class="program-title-holder align-center">
-                <h2 class="program-title">{{current.title}}</h2>
-                <p class="program-description">{{current.description}}</p>
+                <h2 class="program-title" ng-bind-html="current.title"></h2>
+                <p class="program-description" ng-bind-html="current.description"></p>
             </div>
         </div>
     </section>
@@ -220,7 +220,7 @@
             <div class="program-title-holder align-center">
                 <p class="program-name" ng-if="current.action.name">{{current.action.name}}</p>
                 <h2 class="program-title">{{current.action.title}}</h2>
-                <p class="program-description">{{current.action.description}}</p>
+                <p class="program-description" ng-bind-html="current.action.description"></p>
             </div>
             <div class="program-timer-holder">
                 <timer-widget duration="current.action.time" type="current.action.timerType || 'Plenair'" alarm="current.action.alarm"></timer-widget>
@@ -271,7 +271,7 @@
                     <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index">
                         <p class="font-lg align-center">
                             <span ng-if="current.type == 'rules'">Regel {{$index + 1}}</span>
-                            <span ng-if="current.type != 'rules'">Stap {{$index + 1}}</span>
+                            <span ng-if="slide.name">{{slide.name}}</span>
                         </p>
                         <div class="program-title-holder">
                             <h2 class="program-title">{{slide.title}}</h2>
@@ -333,7 +333,7 @@
             <p class="footer-text footer-title">Brightstorming</p>
         </div>
         <div class="pull-right">
-            <p class="footer-text footer-time">15:31</p>
+            <p class="footer-text footer-time">{{date | date:'H:mm'}}</p>
             <button class="btn btn-control" id="program-next"
                     ng-click="next()" ng-disabled="current.id == 'end'">
                 <img src="/app/img/icons/next-white.png" class="img-light"/>
