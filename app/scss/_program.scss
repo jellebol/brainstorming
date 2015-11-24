@@ -56,6 +56,11 @@
     bottom: 120px;
     right: 40px;
   }
+  .program-buttons {
+    button:nth-child(2) {
+      margin-left: 20px;
+    }
+  }
 
   .program-footer {
     position: absolute;
@@ -116,6 +121,23 @@
 .program-start {
   .program-title {
     margin: 100px 0 80px 0;
+  }
+}
+
+.program-action {
+  &.program-action-wrong {
+    .program-title-holder {
+      .program-title {
+        padding: 50px 20px;
+        color:white;
+        border:18px solid white;
+      }
+    }
+    .program-title-top-holder {
+      .program-title {
+        color:$yellow;
+      }
+    }
   }
 }
 
@@ -194,6 +216,19 @@
   }
 }
 
+.program-break {
+  .program-title {
+    margin-top: 0;
+  }
+}
+
 .program-alarm {
   z-index: 1;
+  .alarm-img {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+  }
 }

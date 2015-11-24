@@ -3,6 +3,10 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     $scope.page = $routeParams.page;
     $scope.action = $routeParams.action;
 
+    if(!$rootScope.user.soundOff) {
+        $rootScope.user.soundOff = false;
+    }
+
 //    console.log($scope.program);
 //    console.log($scope.page);
 
@@ -13,7 +17,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         },{
             id:'intro',
             type:'intro',
-            time:300
+            time:300,
+            title:'Waar gaan we vandaag over nadenken?',
+            description:'Bespreek kort de uitdaging.'
         },{
             id:'rules',
             type:'rules',
@@ -55,7 +61,8 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 name:'Ophaalronde',
                 title:$scope.program.focus,
                 description:'Welke idee\353n heb je al voor deze<br/>uitdaging? Noteer zoveel mogelijk idee\353n<br/>en schrijf elk idee apart op.',
-                time:600,
+                time:2,
+//                time:600,
                 timerType: 'Individueel',
                 alarm:true
             }
@@ -88,7 +95,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             description:"Alle huidige idee\353n zijn genoteerd en de deelnemers zijn opgewarmd. Nu is het tijd om aan de slag te gaan met creatieve denktechnieken.",
             theme:'theme-purple-soft'
         },{
-            id:'quote3',
+            id:'quote',
             type:'quote',
             title:'Creativiteit is intelligentie die plezier heeft.',
             description:'Albert Einstein',
@@ -156,7 +163,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
         },{
-            id:'quote',
+            id:'quote2',
             type:'quote',
             title:'Voor goede idee\353n, heb je veel idee\353n nodig.',
             description:'Linus Pauling',
@@ -188,12 +195,123 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             description:"Wissel van plek en vorm nieuwe duo's",
             theme:'theme-orange'
         },{
-            id:'quote2',
+            id:'quote3',
             type:'quote',
             title:'Een vernieuwend idee ziet er altijd gek uit.',
             description:'Alfred North Whitehead',
             time:6,
             theme:'theme-purple'
+        },{
+            id:'wrong',
+            type:'wrong',
+            theme:'theme-green',
+            title:'Foute regel',
+            description:'Wanneer je een regel uit een totaal andere context toepast op je uitdaging kun je tot verrassende inzichren en spannende idee\353n komen.',
+            action:{
+                id:'action-wrong',
+                type:'action',
+                timerType:"Duo's",
+                time:600,
+                parent:'wrong',
+                theme:'theme-fuchsia',
+                title:'Na openen koel bewaren'
+            },
+            explain:{
+                id:'explain-random',
+                type:'explain',
+                exitToNext:'startAction',
+                slides:[
+                    {
+                        name:'Uitleg',
+                        title:'Voorbeeld',
+                        subtitle:'Stel je wilt een nieuw soort tafel ontwerpen en je gebruikt de techniek: "willekeurige afbeelding".'
+                    },{
+                        name:'Stap 1 / 3',
+                        title:'Neem een willekeurige afbeelding',
+                        subtitle:'Stel je neemt een plaatje van een olifant. Kenmerken: slurf, log, zwaar, grote oren, slagtanden etc.'
+                    },{
+                        name:'Stap 2 / 3',
+                        title:'Kies \xE9\xE9n kenmerk',
+                        subtitle:'Je kiest \xE9\xE9n kenmerk (bijvoorbeeld "Slurf") en gebruikt deze om idee\353n mee te bedenken.'
+                    }
+                ]
+            }
+        },{
+            id:'discuss4',
+            type:'discuss',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
+            time:600
+        },{
+            id:'switch',
+            type:'switch',
+            theme:'theme-brown',
+            time:300,
+            title:'Ga op een andere plek zitten, naast iemand anders.',
+            description:'Nieuwe denkpartner, nieuwe idee\353n.'
+        },{
+            id:'quote4',
+            type:'quote',
+            title:'Buiten de wet en de wetenschap zijn alle regels te breken.',
+            description:'Tim Ferriss',
+            time:6,
+            theme:'theme-dark'
+        },{
+            id:'wish',
+            type:'wish',
+            theme:'theme-ocean',
+            title:'Wensdroom',
+            description:'Fantaseer over een ideale, maar onrealistische, situatie en gebruik dit als inspiratie voor fantastische idee\353n.',
+            action:{
+                id:'action-wish',
+                type:'action',
+                timerType:"Duo's",
+                parent:'wish',
+                theme:'theme-purple',
+                title:$scope.program.focus,
+                slides:[
+                    {
+                        title:'Beschrijf een onrealistische wensdroom',
+                        description:'Zou het niet fantastisch zijn als...',
+                        time:120
+                    },
+                    {
+                        title:'Kies \xE9\xE9n kenmerk.',
+                        time:30,
+                        img:'/app/img/random/lemons.JPG'
+                    },
+                    {
+                        title:'Bedenk zoveel mogelijk idee\353n aan de hand van je kenmerk.',
+                        time:300,
+                        alarm:true,
+                        img:'/app/img/random/lemons.JPG'
+                    }
+                ]
+            },
+            explain:{
+                id:'explain-random',
+                type:'explain',
+                exitToNext:'startAction',
+                slides:[
+                    {
+                        name:'Uitleg',
+                        title:'Voorbeeld',
+                        subtitle:'Stel je wilt een nieuw soort tafel ontwerpen en je gebruikt de techniek: "willekeurige afbeelding".'
+                    },{
+                        name:'Stap 1 / 3',
+                        title:'Neem een willekeurige afbeelding',
+                        subtitle:'Stel je neemt een plaatje van een olifant. Kenmerken: slurf, log, zwaar, grote oren, slagtanden etc.'
+                    },{
+                        name:'Stap 2 / 3',
+                        title:'Kies \xE9\xE9n kenmerk',
+                        subtitle:'Je kiest \xE9\xE9n kenmerk (bijvoorbeeld "Slurf") en gebruikt deze om idee\353n mee te bedenken.'
+                    },{
+                        name:'Stap 3 / 3',
+                        title:'Bedenk idee\353n',
+                        subtitle:'Wat kun je bedenken met je gekozen kenmerk? (Wees creatief en laat je inspireren)'
+                    }
+                ]
+            }
         },{
             id:'end',
             type:'end',
@@ -202,6 +320,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }
     ];
 
+    //set percentage width for process bar
     $scope.calcProgress = function (){
         var length = $scope.steps.length;
         var stepIndex = _.findIndex($scope.steps, 'id', $routeParams.page) + 1;
@@ -218,6 +337,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
 
 
     //OWL FUNCTIONS
+    //initialize action slides
     $scope.initSlides = function(){
         var owl = $('#action-slides-carousel');
         owl.owlCarousel({
@@ -240,6 +360,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             },0);
         })
     };
+    //initialize explain carousel
     $scope.initExplain = function(){
         var owl = $('#explain-slides-carousel');
         owl.owlCarousel({
@@ -257,6 +378,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     var currentObj = _.where($scope.steps, {id:$scope.page});
     $scope.currentIndex = _.findIndex($scope.steps, {id:$scope.page});
 
+    //current program page
     $scope.current = currentObj[0];
 //    console.log($scope.currentIndex);
 
@@ -327,6 +449,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }*/
     });
 
+    //open or close explain page
     $scope.explainFn = {
         open:function(){
             $scope.explain = true;
@@ -339,16 +462,30 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         }
     };
 
+    //turn alarm sound on or off
+    $scope.sound = {
+        turnOn:function(){
+            $rootScope.user.soundOff = false;
+        },
+        turnOff:function(){
+            console.log('off');
+            $rootScope.user.soundOff = true;
+        }
+    };
+
+    //pause timer
     $scope.pause = function(){
         $rootScope.$broadcast('pause');
         $scope.paused = true;
     };
 
+    //play timer
     $scope.play = function(){
         $rootScope.$broadcast('play');
         $scope.paused = false;
     };
 
+    //get current time and update every 30 seconds
     $scope.date = new Date();
     $interval(function () {
         $scope.date = new Date();

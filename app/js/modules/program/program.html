@@ -18,13 +18,13 @@
         </div>
     </section>
 
-    <!-- intro -->
-    <section class="program-intro full-page theme-green" ng-if="current.type == 'intro'">
+    <!-- intro || switch -->
+    <section class="program-intro full-page" ng-class="current.theme || 'theme-green'" ng-if="current.type == 'intro' || current.type == 'switch'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container thin">
             <div class="program-title-holder align-center">
-                <h2 class="program-title">Waar gaan we vandaag over nadenken?</h2>
-                <p class="program-description">Bespreek kort de uitdaging.</p>
+                <h2 class="program-title" ng-bind-html="current.title"></h2>
+                <p class="program-description" ng-bind-html="current.description"></p>
             </div>
             <div class="program-timer-holder">
                 <timer-widget duration="current.time" type="'Plenair'"></timer-widget>
@@ -121,8 +121,8 @@
         </div>
     </section>
 
-    <!-- random -->
-    <section class="program-random full-page theme-grey" ng-if="current.type == 'random' && !action">
+    <!-- random || wrong || wish -->
+    <section class="program-random full-page" ng-class="current.theme || 'theme-grey'" ng-if="(current.type == 'random' || current.type == 'wrong' || current.type == 'wish') && !action">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container thin align-center">
             <div class="program-title-holder">
@@ -189,6 +189,7 @@
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container thin">
             <div class="program-title-holder align-center">
+                <img src="/app/img/pauze.png" class="break-img"/>
                 <h2 class="program-title">{{current.title}}</h2>
                 <p class="program-description">{{current.description}}</p>
             </div>
@@ -214,13 +215,19 @@
 
 
     <!-- action -->
-    <section class="program-action full-page" ng-class="current.action.theme" ng-if="action && !current.action.slides">
+    <section class="program-action full-page program-action-{{current.type}}" ng-class="current.action.theme" ng-if="action && !current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
+        <div class="program-title-top-holder align-center" ng-if="current.type == 'wrong'">
+            <div class="container">
+                <h2 class="program-title">{{program.focus}}</h2>
+            </div>
+        </div>
         <div class="container">
             <div class="program-title-holder align-center">
                 <p class="program-name" ng-if="current.action.name">{{current.action.name}}</p>
                 <h2 class="program-title">{{current.action.title}}</h2>
                 <p class="program-description" ng-bind-html="current.action.description"></p>
+                <p class="program-description" ng-if="current.type == 'wrong'">Hoe kan bovenstaande regel ons helpen?</p>
             </div>
             <div class="program-timer-holder">
                 <timer-widget duration="current.action.time" type="current.action.timerType || 'Plenair'" alarm="current.action.alarm"></timer-widget>
@@ -291,15 +298,19 @@
 
     <!-- alarm -->
     <section class="program-alarm full-page theme-red" ng-if="alarm">
+        <audio autoplay ng-if="!user.soundOff" class="hidden">
+            <source src="/app/audio/alarm.wav" type="audio/wav">
+            <!--Your browser does not support the audio element.-->
+        </audio>
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container align-center">
             <div class="program-title-holder">
                 <img src="/app/img/alarm.png" class="alarm-img"/>
                 <h2 class="program-title">Het is tijd!</h2>
-                <p class="program-description">Pennen neer. Het is nu tijd om de ideeën te bespreken</p>
+                <p class="program-description">Pennen neer. Het is nu tijd om<br/>de ideeën te bespreken</p>
             </div>
             <div class="program-buttons">
-                <button class="btn btn-primary uppercase btn-xl" ng-click="next()">Oké</button>
+                <button class="btn btn-primary uppercase btn-xl" ng-click="next()"><strong>Oké</strong></button>
             </div>
         </div>
     </section>
@@ -322,13 +333,15 @@
                     ng-click="play()" ng-if="paused">
                 <i class="fa fa-play"></i>
             </button>
-            <button class="btn btn-control" id="program-sound-on" ng-if="!soundOff">
+            <button class="btn btn-control" id="program-sound-on" ng-if="!user.soundOff"
+                    ng-click="sound.turnOff()">
                 <img src="/app/img/icons/sound-on-white.png" class="img-light"/>
                 <img src="/app/img/icons/sound-on-black.png" class="img-dark"/>
             </button>
-            <button class="btn btn-control" id="program-sound-off" ng-if="soundOff">
-                <img src="/app/img/icons/sound-on-white.png" class="img-light"/>
-                <img src="/app/img/icons/sound-on-black.png" class="img-dark"/>
+            <button class="btn btn-control" id="program-sound-off" ng-if="user.soundOff"
+                    ng-click="sound.turnOn()">
+                <img src="/app/img/icons/sound-off-white.png" class="img-light"/>
+                <img src="/app/img/icons/sound-off-black.png" class="img-dark"/>
             </button>
             <p class="footer-text footer-title">Brightstorming</p>
         </div>

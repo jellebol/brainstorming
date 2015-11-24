@@ -7757,6 +7757,29 @@ button.close {
   position: relative;
   z-index: 1; }
 
+@-webkit-keyframes spaceboots {
+  0% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg); }
+  10% {
+    -webkit-transform: translate(-2px, -3px) rotate(-1.5deg); }
+  20% {
+    -webkit-transform: translate(-4px, 0px) rotate(1.5deg); }
+  30% {
+    -webkit-transform: translate(0px, 3px) rotate(0deg); }
+  40% {
+    -webkit-transform: translate(2px, -2px) rotate(1.5deg); }
+  50% {
+    -webkit-transform: translate(-2px, 3px) rotate(-1.5deg); }
+  60% {
+    -webkit-transform: translate(-4px, 2px) rotate(0deg); }
+  70% {
+    -webkit-transform: translate(3px, 2px) rotate(-1.5deg); }
+  80% {
+    -webkit-transform: translate(-2px, -2px) rotate(1.5deg); }
+  90% {
+    -webkit-transform: translate(3px, 3px) rotate(0deg); }
+  100% {
+    -webkit-transform: translate(2px, -3px) rotate(-1.5deg); } }
 .font-lg, .program-page .program-description {
   font-size: 33px; }
   @media (max-width: 1200px) {
@@ -8204,6 +8227,9 @@ body {
 .theme-pink {
   background-color: #b30857; }
 
+.theme-fuchsia {
+  background-color: #8f014b; }
+
 .theme-coral {
   background-color: #d8454a; }
 
@@ -8577,6 +8603,8 @@ body.LoginCtrl {
   position: absolute;
   bottom: 120px;
   right: 40px; }
+.program-page .program-buttons button:nth-child(2) {
+  margin-left: 20px; }
 .program-page .program-footer {
   position: absolute;
   bottom: 1px;
@@ -8617,6 +8645,13 @@ body.LoginCtrl {
 
 .program-start .program-title {
   margin: 100px 0 80px 0; }
+
+.program-action.program-action-wrong .program-title-holder .program-title {
+  padding: 50px 20px;
+  color: white;
+  border: 18px solid white; }
+.program-action.program-action-wrong .program-title-top-holder .program-title {
+  color: #ffca4c; }
 
 .program-title-top-holder {
   margin-top: -100px;
@@ -8676,8 +8711,17 @@ body.LoginCtrl {
 .program-quote .program-title {
   font-weight: 600; }
 
+.program-break .program-title {
+  margin-top: 0; }
+
 .program-alarm {
   z-index: 1; }
+  .program-alarm .alarm-img {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear; }
 
 .dashboard {
   background-color: #f8f7fb; }
