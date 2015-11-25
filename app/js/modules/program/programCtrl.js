@@ -217,22 +217,22 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 title:'Na openen koel bewaren'
             },
             explain:{
-                id:'explain-random',
+                id:'explain-wrong',
                 type:'explain',
                 exitToNext:'startAction',
                 slides:[
                     {
                         name:'Uitleg',
-                        title:'Voorbeeld',
-                        subtitle:'Stel je wilt een nieuw soort tafel ontwerpen en je gebruikt de techniek: "willekeurige afbeelding".'
+                        title:'De uitdaging',
+                        subtitle:'Hoe zorgen we dat voetgangers blijven wachten voor een rood stoplicht?'
                     },{
-                        name:'Stap 1 / 3',
-                        title:'Neem een willekeurige afbeelding',
-                        subtitle:'Stel je neemt een plaatje van een olifant. Kenmerken: slurf, log, zwaar, grote oren, slagtanden etc.'
+                        name:'Stap 1',
+                        title:'Kies een valse regel',
+                        subtitle:"Gebruik een regel uit een andere context. Bijvoorbeeld: 'de speler met de meeste punten wint.'"
                     },{
-                        name:'Stap 2 / 3',
-                        title:'Kies \xE9\xE9n kenmerk',
-                        subtitle:'Je kiest \xE9\xE9n kenmerk (bijvoorbeeld "Slurf") en gebruikt deze om idee\353n mee te bedenken.'
+                        name:'Stap 2',
+                        title:'Bedenk idee\353n',
+                        subtitle:'Deze regel zou kunnen leiden tot een spel dat je kunt spelen tijdens het wachten.'
                     }
                 ]
             }
@@ -273,42 +273,34 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     {
                         title:'Beschrijf een onrealistische wensdroom',
                         description:'Zou het niet fantastisch zijn als...',
-                        time:120
+                        time:30
                     },
                     {
-                        title:'Kies \xE9\xE9n kenmerk.',
-                        time:30,
-                        img:'/app/img/random/lemons.JPG'
+                        title:'Waarom lost deze wensdroom je uitdaging op?',
+                        description:'Waarom lost deze wensdroom je uitdaging op?',
+                        time:30
                     },
                     {
-                        title:'Bedenk zoveel mogelijk idee\353n aan de hand van je kenmerk.',
+                        title:'Op welke andere manieren kun je dit bereiken?',
+                        description:'Hoe kun je nog meer tot deze oplossing komen?',
                         time:300,
-                        alarm:true,
-                        img:'/app/img/random/lemons.JPG'
+                        alarm:true
                     }
                 ]
             },
             explain:{
-                id:'explain-random',
+                id:'explain-wish',
                 type:'explain',
                 exitToNext:'startAction',
                 slides:[
                     {
                         name:'Uitleg',
                         title:'Voorbeeld',
-                        subtitle:'Stel je wilt een nieuw soort tafel ontwerpen en je gebruikt de techniek: "willekeurige afbeelding".'
+                        subtitle:''
                     },{
-                        name:'Stap 1 / 3',
-                        title:'Neem een willekeurige afbeelding',
-                        subtitle:'Stel je neemt een plaatje van een olifant. Kenmerken: slurf, log, zwaar, grote oren, slagtanden etc.'
-                    },{
-                        name:'Stap 2 / 3',
-                        title:'Kies \xE9\xE9n kenmerk',
-                        subtitle:'Je kiest \xE9\xE9n kenmerk (bijvoorbeeld "Slurf") en gebruikt deze om idee\353n mee te bedenken.'
-                    },{
-                        name:'Stap 3 / 3',
-                        title:'Bedenk idee\353n',
-                        subtitle:'Wat kun je bedenken met je gekozen kenmerk? (Wees creatief en laat je inspireren)'
+                        name:'Stap 1',
+                        title:'',
+                        subtitle:''
                     }
                 ]
             }

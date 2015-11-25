@@ -8288,6 +8288,12 @@ body {
     border: 0;
     border-radius: 0; }
 
+.main-footer {
+  padding: 50px 0; }
+  .main-footer a {
+    color: grey;
+    margin-left: 20px; }
+
 body.LoginCtrl {
   background-color: #2b2e3a; }
 
@@ -8741,6 +8747,9 @@ body.LoginCtrl {
 .dashboard-content {
   min-height: 500px;
   padding: 50px 0; }
+  @media (max-width: 1200px) {
+    .dashboard-content {
+      min-height: 430px; } }
 
 .dashboard-empty {
   padding-top: 10%;

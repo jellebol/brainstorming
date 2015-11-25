@@ -247,7 +247,7 @@
             <div class="action-slides-holder">
                 <div id="action-slides-carousel" class="owl-carousel owl-theme">
                     <div class="owl-item item" ng-repeat="slide in current.action.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
-                        <div class="row">
+                        <div class="row" ng-if="current.type == 'random'">
                             <div class="col-sm-6">
                                 <img src="{{slide.img}}" class="slide-img"/>
                             </div>
@@ -257,6 +257,10 @@
                                 </div>
                                 <p class="slide-title">{{slide.title}}</p>
                             </div>
+                        </div>
+                        <div class="program-title-holder align-center" ng-if="current.type == 'wish'">
+                            <h2 class="program-title">{{slide.title}}</h2>
+                            <p class="program-description" ng-bind-html="slide.description"></p>
                         </div>
                         <div class="slide-timer-holder" ng-if="$index == activeIndex">
                             <timer-widget duration="slide.time" type="current.action.timerType || 'Plenair'" alarm="slide.alarm" slider="true"></timer-widget>
