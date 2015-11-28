@@ -305,6 +305,120 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 ]
             }
         },{
+            id:'discuss5',
+            type:'discuss',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
+            time:600
+        },{
+            id:'trends',
+            type:'trends',
+            theme:'theme-purple',
+            title:'Trends',
+            description:'Laat je inspireren door een trend en sluit aan op krachtige bewegingen die al in gang zijn gezet',
+            action:{
+                id:'action-trends',
+                type:'action',
+                timerType:"Duo's",
+                time:600,
+                alarm:true,
+                parent:'trends',
+                theme:'theme-fuchsia',
+                title:'Hoe zouden we de trend van <span>vergrijzing</span> kunnen inzetten voor onze uitdaging?',
+                img:'/app/img/trends/vergrijzing.jpg',
+                credits:'Flickr &#64; Kamyar Adl'
+            },
+            explain:{
+                id:'explain-trends',
+                type:'explain',
+                exitToNext:'startAction',
+                slides:[
+                    {
+                        name:'Uitleg',
+                        title:'Voorbeeld',
+                        subtitle:'Stel je bent de eigenaar van een pizzeria en je wilt pizza’s gaan bezorgen op een vernieuwende manier.'
+                    },{
+                        name:'Stap 1',
+                        title:'Kies een trend',
+                        subtitle:"Kies een trend. Bijvoorbeeld: 'robotica'. Kijk wat deze trend kan betekenen voor jouw organisatie"
+                    },{
+                        name:'Stap 2',
+                        title:'Bedenk idee\353n',
+                        subtitle:"'Robotica' zou bijvoorbeeld kunnen leiden tot het idee om pizza's te laten bezorgen door drones."
+                    }
+                ]
+            }
+        },{
+            id:'discuss6',
+            type:'discuss',
+            theme:'theme-ocean',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
+            time:600
+        },{
+            id:'worse',
+            type:'worse',
+            theme:'theme-eggplant',
+            title:'Maak het erger',
+            description:'Een situatie is altijd te verergeren. Door de uitdaging nog slechter voor te stellen zie je dingen die je anders minder snel zou zien.',
+            action:{
+                id:'action-worse',
+                type:'action',
+                timerType:"Duo's",
+                parent:'wish',
+                theme:'theme-brown-light',
+                title:$scope.program.focus,
+                slides:[
+                    {
+                        title:'Op welke manier kunnen we de situatie verergeren?',
+                        description:'Schrijf \xE9\xE9n idee op.',
+                        time:120
+                    },
+                    {
+                        title:'Wat zijn voordelen van deze verergering?',
+                        description:'Schrijf \xE9\xE9n idee op.',
+                        time:120
+                    },
+                    {
+                        title:'Op welke andere manieren kun je deze voordelen bereiken?',
+                        description:'Noteer zoveel mogelijk idee\353n.',
+                        time:120,
+                        alarm:true
+                    }
+                ]
+            },
+            explain:{
+                id:'explain-wish',
+                type:'explain',
+                exitToNext:'startAction',
+                slides:[
+                    {
+                        name:'Uitleg',
+                        title:'Voorbeeld',
+                        subtitle:'Stel je bent een boer en je hebt last van een insectenplaag die je oogst opeet.'
+                    },{
+                        name:'Stap 1',
+                        title:'Maak het erger',
+                        subtitle:'Je zou de situatie kunnen verergeren door zelf nog meer insecten te verspreiden over het gebied.'
+                    },{
+                        name:'Stap 2',
+                        title:'De voordelen',
+                        subtitle:'Een voordeel hiervan zou kunnen zijn dat de insecten sneller alles opeten, en hierna aan elkaar gaan peuzelen...'
+                    },{
+                        name:'Stap 3',
+                        title:'Andere Manier',
+                        subtitle:'Dit kun je ook bereiken door een natuurlijke vijand te plaatsen in het gebied die de plaag weer opeet.'
+                    }
+                ]
+            }
+        },{
+            id:'discuss7',
+            type:'discuss',
+            theme:'theme-ocean',
+            title:'Bespreek de idee\353n',
+            description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
+            time:600
+        },{
             id:'end',
             type:'end',
             title:'Genoeg idee\353n <br/>nu aan de slag',

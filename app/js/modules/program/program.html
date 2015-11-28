@@ -98,7 +98,7 @@
     </section>
 
     <!-- discusss -->
-    <section class="program-discuss full-page theme-eggplant" ng-if="current.type == 'discuss'">
+    <section class="program-discuss full-page" ng-class="current.theme || 'theme-eggplant'" ng-if="current.type == 'discuss'">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container-fluid align-center">
             <div class="row">
@@ -121,8 +121,9 @@
         </div>
     </section>
 
-    <!-- random || wrong || wish -->
-    <section class="program-random full-page" ng-class="current.theme || 'theme-grey'" ng-if="(current.type == 'random' || current.type == 'wrong' || current.type == 'wish') && !action">
+    <!-- random || wrong || wish || trends || worse -->
+    <section class="program-random full-page" ng-class="current.theme || 'theme-grey'"
+             ng-if="(current.type == 'random' || current.type == 'wrong' || current.type == 'wish' || current.type == 'trends' || current.type == 'worse') && !action">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
         <div class="container thin align-center">
             <div class="program-title-holder">
@@ -217,18 +218,34 @@
     <!-- action -->
     <section class="program-action full-page program-action-{{current.type}}" ng-class="current.action.theme" ng-if="action && !current.action.slides">
         <div ng-include="'/app/js/includes/program-process.html'"></div>
-        <div class="program-title-top-holder align-center" ng-if="current.type == 'wrong'">
+        <div class="program-title-top-holder align-center" ng-if="current.type == 'wrong' || current.type == 'trends'">
             <div class="container">
                 <h2 class="program-title">{{program.focus}}</h2>
             </div>
         </div>
         <div class="container">
-            <div class="program-title-holder align-center">
+            <!--basic action template big text centered-->
+            <div class="program-title-holder align-center" ng-if="current.type != 'trends'">
                 <p class="program-name" ng-if="current.action.name">{{current.action.name}}</p>
                 <h2 class="program-title">{{current.action.title}}</h2>
                 <p class="program-description" ng-bind-html="current.action.description"></p>
                 <p class="program-description" ng-if="current.type == 'wrong'">Hoe kan bovenstaande regel ons helpen?</p>
             </div>
+
+            <!--trends action template-->
+            <div class="item">
+                <button type="button" class="btn btn-dark-trans switch-trend"><i class="fa fa-repeat"></i> Andere trend</button>
+                <div class="row" ng-if="current.type == 'trends'">
+                    <div class="col-sm-6">
+                        <img src="{{current.action.img}}" class="slide-img"/>
+                        <p class="slide-credits" ng-bind-html="current.action.credits"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="slide-title" ng-bind-html="current.action.title"></p>
+                    </div>
+                </div>
+            </div>
+
             <div class="program-timer-holder">
                 <timer-widget duration="current.action.time" type="current.action.timerType || 'Plenair'" alarm="current.action.alarm"></timer-widget>
             </div>
@@ -248,7 +265,7 @@
                 <div id="action-slides-carousel" class="owl-carousel owl-theme">
                     <div class="owl-item item" ng-repeat="slide in current.action.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
                         <div class="row" ng-if="current.type == 'random'">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 align-center">
                                 <img src="{{slide.img}}" class="slide-img"/>
                             </div>
                             <div class="col-sm-6">
@@ -258,8 +275,8 @@
                                 <p class="slide-title">{{slide.title}}</p>
                             </div>
                         </div>
-                        <div class="program-title-holder align-center" ng-if="current.type == 'wish'">
-                            <h2 class="program-title">{{slide.title}}</h2>
+                        <div class="program-title-holder align-center" ng-if="current.type == 'wish' || current.type == 'worse'">
+                            <h2 class="program-title normal">{{slide.title}}</h2>
                             <p class="program-description" ng-bind-html="slide.description"></p>
                         </div>
                         <div class="slide-timer-holder" ng-if="$index == activeIndex">
