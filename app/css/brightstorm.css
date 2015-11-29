@@ -8144,6 +8144,7 @@ body {
 
 .action-slides-holder .item, .program-action-trends .item {
   width: 100%;
+  min-height: 500px;
   padding: 40px; }
   .action-slides-holder .item .slide-title, .program-action-trends .item .slide-title {
     color: white;
@@ -8599,8 +8600,8 @@ body.LoginCtrl {
   margin: 50px 0 30px 0;
   font-size: 90px;
   font-weight: 800; }
-  .program-page .program-title.normal {
-    font-weight: normal; }
+  .program-page .program-title.smaller {
+    font-size: 80px; }
   @media (max-width: 1200px) {
     .program-page .program-title {
       margin: 30px 0 20px 0;
@@ -8646,6 +8647,14 @@ body.LoginCtrl {
   .program-page.dark-details .program-footer .footer-text.footer-time {
     color: #333;
     border-right: 1px solid black; }
+.program-page .owl-dots {
+  text-align: center; }
+  .program-page .owl-dots .owl-dot span {
+    width: 19px;
+    height: 19px;
+    margin: 5px 15px; }
+  .program-page .owl-dots .owl-dot.active span {
+    background-color: #ffca4c; }
 
 .program-img {
   margin-top: 50px;
@@ -8731,6 +8740,9 @@ body.LoginCtrl {
 
 .program-break .program-title {
   margin-top: 0; }
+
+.program-page-random .owl-dots {
+  display: none; }
 
 .program-alarm {
   z-index: 1; }

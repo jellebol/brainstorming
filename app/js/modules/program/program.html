@@ -209,6 +209,10 @@
                 <h2 class="program-title" ng-bind-html="current.title"></h2>
                 <p class="program-description" ng-bind-html="current.description"></p>
             </div>
+
+            <div class="program-buttons align-center">
+                <button class="btn btn-border-primary btn-xl" ng-click="closeProgram('end')">Stop Brightstorm</button>
+            </div>
         </div>
     </section>
 
@@ -233,9 +237,9 @@
             </div>
 
             <!--trends action template-->
-            <div class="item">
+            <div class="item" ng-if="current.type == 'trends'">
                 <button type="button" class="btn btn-dark-trans switch-trend"><i class="fa fa-repeat"></i> Andere trend</button>
-                <div class="row" ng-if="current.type == 'trends'">
+                <div class="row">
                     <div class="col-sm-6">
                         <img src="{{current.action.img}}" class="slide-img"/>
                         <p class="slide-credits" ng-bind-html="current.action.credits"></p>
@@ -276,7 +280,7 @@
                             </div>
                         </div>
                         <div class="program-title-holder align-center" ng-if="current.type == 'wish' || current.type == 'worse'">
-                            <h2 class="program-title normal">{{slide.title}}</h2>
+                            <h2 class="program-title smaller">{{slide.title}}</h2>
                             <p class="program-description" ng-bind-html="slide.description"></p>
                         </div>
                         <div class="slide-timer-holder" ng-if="$index == activeIndex">

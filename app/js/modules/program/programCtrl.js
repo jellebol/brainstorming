@@ -61,8 +61,8 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 name:'Ophaalronde',
                 title:$scope.program.focus,
                 description:'Welke idee\353n heb je al voor deze<br/>uitdaging? Noteer zoveel mogelijk idee\353n<br/>en schrijf elk idee apart op.',
-                time:2,
-//                time:600,
+//                time:2,
+                time:600,
                 timerType: 'Individueel',
                 alarm:true
             }
@@ -276,7 +276,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                         time:30
                     },
                     {
-                        title:'Waarom lost deze wensdroom je uitdaging op?',
+                        title:'Wat is de gedachte hierachter?',
                         description:'Waarom lost deze wensdroom je uitdaging op?',
                         time:30
                     },
@@ -296,11 +296,23 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     {
                         name:'Uitleg',
                         title:'Voorbeeld',
-                        subtitle:''
+                        subtitle:'Stel je bent een zonnebrillen-fabrikant. Je wilt een innovatieve bril ontwikkelen.'
+                    },{
+                        name:'Kans',
+                        title:'Startpunt',
+                        subtitle:'Een probleem dat iedereen wel herkent: je laat je zonnebril liggen op het strand of aan de rand van het zwembad.'
                     },{
                         name:'Stap 1',
-                        title:'',
-                        subtitle:''
+                        title:'Beschrijf Wensdroom',
+                        subtitle:'Zou het niet fantastisch zijn als... je zonnebril begint te gillen als je hem dreigt te vergeten?'
+                    },{
+                        name:'Stap 2',
+                        title:'Het idee erachter',
+                        subtitle:'Het idee: je wordt gewaarschuwd als je je zonnebril dreigt te vergeten.'
+                    },{
+                        name:'Stap 3',
+                        title:'Invulling',
+                        subtitle:'Hoe kunnen we dit realiseren? Door een zendertje in de bril te verwerken die gekoppeld is aan je smartphone...'
                     }
                 ]
             }
@@ -325,7 +337,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 parent:'trends',
                 theme:'theme-fuchsia',
                 title:'Hoe zouden we de trend van <span>vergrijzing</span> kunnen inzetten voor onze uitdaging?',
-                img:'/app/img/trends/vergrijzing.jpg',
+                img:'/app/img/trends/vergrijzing.JPG',
                 credits:'Flickr &#64; Kamyar Adl'
             },
             explain:{
@@ -422,7 +434,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             id:'end',
             type:'end',
             title:'Genoeg idee\353n <br/>nu aan de slag',
-            description:'Beoordeel de idee\353n & bespreek de opvolging'
+            description:'Beoordeel de idee\353n &<br/> bespreek de opvolging'
         }
     ];
 
@@ -452,8 +464,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     items:1
                 }
             },
-            dots:false,
+            dots:true,
             nav:true,
+            autoHeight:false,
             navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
         });
 
@@ -597,17 +610,21 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         $scope.date = new Date();
     }, 30000);
 
-    $scope.closeProgram = function () {
+    $scope.closeProgram = function (option) {
         event.preventDefault();
-        var modalInstance = $uibModal.open({
-            templateUrl: '/app/js/modals/close-program-modal/close-program-modal.html',
-            controller: 'closeProgramModelCtrl'
-        });
+        if(option == 'end') {
+            $location.path('/dashboard');
+        } else {
+            var modalInstance = $uibModal.open({
+                templateUrl: '/app/js/modals/close-program-modal/close-program-modal.html',
+                controller: 'closeProgramModelCtrl'
+            });
 
-        modalInstance.result.then(function (selectedItem) {
-//            $scope.selected = selectedItem;
-        }, function () {
-            console.log('Modal dismissed at: ' + new Date());
-        });
+            modalInstance.result.then(function (selectedItem) {
+    //            $scope.selected = selectedItem;
+            }, function () {
+                console.log('Modal dismissed at: ' + new Date());
+            });
+        }
     }
 });
