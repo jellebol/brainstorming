@@ -21,7 +21,7 @@ brightstormApp.controller('ChecklistCtrl', function($scope, $rootScope, $routePa
             label:'Beamer / computer'
         },
         {
-            label:'Internetverbinging'
+            label:'Internetverbinding'
         },
         {
             label:'Fruit / snoep'

@@ -54,6 +54,7 @@ brightstormApp.controller('MainCtrl', function($scope, $rootScope, $location) {
     $rootScope.user = {
         firstName:'Murielle',
         lastName:'Smit',
+        soundOff:false,
         programs:[{
             createdAt:new Date(),
             id:1,

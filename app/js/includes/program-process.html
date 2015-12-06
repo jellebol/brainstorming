@@ -3,9 +3,9 @@
         <div class="program-process process" style="width:{{percentage}}"></div>
     </section>
     <div class="container-fluid">
-        <div ng-include="'/app/js/includes/logo-corner.html'" class="program-light-logo is-inline" ng-click="closeProgram()"></div>
-        <div ng-include="'/app/js/includes/logo-corner-dark.html'" class="program-dark-logo is-inline" ng-click="closeProgram()"></div>
-        <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()">
+        <div ng-include="'/app/js/includes/logo-corner.html'" class="program-light-logo is-inline" ng-click="closeProgram($event)"></div>
+        <div ng-include="'/app/js/includes/logo-corner-dark.html'" class="program-dark-logo is-inline" ng-click="closeProgram($event)"></div>
+        <button class="btn btn-link btn-icon close-program" ng-click="closeProgram($event)">
             <img src="/app/img/close.png" class="close-img close-img-light"/>
             <img src="/app/img/close-black.png" class="close-img close-img-dark"/>
         </button>

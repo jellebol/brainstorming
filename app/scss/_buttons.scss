@@ -6,6 +6,11 @@
 
 .btn {
   border-radius:$border-radius;
+
+  span.glyphicon-triangle-right, span.glyphicon-triangle-left {
+    font-size: 9px;
+    margin-right: 3px;
+  }
 }
 
 .btn-lg {
@@ -29,7 +34,8 @@
 }
 
 .btn-primary {
-  @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
+  @include button($yellow, $yellow-darker, black, black, $yellow, $yellow-darker);
+//  @include button($yellow, transparent, black, $yellow, $yellow, $yellow);
 }
 
 .btn-cyan {

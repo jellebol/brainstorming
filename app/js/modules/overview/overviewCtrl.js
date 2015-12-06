@@ -14,7 +14,7 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
         },{
             type:'refresh',
             title:'Spelregels',
-            description:'Oppepertje',
+            description:'Oppeppertje',
             span:1
         },{
             type:'think',

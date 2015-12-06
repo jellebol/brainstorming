@@ -9,18 +9,19 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
 
 //    console.log($scope.program);
 //    console.log($scope.page);
-
-    $scope.steps = [
-        {
+    var steps = {
+        start: {
             id:'start',
             type:'start'
-        },{
+        },
+        intro: {
             id:'intro',
             type:'intro',
             time:300,
             title:'Waar gaan we vandaag over nadenken?',
             description:'Bespreek kort de uitdaging.'
-        },{
+        },
+        rules: {
             id:'rules',
             type:'rules',
             title:'Brightstorm Spelregels',
@@ -48,7 +49,8 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        braindump: {
             id:'braindump',
             type:'braindump',
             title:'Maak je hoofd leeg',
@@ -66,13 +68,15 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 timerType: 'Individueel',
                 alarm:true
             }
-        },{
+        },
+        discuss: {
             id:'discuss',
             type:'discuss',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        whatif: {
             id:'whatif',
             type:'whatif',
             title:'Wat als...',
@@ -88,20 +92,23 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 time:300,
                 alarm:true
             }
-        },{
+        },
+        continue: {
             id:'continue',
             type:'continue',
             title:'Klaar voor het echte werk?',
             description:"Alle huidige idee\353n zijn genoteerd en de deelnemers zijn opgewarmd. Nu is het tijd om aan de slag te gaan met creatieve denktechnieken.",
             theme:'theme-purple-soft'
-        },{
+        },
+        quote: {
             id:'quote',
             type:'quote',
             title:'Creativiteit is intelligentie die plezier heeft.',
             description:'Albert Einstein',
             time:6,
             theme:'theme-pink'
-        },{
+        },
+        random: {
             id:'random',
             type:'random',
             title:'Willekeurige afbeelding',
@@ -136,7 +143,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 id:'explain-random',
                 type:'explain',
                 exitToNext:'startAction',
-                slides:[
+                    slides:[
                     {
                         name:'Uitleg',
                         title:'Voorbeeld',
@@ -156,19 +163,22 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        discuss2: {
             id:'discuss2',
             type:'discuss',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        quote2: {
             id:'quote2',
             type:'quote',
             title:'Voor goede idee\353n, heb je veel idee\353n nodig.',
             description:'Linus Pauling',
             time:6
-        },{
+        },
+        scamper: {
             id:'scamper',
             type:'scamper',
             title:'Wat kunnen we <span class="uppercase white">verwijderen</span> om ons doel te bereiken?',
@@ -176,51 +186,56 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             time:300,
             timerType:"Duo's",
             alarm:true
-        },{
+        },
+        discuss3: {
             id:'discuss3',
             type:'discuss',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        break: {
             id:'break',
             type:'break',
             title:'Korte pauze',
             description:'Tijd om de hersentjes te laten afkoelen, koffie te halen of eventjes de benen te strekken.',
             time:600
-        },{
+        },
+        continue2: {
             id:'continue2',
             type:'continue',
             title:'Klaar om verder te gaan?',
             description:"Wissel van plek en vorm nieuwe duo's",
             theme:'theme-orange'
-        },{
+        },
+        quote3: {
             id:'quote3',
             type:'quote',
             title:'Een vernieuwend idee ziet er altijd gek uit.',
             description:'Alfred North Whitehead',
             time:6,
             theme:'theme-purple'
-        },{
+        },
+        wrong: {
             id:'wrong',
             type:'wrong',
             theme:'theme-green',
             title:'Foute regel',
-            description:'Wanneer je een regel uit een totaal andere context toepast op je uitdaging kun je tot verrassende inzichren en spannende idee\353n komen.',
+            description:'Wanneer je een regel uit een totaal andere context toepast op je uitdaging kun je tot verrassende inzichten en spannende idee\353n komen.',
             action:{
                 id:'action-wrong',
                 type:'action',
                 timerType:"Duo's",
-                time:600,
+                time:360,
                 parent:'wrong',
                 theme:'theme-fuchsia',
                 title:'Na openen koel bewaren'
             },
             explain:{
                 id:'explain-wrong',
-                type:'explain',
-                exitToNext:'startAction',
-                slides:[
+                    type:'explain',
+                    exitToNext:'startAction',
+                    slides:[
                     {
                         name:'Uitleg',
                         title:'De uitdaging',
@@ -236,27 +251,31 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        discuss4: {
             id:'discuss4',
             type:'discuss',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        switch: {
             id:'switch',
             type:'switch',
             theme:'theme-brown',
             time:300,
             title:'Ga op een andere plek zitten, naast iemand anders.',
             description:'Nieuwe denkpartner, nieuwe idee\353n.'
-        },{
+        },
+        quote4:{
             id:'quote4',
             type:'quote',
             title:'Buiten de wet en de wetenschap zijn alle regels te breken.',
             description:'Tim Ferriss',
             time:6,
             theme:'theme-dark'
-        },{
+        },
+        wish: {
             id:'wish',
             type:'wish',
             theme:'theme-ocean',
@@ -273,12 +292,12 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     {
                         title:'Beschrijf een onrealistische wensdroom',
                         description:'Zou het niet fantastisch zijn als...',
-                        time:30
+                        time:120
                     },
                     {
                         title:'Wat is de gedachte hierachter?',
                         description:'Waarom lost deze wensdroom je uitdaging op?',
-                        time:30
+                        time:60
                     },
                     {
                         title:'Op welke andere manieren kun je dit bereiken?',
@@ -316,13 +335,15 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        discuss5: {
             id:'discuss5',
             type:'discuss',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        trends: {
             id:'trends',
             type:'trends',
             theme:'theme-purple',
@@ -332,7 +353,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 id:'action-trends',
                 type:'action',
                 timerType:"Duo's",
-                time:600,
+                time:300,
                 alarm:true,
                 parent:'trends',
                 theme:'theme-fuchsia',
@@ -348,7 +369,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     {
                         name:'Uitleg',
                         title:'Voorbeeld',
-                        subtitle:'Stel je bent de eigenaar van een pizzeria en je wilt pizza’s gaan bezorgen op een vernieuwende manier.'
+                        subtitle:'Stel je bent de eigenaar van een pizzeria en je wilt pizza\'s gaan bezorgen op een vernieuwende manier.'
                     },{
                         name:'Stap 1',
                         title:'Kies een trend',
@@ -360,14 +381,16 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        discuss6: {
             id:'discuss6',
             type:'discuss',
             theme:'theme-ocean',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        worse: {
             id:'worse',
             type:'worse',
             theme:'theme-eggplant',
@@ -375,12 +398,12 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             description:'Een situatie is altijd te verergeren. Door de uitdaging nog slechter voor te stellen zie je dingen die je anders minder snel zou zien.',
             action:{
                 id:'action-worse',
-                type:'action',
-                timerType:"Duo's",
-                parent:'wish',
-                theme:'theme-brown-light',
-                title:$scope.program.focus,
-                slides:[
+                    type:'action',
+                    timerType:"Duo's",
+                    parent:'wish',
+                    theme:'theme-brown-light',
+                    title:$scope.program.focus,
+                    slides:[
                     {
                         title:'Op welke manier kunnen we de situatie verergeren?',
                         description:'Schrijf \xE9\xE9n idee op.',
@@ -401,9 +424,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             },
             explain:{
                 id:'explain-wish',
-                type:'explain',
-                exitToNext:'startAction',
-                slides:[
+                    type:'explain',
+                    exitToNext:'startAction',
+                    slides:[
                     {
                         name:'Uitleg',
                         title:'Voorbeeld',
@@ -423,27 +446,77 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     }
                 ]
             }
-        },{
+        },
+        discuss7: {
             id:'discuss7',
             type:'discuss',
             theme:'theme-ocean',
             title:'Bespreek de idee\353n',
             description:'Laat iedereen aan de beurt. Eventuele aanvullingen op idee\353n mogen worden genoteerd.',
             time:600
-        },{
+        },
+        end: {
             id:'end',
             type:'end',
             title:'Genoeg idee\353n <br/>nu aan de slag',
             description:'Beoordeel de idee\353n &<br/> bespreek de opvolging'
         }
-    ];
+    };
+
+    $scope.steps1 = [];
+    $scope.steps1.push(steps.start);
+    $scope.steps1.push(steps.intro);
+    $scope.steps1.push(steps.rules);
+    $scope.steps1.push(steps.braindump);
+    $scope.steps1.push(steps.discuss);
+    $scope.steps1.push(steps.random);
+    $scope.steps1.push(steps.discuss2);
+    $scope.steps1.push(steps.wish);
+    $scope.steps1.push(steps.discuss3);
+    $scope.steps1.push(steps.end);
+
+    $scope.steps2 = [];
+    $scope.steps2.push(steps.start);
+    $scope.steps2.push(steps.intro);
+    $scope.steps2.push(steps.rules);
+    $scope.steps2.push(steps.braindump);
+    $scope.steps2.push(steps.discuss);
+    $scope.steps2.push(steps.whatif);
+    $scope.steps2.push(steps.continue);
+    $scope.steps2.push(steps.quote);
+    $scope.steps2.push(steps.random);
+    $scope.steps2.push(steps.discuss2);
+    $scope.steps2.push(steps.quote2);
+    $scope.steps2.push(steps.scamper);
+    $scope.steps2.push(steps.discuss3);
+    $scope.steps2.push(steps.break);
+    $scope.steps2.push(steps.continue2);
+    $scope.steps2.push(steps.quote3);
+    $scope.steps2.push(steps.wrong);
+    $scope.steps2.push(steps.discuss4);
+    $scope.steps2.push(steps.switch);
+    $scope.steps2.push(steps.quote4);
+    $scope.steps2.push(steps.wish);
+    $scope.steps2.push(steps.discuss5);
+    $scope.steps2.push(steps.trends);
+    $scope.steps2.push(steps.discuss6);
+    $scope.steps2.push(steps.worse);
+    $scope.steps2.push(steps.discuss7);
+    $scope.steps2.push(steps.end);
+
+    if($scope.program.duration == '1 uur') {
+        $scope.steps = $scope.steps1;
+    } else {
+        $scope.steps = $scope.steps2;
+    }
+
 
     //set percentage width for process bar
     $scope.calcProgress = function (){
         var length = $scope.steps.length;
         var stepIndex = _.findIndex($scope.steps, 'id', $routeParams.page) + 1;
         var percentage = (stepIndex / length) * 100;
-        console.log(length, stepIndex, percentage);
+//        console.log(length, stepIndex, percentage);
         var prevPercentage = $rootScope.savedPercentage || 0;
         $scope.percentage = Math.ceil(prevPercentage) + '%';
         $timeout(function(){
@@ -467,7 +540,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             dots:true,
             nav:true,
             autoHeight:false,
-            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+            navText:['','']
         });
 
         $scope.activeIndex = 0;
@@ -490,7 +563,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             },
             dots:true,
             nav:true,
-            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+            navText:['','']
         });
     };
 
@@ -526,6 +599,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             if($scope.activeIndex == ($scope.current.action.slides.length - 1)){
                 $timeout(function(){
                     $scope.alarm = true;
+                    if(!$rootScope.user.soundOff) {
+                        $('#alarm-audio').get(0).play();
+                    }
                 },1000);
             } else {
                 $timeout(function(){
@@ -536,6 +612,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             if(($scope.current.action && $scope.current.action.alarm) || $scope.current.alarm) {
                 $timeout(function(){
                     $scope.alarm = true;
+                    if(!$rootScope.user.soundOff) {
+                        $('#alarm-audio').get(0).play();
+                    }
                 },1000);
             } else {
                 $timeout(function(){
@@ -587,8 +666,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             $rootScope.user.soundOff = false;
         },
         turnOff:function(){
-            console.log('off');
+//            console.log('off');
             $rootScope.user.soundOff = true;
+            $('#alarm-audio').get(0).pause();
         }
     };
 
@@ -604,13 +684,37 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         $scope.paused = false;
     };
 
+    //fullscreen
+    $scope.fullScreen = function() {
+        if (!document.fullscreenElement &&    // alternative standard method
+            !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+            $scope.fullScreenActive = true;
+        } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            }
+            $scope.fullScreenActive = false;
+        }
+    }
+
     //get current time and update every 30 seconds
     $scope.date = new Date();
     $interval(function () {
         $scope.date = new Date();
     }, 30000);
 
-    $scope.closeProgram = function (option) {
+    $scope.closeProgram = function (event, option) {
         event.preventDefault();
         if(option == 'end') {
             $location.path('/dashboard');
@@ -623,7 +727,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             modalInstance.result.then(function (selectedItem) {
     //            $scope.selected = selectedItem;
             }, function () {
-                console.log('Modal dismissed at: ' + new Date());
+//                console.log('Modal dismissed at: ' + new Date());
             });
         }
     }

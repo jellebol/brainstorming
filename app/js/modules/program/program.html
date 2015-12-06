@@ -1,10 +1,10 @@
-<div class="program-page theme-page full-page {{explain ? 'dark-details' : 'light-details'}}" ng-class="'program-page-' + current.type">
+<div id="programPage" class="program-page theme-page full-page {{explain ? 'dark-details' : 'light-details'}}" ng-class="'program-page-' + current.type">
 
     <!-- start -->
     <section class="program-start full-page theme-blue-dark" ng-if="current.type == 'start'">
         <div class="container-fluid is-relative">
-            <div ng-include="'/app/js/includes/logo-corner.html'" ng-click="closeProgram()" class="is-inline"></div>
-            <button class="btn btn-link btn-icon close-program" ng-click="closeProgram()">
+            <div ng-include="'/app/js/includes/logo-corner.html'" ng-click="closeProgram($event)" class="is-inline"></div>
+            <button class="btn btn-link btn-icon close-program" ng-click="closeProgram($event)">
                 <img src="/app/img/close.png" class="close-img"/>
             </button>
         </div>
@@ -211,7 +211,7 @@
             </div>
 
             <div class="program-buttons align-center">
-                <button class="btn btn-border-primary btn-xl" ng-click="closeProgram('end')">Stop Brightstorm</button>
+                <button class="btn btn-border-primary btn-xl" ng-click="closeProgram($event, 'end')">Stop Brightstorm</button>
             </div>
         </div>
     </section>
@@ -322,8 +322,8 @@
 
 
     <!-- alarm -->
-    <section class="program-alarm full-page theme-red" ng-if="alarm">
-        <audio autoplay ng-if="!user.soundOff" class="hidden">
+    <section class="program-alarm full-page theme-red" ng-show="alarm">
+        <audio id="alarm-audio" class="hidden">
             <source src="/app/audio/alarm.wav" type="audio/wav">
             <!--Your browser does not support the audio element.-->
         </audio>
@@ -377,7 +377,7 @@
                 <img src="/app/img/icons/next-white.png" class="img-light"/>
                 <img src="/app/img/icons/next-black.png" class="img-dark"/>
             </button>
-            <button class="btn btn-control" id="program-fullscreen">
+            <button class="btn btn-control" id="program-fullscreen" ng-click="fullScreen()">
                 <img src="/app/img/icons/full-screen-white.png" class="img-light"/>
                 <img src="/app/img/icons/full-screen-black.png" class="img-dark"/>
             </button>

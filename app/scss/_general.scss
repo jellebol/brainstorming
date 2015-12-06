@@ -183,9 +183,36 @@ body {
     position: absolute;
     .owl-prev {
       float: left;
+      background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
+      &:hover {
+        background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+      }
     }
     .owl-next {
       float: right;
+      background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
+      &:hover {
+        background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+      }
+    }
+  }
+}
+
+.dark-details {
+  .owl-carousel {
+    .owl-nav {
+      .owl-prev {
+        background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+        &:hover {
+          background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+        }
+      }
+      .owl-next {
+        background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
+        &:hover {
+          background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+        }
+      }
     }
   }
 }
@@ -233,10 +260,10 @@ body {
       text-align: center;
       font-size: 21px!important;
       line-height: 29px;
-      background-color: white!important;
+//      background-color: white!important;
       opacity: 1!important;
       &:hover {
-        opacity: 0.7;
+        opacity: 1;
       }
     }
   }
