@@ -124,18 +124,18 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     {
                         title:'Noteer vijf kenmerken van het object op de foto.',
                         time:120,
-                        img:'/app/img/random/lemons.JPG'
+                        img:'/app/img/random/lemons.png'
                     },
                     {
                         title:'Kies \xE9\xE9n kenmerk.',
                         time:30,
-                        img:'/app/img/random/lemons.JPG'
+                        img:'/app/img/random/lemons.png'
                     },
                     {
                         title:'Bedenk zoveel mogelijk idee\353n aan de hand van je kenmerk.',
                         time:300,
                         alarm:true,
-                        img:'/app/img/random/lemons.JPG'
+                        img:'/app/img/random/lemons.png'
                     }
                 ]
             },
@@ -358,7 +358,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 parent:'trends',
                 theme:'theme-fuchsia',
                 title:'Hoe zouden we de trend van <span>vergrijzing</span> kunnen inzetten voor onze uitdaging?',
-                img:'/app/img/trends/vergrijzing.JPG',
+                img:'/app/img/trends/vergrijzing.png',
                 credits:'Flickr &#64; Kamyar Adl'
             },
             explain:{
@@ -528,6 +528,28 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
 
 
     //OWL FUNCTIONS
+
+    function owlNav() {
+        $('.owl-carousel').each(function(){
+            var carousel = $(this);
+            var carouselPrev = carousel.find('.owl-prev');
+            var carouselNext = carousel.find('.owl-next');
+            carousel.find('.owl-item').each(function(){
+                var item = $(this);
+                if (item.is(':first-child') && item.hasClass('active')) {
+                    carouselPrev.addClass('disabled');
+                    carouselNext.removeClass('disabled');
+                } else if (item.is(':last-child') && item.hasClass('active')) {
+                    carouselPrev.removeClass('disabled');
+                    carouselNext.addClass('disabled');
+                } else if(!item.is(':first-child') && !item.is(':last-child') && item.hasClass('active')){
+                    carouselPrev.removeClass('disabled');
+                    carouselNext.removeClass('disabled');
+                }
+            })
+        })
+    }
+
     //initialize action slides
     $scope.initSlides = function(){
         var owl = $('#action-slides-carousel');
@@ -543,6 +565,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             navText:['','']
         });
 
+        owlNav();
         $scope.activeIndex = 0;
 
         owl.on('changed.owl.carousel', function(event) {
@@ -550,6 +573,9 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             $timeout(function() {
                 $scope.$apply();
             },0);
+            $timeout(function() {
+                owlNav();
+            });
         })
     };
     //initialize explain carousel
@@ -565,6 +591,12 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
             nav:true,
             navText:['','']
         });
+        owlNav();
+        owl.on('changed.owl.carousel', function(event) {
+            $timeout(function() {
+                owlNav();
+            });
+        })
     };
 
     var currentObj = _.where($scope.steps, {id:$scope.page});

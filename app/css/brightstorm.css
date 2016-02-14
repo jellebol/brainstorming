@@ -7803,7 +7803,7 @@ button.close {
     -moz-transform: translate(2px, -3px) rotate(-1.5deg);
     transform: translate(2px, -3px) rotate(-1.5deg); } }
 .font-lg, .program-page .program-description {
-  font-size: 33px; }
+  font-size: 31px; }
   @media (max-width: 1200px) {
     .font-lg, .program-page .program-description {
       font-size: 28px; } }
@@ -8172,6 +8172,16 @@ body {
     background: url(/app/img/icons/slider/next-white.png) no-repeat center center; }
     .owl-carousel .owl-nav .owl-next:hover {
       background: url(/app/img/icons/slider/next-geel.png) no-repeat center center; }
+  .owl-carousel .owl-nav .owl-prev.disabled {
+    opacity: 0.3 !important;
+    cursor: default; }
+    .owl-carousel .owl-nav .owl-prev.disabled:hover {
+      background: url(/app/img/icons/slider/prev-white.png) no-repeat center center; }
+  .owl-carousel .owl-nav .owl-next.disabled {
+    opacity: 0.3 !important;
+    cursor: default; }
+    .owl-carousel .owl-nav .owl-next.disabled:hover {
+      background: url(/app/img/icons/slider/next-white.png) no-repeat center center; }
 
 .dark-details .owl-carousel .owl-nav .owl-prev {
   background: url(/app/img/icons/slider/prev-zwart.png) no-repeat center center; }
@@ -8181,6 +8191,16 @@ body {
   background: url(/app/img/icons/slider/next-zwart.png) no-repeat center center; }
   .dark-details .owl-carousel .owl-nav .owl-next:hover {
     background: url(/app/img/icons/slider/next-geel.png) no-repeat center center; }
+.dark-details .owl-carousel .owl-nav .owl-prev.disabled {
+  opacity: 0.3 !important;
+  cursor: default; }
+  .dark-details .owl-carousel .owl-nav .owl-prev.disabled:hover {
+    background: url(/app/img/icons/slider/prev-zwart.png) no-repeat center center; }
+.dark-details .owl-carousel .owl-nav .owl-next.disabled {
+  opacity: 0.3 !important;
+  cursor: default; }
+  .dark-details .owl-carousel .owl-nav .owl-next.disabled:hover {
+    background: url(/app/img/icons/slider/next-zwart.png) no-repeat center center; }
 
 .action-slides-holder .item, .program-action-trends .item {
   width: 100%;
@@ -8634,7 +8654,7 @@ body.LoginCtrl {
   color: #ffca4c; }
 .program-page .program-title {
   margin: 50px 0 30px 0;
-  font-size: 90px;
+  font-size: 82px;
   font-weight: 800; }
   .program-page .program-title.smaller {
     font-size: 80px; }

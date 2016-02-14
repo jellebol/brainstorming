@@ -195,6 +195,20 @@ body {
         background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
       }
     }
+    .owl-prev.disabled {
+      opacity:0.3!important;
+      cursor:default;
+      &:hover {
+        background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
+      }
+    }
+    .owl-next.disabled {
+      opacity:0.3!important;
+      cursor:default;
+      &:hover {
+        background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
+      }
+    }
   }
 }
 
@@ -211,6 +225,20 @@ body {
         background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
         &:hover {
           background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+        }
+      }
+      .owl-prev.disabled {
+        opacity:0.3!important;
+        cursor:default;
+        &:hover {
+          background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+        }
+      }
+      .owl-next.disabled {
+        opacity:0.3!important;
+        cursor:default;
+        &:hover {
+          background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
         }
       }
     }

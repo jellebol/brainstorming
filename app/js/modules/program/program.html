@@ -241,7 +241,7 @@
                 <button type="button" class="btn btn-dark-trans switch-trend"><i class="fa fa-repeat"></i> Andere trend</button>
                 <div class="row">
                     <div class="col-sm-6">
-                        <img src="{{current.action.img}}" class="slide-img"/>
+                        <img ng-src="{{current.action.img}}" class="slide-img"/>
                         <p class="slide-credits" ng-bind-html="current.action.credits"></p>
                     </div>
                     <div class="col-sm-6">
@@ -267,20 +267,20 @@
         <div class="container">
             <div class="action-slides-holder">
                 <div id="action-slides-carousel" class="owl-carousel owl-theme">
-                    <div class="owl-item item" ng-repeat="slide in current.action.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
+                    <div class="item" ng-repeat="slide in current.action.slides track by $index" ng-class="$index == (current.action.slides.length - 1) ? 'active' : ''">
                         <div class="row" ng-if="current.type == 'random'">
                             <div class="col-sm-6 align-center">
-                                <img src="{{slide.img}}" class="slide-img"/>
+                                <img ng-src="{{slide.img}}" class="slide-img"/>
                             </div>
                             <div class="col-sm-6">
                                 <div class="slide-count">
                                     <span ng-repeat="count in current.action.slides track by $index" ng-class="$index == activeIndex ? 'active' : ''">{{$index + 1}}</span>
                                 </div>
-                                <p class="slide-title">{{slide.title}}</p>
+                                <p class="slide-title" ng-bind-html="slide.title"></p>
                             </div>
                         </div>
                         <div class="program-title-holder align-center" ng-if="current.type == 'wish' || current.type == 'worse'">
-                            <h2 class="program-title smaller">{{slide.title}}</h2>
+                            <h2 class="program-title smaller" ng-bind-html="slide.title"></h2>
                             <p class="program-description" ng-bind-html="slide.description"></p>
                         </div>
                         <div class="slide-timer-holder" ng-if="$index == activeIndex">
