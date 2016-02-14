@@ -32,7 +32,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                 exitToNext:true,
                 slides:[
                     {
-                        title:'Ga voor kwaliteit',
+                        title:'Ga voor kwantiteit',
                         subtitle:'Schrijf zoveel mogelijk idee\353n op. Hoe meer idee\353n je hebt hoe groter de kans dat je iets geniaals tegen komt.'
                     },{
                         title:'Stel je oordeel uit',

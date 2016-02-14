@@ -30,9 +30,7 @@
                             <img ng-src="/app/img/setup/{{choice.imgDark}}" class="img"/>
                             <img ng-src="/app/img/setup/{{choice.imgLight}}" class="img-hover"/>
                         </div>
-                        <p class="setup-choice-label">
-                            {{choice.description}}
-                        </p>
+                        <p class="setup-choice-label" ng-bind-html="choice.description"></p>
                     </li>
                 </ul>
                 <form role="form" id="focus-form" name="focusForm" ng-if="page == 5" novalidate>
