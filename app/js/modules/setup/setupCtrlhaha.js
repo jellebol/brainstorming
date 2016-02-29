@@ -1,7 +1,7 @@
 brightstormApp.controller('SetupCtrl', function($scope, $rootScope, $routeParams, $location, $timeout, $uibModal) {
     $scope.program = _.find($rootScope.user.programs, 'id', Number($routeParams.id));
     if($scope.program.focus) $scope.focus = $scope.program.focus;
-    console.log($scope.program);
+    //console.log($scope.program);
     $scope.page = $routeParams.page;
 
     $scope.setupSteps = [

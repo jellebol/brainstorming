@@ -183,30 +183,58 @@ body {
     position: absolute;
     .owl-prev {
       float: left;
-      background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
+      //background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
+      width: 45px;
+      height: 45px;
+      background-color: white;
+      &:after {
+        content: '\f104';
+        font-family: FontAwesome;
+        font-size: 44px;
+        margin-right: 5px;
+        line-height: 24px;
+        color: black;
+      }
       &:hover {
-        background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+        //background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+        background-color: $yellow;
       }
     }
     .owl-next {
       float: right;
-      background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
+      //background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
+      width: 45px;
+      height: 45px;
+      background-color: white;
+      &:after {
+        content: '\f105';
+        font-family: FontAwesome;
+        font-size: 44px;
+        margin-left: 7px;
+        line-height: 24px;
+        color: black;
+      }
       &:hover {
-        background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+        //background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+        background-color: $yellow;
       }
     }
     .owl-prev.disabled {
       opacity:0.3!important;
       cursor:default;
+      background-color: #cbc9cc!important;
       &:hover {
-        background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
+        background-color: #cbc9cc;
+        //background:url(/app/img/icons/slider/prev-white.png) no-repeat center center;
       }
     }
     .owl-next.disabled {
       opacity:0.3!important;
       cursor:default;
+      background-color: #cbc9cc!important;
       &:hover {
-        background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
+        background-color: #cbc9cc;
+        //background:url(/app/img/icons/slider/next-white.png) no-repeat center center;
       }
     }
   }
@@ -216,29 +244,41 @@ body {
   .owl-carousel {
     .owl-nav {
       .owl-prev {
-        background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+        //background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+        background-color: black;
+        &:after {
+          color: white;
+        }
         &:hover {
-          background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+          //background:url(/app/img/icons/slider/prev-geel.png) no-repeat center center;
+          background-color: $yellow;
         }
       }
       .owl-next {
-        background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
+        //background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
+        background-color: black;
+        &:after {
+          color: white;
+        }
         &:hover {
-          background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+          //background:url(/app/img/icons/slider/next-geel.png) no-repeat center center;
+          background-color: $yellow;
         }
       }
       .owl-prev.disabled {
         opacity:0.3!important;
         cursor:default;
         &:hover {
-          background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+          //background:url(/app/img/icons/slider/prev-zwart.png) no-repeat center center;
+          background-color: #cbc9cc;
         }
       }
       .owl-next.disabled {
         opacity:0.3!important;
         cursor:default;
         &:hover {
-          background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
+          //background:url(/app/img/icons/slider/next-zwart.png) no-repeat center center;
+          background-color: #cbc9cc;
         }
       }
     }

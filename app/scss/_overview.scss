@@ -81,14 +81,17 @@
         right: -42px;
       }
       div {
-        height: 35px;
-        width: 35px;
-        background-color: white;
-        color: $grey-medium;
+        //height: 35px;
+        //width: 35px;
+        //background-color: white;
+        //color: $grey-medium;
         border-radius: 50%;
         text-align: center;
-        font-size: 21px;
-        line-height: 35px;
+        //font-size: 21px;
+        //line-height: 35px;
+        &:after {
+          line-height: 40px;
+        }
       }
     }
     .owl-dots {

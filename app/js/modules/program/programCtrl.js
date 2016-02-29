@@ -581,6 +581,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
     //initialize explain carousel
     $scope.initExplain = function(){
         var owl = $('#explain-slides-carousel');
+        console.log(owl);
         owl.owlCarousel({
             responsive:{
                 0:{
@@ -595,7 +596,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
         owl.on('changed.owl.carousel', function(event) {
             $timeout(function() {
                 owlNav();
-            });
+            },1);
         })
     };
 

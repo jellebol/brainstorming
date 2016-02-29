@@ -302,16 +302,54 @@
         <div class="container explain-container">
             <div class="explain-slides-holder">
                 <div id="explain-slides-carousel" class="owl-carousel owl-theme align-center">
-                    <div class="owl-item item" ng-repeat="slide in current.explain.slides track by $index">
+                    <div class="owl-item item" ng-repeat="slide in current.explain.slides">
                         <p class="font-lg align-center">
                             <span ng-if="current.type == 'rules'">Regel {{$index + 1}}</span>
                             <span ng-if="slide.name">{{slide.name}}</span>
                         </p>
                         <div class="program-title-holder">
                             <h2 class="program-title">{{slide.title}}</h2>
-                            <img ng-src="/app/img/explain/{{current.type}}/{{$index + 1}}.png" class="explain-img"/>
+                            <!--<div class="explain-img-bg" style="background:url(/app/img/explain/{{current.type}}/{{$index + 1}}.png) no-repeat center center; background-size:contain;"></div>-->
+                            <!--<img ng-src="/app/img/explain/{{current.type}}/{{$index + 1}}.png" class="explain-img"/>-->
+                            <div ng-if="current.type == 'random'">
+                                <img src="/app/img/explain/random/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/random/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/random/3.png" class="explain-img" ng-show="$index == 2"/>
+                                <img src="/app/img/explain/random/4.png" class="explain-img" ng-show="$index == 3"/>
+                            </div>
+                            <div ng-if="current.type == 'rules'">
+                                <img src="/app/img/explain/rules/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/rules/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/rules/3.png" class="explain-img" ng-show="$index == 2"/>
+                                <img src="/app/img/explain/rules/4.png" class="explain-img" ng-show="$index == 3"/>
+                                <img src="/app/img/explain/rules/5.png" class="explain-img" ng-show="$index == 4"/>
+                            </div>
+                            <div ng-if="current.type == 'trends'">
+                                <img src="/app/img/explain/trends/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/trends/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/trends/3.png" class="explain-img" ng-show="$index == 2"/>
+                            </div>
+                            <div ng-if="current.type == 'wish'">
+                                <img src="/app/img/explain/wish/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/wish/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/wish/3.png" class="explain-img" ng-show="$index == 2"/>
+                                <img src="/app/img/explain/wish/4.png" class="explain-img" ng-show="$index == 3"/>
+                                <img src="/app/img/explain/wish/5.png" class="explain-img" ng-show="$index == 4"/>
+                            </div>
+                            <div ng-if="current.type == 'worse'">
+                                <img src="/app/img/explain/worse/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/worse/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/worse/3.png" class="explain-img" ng-show="$index == 2"/>
+                                <img src="/app/img/explain/worse/4.png" class="explain-img" ng-show="$index == 3"/>
+                            </div>
+                            <div ng-if="current.type == 'wrong'">
+                                <img src="/app/img/explain/wrong/1.png" class="explain-img" ng-show="$index == 0"/>
+                                <img src="/app/img/explain/wrong/2.png" class="explain-img" ng-show="$index == 1"/>
+                                <img src="/app/img/explain/wrong/3.png" class="explain-img" ng-show="$index == 2"/>
+                            </div>
                             <p class="program-description">{{slide.subtitle}}</p>
                         </div>
+                        <!--<div ng-init="initExplain()"></div>-->
                         <div ng-init="initExplain()" ng-if="$index == (current.explain.slides.length - 1)"></div>
                     </div>
                 </div>

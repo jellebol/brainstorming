@@ -133,7 +133,7 @@ brightstormApp.controller('OverviewCtrl', function($scope, $rootScope, $routePar
             items:6,
             nav:true,
             dots:true,
-            navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+            navText:['',''],
             slideBy: 'page'
         });
     };
