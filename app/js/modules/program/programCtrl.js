@@ -133,6 +133,7 @@ brightstormApp.controller('ProgramCtrl', function($scope, $rootScope, $location,
                     },
                     {
                         title:'Bedenk zoveel mogelijk idee\353n aan de hand van je kenmerk.',
+                        //time:10,
                         time:300,
                         alarm:true,
                         img:'/app/img/random/lemons.png'
